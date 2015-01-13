@@ -2,9 +2,15 @@
 <html>
 <head>
 </head>
-<body>
+<body onload="chrono()">
+	<span id="affichageEtudiant_tempsProchainVote">Prochain vote dans :</span>
+	<br/>
+	<span id="chrono">1 minutes et 00 secondes.</span>
+	<br/><br/>
 	<form method=POST action=voteEtudiant.html>
 		<input type=submit value="voter" name="voter" />
 	</form>
+	
+	<script src="affichageEtudiant.js" type="text/javascript"></script>
 </body>
 </html>
