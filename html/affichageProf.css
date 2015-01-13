@@ -1,0 +1,25 @@
+.DIV_BODDY{
+width:90%;
+min-width:400px;
+height:90%
+min-height:400px;
+border:1px solid black;
+text-align: center;
+}
+
+.INFORMATION{
+display:inline-block;
+vertical-align:top;
+}
+
+.BOUTONS{
+display:inline-block;
+vertical-align:top;
+}
+
+.HEURE{
+}
+
+.COURBE{
+
+}
