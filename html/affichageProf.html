@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<!--<link rel="stylesheet" type="text/css" href="css.css" />-->
+		<link rel="stylesheet" type="text/css" href="css.css" />
 		<link rel="stylesheet" type="text/css" href="affichageProf.css" />
         <title>AffichageProf</title>
     </head>
@@ -13,18 +13,22 @@
 			<div class="INFORMATION">
 				<form method="post" action="affichageProf.html">
 					<label>Session :</label>
-					<input type="text" name="idSession" id="idSession" readonly />
 					<br />
 					<label>Personnes connect&eacutees :</label>
-					<input type="text" name="nbPersonne" id="nbPersonne" readonly />
 					<br />
-					<label>Humeur g&eacuten&eacuterale :</label>
-					
-					<img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 />
+					<label>Avis moyen :</label>					
 					<br />
-					<label>Avis moyen :</label>
-					<input type="text" name="avisMoyen" id="avisMoyen" readonly />
+					<label>Humeur g&eacuten&eacuterale :</label>	
 				</form>
+			</div>
+			<div class="RECEPTION_INFORMATION">
+				<input type="text" name="idSession" id="idSession" readonly />
+				<br />
+				<input type="text" name="nbPersonne" id="nbPersonne" readonly />
+				<br />
+				<input type="text" name="avisMoyen" id="avisMoyen" readonly />
+				<br />
+				<img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 />
 			</div>
 			<div class="BOUTONS">
 				<form method="post" action="affichageProf.html">

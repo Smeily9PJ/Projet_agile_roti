@@ -1,20 +1,28 @@
 .DIV_BODDY{
 width:90%;
 min-width:400px;
-height:90%
+height:90%;
 min-height:400px;
 border:1px solid black;
+text-align: center;
+}
+
+.RECEPTION_INFORMATION{
+display:inline-block;
+vertical-align:top;
 text-align: center;
 }
 
 .INFORMATION{
 display:inline-block;
 vertical-align:top;
+text-align: left;
 }
 
 .BOUTONS{
 display:inline-block;
 vertical-align:top;
+text-align: right;
 }
 
 .HEURE{
