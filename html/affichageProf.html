@@ -8,7 +8,7 @@
     <body>
         <h1>Votre courbe</h1>	
 		<div>
-			<form method="post" action="traitement.php">
+			<form method="post" action="affichageProf.html">
 				<label>Session :</label>
 				<input type="text" name="idSession" id="idSession" readonly />
 				<br />
@@ -17,7 +17,23 @@
 				<br />
 				<label>Humeur g&eacuten&eacuterale :</label>
 				<img src="images/humeurs/sonne.png" alt="Smiley" width=40 height=40 />
+				<br />
+				<label>Avis moyen :</label>
+				<input type="text" name="avisMoyen" id="avisMoyen" readonly />
 			</form>
 		</div>
+		<div>
+			<form method="post" action="affichageProf.html">
+				<input type="submit" value="Lancer vote" name="lancerVote" id="lancerVote" />
+				<input type="submit" value="Fin De Session" name="finDeSession" id="finDeSession" />
+			</form>
+		</div>
+		<div>
+			<p>HOUR</p>
+		</div>
+		<div>
+			<p>graph a faire en java</p>
+		</div>
+		
     </body>
 </html>
