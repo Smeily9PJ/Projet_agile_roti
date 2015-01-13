@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-  <meta name="description" content="Votez ROTI">
-  <meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
+<meta name="description" content="Votez ROTI">
+<meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
+<link rel="stylesheet" type="text/css" href="css.css" />
 <title>Le ROTI c'est la vie</title>
 <script type="text/javascript">
 	function create(){
@@ -23,33 +24,33 @@
 </script>
 </head>
 
-	<body style="background-color:#E6FFFF;">
-		<div id="accueil_create" onclick="create()" style="background-color:black; color:white; width:22%; height:38%; margin:0px; padding:20px; top:35%; left:20%; position: absolute;">
+	<body>
+		<div id="accueil_create" onclick="create()">
 			<h1>Create</h1>
 		</div>
 		
-		<div id="accueil_join" onclick="join()" style="background-color:black; color:white; width:22%; height:38%; margin:0px; padding:20px; top:35%; left:55%; position: absolute;">
+		<div id="accueil_join" onclick="join()">
 			<h1>Join</h1>
 		</div>
 		
-		<div id="accueil_infos"  style="color:black; margin:0px; padding:0px; top:93%; left:85%; position: absolute;">
+		<div id="accueil_infos">
 			<p>qu'est-ce que c'est ? | credit</p>
 		</div>
-		<div id="accueil_ClickCreate" style="display:none; background-color:#E6FFFF; color:black; margin:0px; padding:20px; top:43%; left:25%; position: absolute;">
+		<div id="accueil_ClickCreate">
 			<form METHOD="POST" ou "GET" ACTION="">
 				<table><td>Numéro de session :</td></tr>
 					   <td>#529871</td></tr>
 					   <td>Mot de passe :</td></tr>
-					   <td><input type=password name="mdpSession"</td></tr>
-					   <td><input type="submit" value="Creer"></table>	
+					   <td><input type=password name="accueil_text_mdpSession"</td></tr>
+					   <td><input type="submit" value="Creer"></td></table>	
 			</form>
 		</div>
-		<div id="accueil_ClickJoin" style="display:none; background-color:#E6FFFF; color:black; margin:0px; padding:20px; top:43%; left:60%; position: absolute;">
+		<div id="accueil_ClickJoin">
 			<form METHOD="POST" ou "GET" ACTION="">
 			    <table><td>Numéro de session :</td></tr>
-					   <td><input type=text name="idSession"></td></tr>
+					   <td><input type=text name="accueil_text_idSession"></td></tr>
 					   <td>Mot de passe :</td></tr>
-					   <td><input type=password name="mdpSession"</td></tr>
+					   <td><input type=password name="accueil_text_mdpSession"</td></tr>
 				       <td><input type="submit" value="Rejoindre"></td></table>
 			</form>
 		</div>
