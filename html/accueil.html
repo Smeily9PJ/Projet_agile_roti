@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="description" content="Votez ROTI">
+  <meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
+<title>Le ROTI c'est la vie</title>
 <script type="text/javascript">
 	function create(){
 		document.getElementById('accueil_create').style.display = 'none';
@@ -15,7 +21,8 @@
 	    	document.getElementById('accueil_create').style.display = 'block';
 	}
 </script>
-<html>
+</head>
+
 	<body style="background-color:#E6FFFF;">
 		<div id="accueil_create" onclick="create()" style="background-color:black; color:white; width:22%; height:38%; margin:0px; padding:20px; top:35%; left:20%; position: absolute;">
 			<h1>Create</h1>
@@ -30,19 +37,19 @@
 		</div>
 		<div id="accueil_ClickCreate" style="display:none; background-color:#E6FFFF; color:black; margin:0px; padding:20px; top:43%; left:25%; position: absolute;">
 			<form METHOD="POST" ou "GET" ACTION="">
-				<table><td>Num�ro de session :</td></tr>
+				<table><td>Numéro de session :</td></tr>
 					   <td>#529871</td></tr>
 					   <td>Mot de passe :</td></tr>
-					   <td><input type=text name="mdpSession"</td></tr>
+					   <td><input type=password name="mdpSession"</td></tr>
 					   <td><input type="submit" value="Creer"></table>	
 			</form>
 		</div>
 		<div id="accueil_ClickJoin" style="display:none; background-color:#E6FFFF; color:black; margin:0px; padding:20px; top:43%; left:60%; position: absolute;">
 			<form METHOD="POST" ou "GET" ACTION="">
-			    <table><td>Num�ro de session :</td></tr>
+			    <table><td>Numéro de session :</td></tr>
 					   <td><input type=text name="idSession"></td></tr>
 					   <td>Mot de passe :</td></tr>
-					   <td><input type=text name="mdpSession"</td></tr>
+					   <td><input type=password name="mdpSession"</td></tr>
 				       <td><input type="submit" value="Rejoindre"></td></table>
 			</form>
 		</div>
