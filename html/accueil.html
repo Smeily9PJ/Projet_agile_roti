@@ -2,12 +2,16 @@
 <script type="text/javascript">
 	function create(){
 		document.getElementById('accueil_create').style.display = 'none';
+		document.getElementById('accueil_ClickCreate').style.display = 'block';
 		if(document.getElementById('accueil_join').style.display == 'none')
+			document.getElementById('accueil_ClickJoin').style.display = 'none';
 	    	document.getElementById('accueil_join').style.display = 'block';
 	}
 	function join(){
 		document.getElementById('accueil_join').style.display = 'none';
+		document.getElementById('accueil_ClickJoin').style.display = 'block';
 		if(document.getElementById('accueil_create').style.display == 'none')
+			document.getElementById('accueil_ClickCreate').style.display = 'none';
 	    	document.getElementById('accueil_create').style.display = 'block';
 	}
 </script>
@@ -23,6 +27,28 @@
 		
 		<div id="accueil_infos"  style="color:black; margin:0px; padding:0px; top:93%; left:85%; position: absolute;">
 			<p>qu'est-ce que c'est ? | credit</p>
+		</div>
+		<div id="accueil_ClickCreate" style="display:none; text-align:center; vertical-align:middle; background-color:#E6FFFF; color:black; width:22%; height:38%; margin:0px; padding:20px; top:35%; left:20%; position: absolute;">
+			<form METHOD="POST" ou "GET" ACTION="">
+				<table><tr>
+					<td>Numéro de session :</td>
+				</tr><tr>
+					<td>#529871</td>
+				</tr></table>	
+			</form>
+		</div>
+		<div id="accueil_ClickJoin" style="display:none; background-color:#E6FFFF; color:black; width:22%; height:38%; margin:0px; padding:20px; top:35%; left:55%; position: absolute;">
+			<form METHOD="POST" ou "GET" ACTION="">
+			    <table><tr>
+					<td>Numéro de session :</td>
+					<td><input type=text name="idSession"</td>
+				</tr><tr>
+					<td>Mot de passe :</td>
+					<td><input type=text name="mdpSession"</td>
+				</tr><tr>
+					<input type="submit" value="Rejoindre">
+				</tr></table>
+			</form>
 		</div>
 	</body>
 </html>
