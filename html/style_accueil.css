@@ -1,5 +1,5 @@
-@media screen and (max-width: 320px) {
-	   #accueil_create {
+@media screen and (max-width: 320px) {		
+	#accueil_create {
        background-color:grey; 
        width:40%; 
        height:15%; 
