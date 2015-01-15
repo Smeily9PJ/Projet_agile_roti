@@ -1,3 +1,45 @@
+@media screen and (max-width: 320px) {
+	   #accueil_create {
+       background-color:grey; 
+       width:40%; 
+       height:15%; 
+       padding:0px; 
+       top:14%; 
+       left:5%; 
+       position: absolute;
+       -moz-border-radius: 25px;
+       -webkit-border-radius: 25px;
+       border-radius: 25px;
+   }
+   
+   #accueil_join {
+       background-color:grey;  
+       width:40%; 
+       height:15%; 
+       padding:0px; 
+       top:14%; 
+       left:50%; 
+       position: absolute;
+       -moz-border-radius: 25px;
+       -webkit-border-radius: 25px;
+       border-radius: 25px;
+   }
+   
+   #accueil_infos {
+       top:88%; 
+       left:30%; 
+       position: absolute;
+   }
+   
+   #accueil_ClickCreate, #accueil_ClickJoin{
+       display:none; 
+       padding:20px;
+       top:40%; 
+       left:20%; 
+       position: absolute;
+   }
+}
+
 @media screen and (min-width: 1024px) {
    #accueil_create {
        background-color:grey; 
