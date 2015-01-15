@@ -1,0 +1,59 @@
+body {
+    background-color:#E6FFFF;
+	color:black;
+	margin:0px;
+	padding:0px;
+}
+
+header  {
+	top:0px;
+	width:100%;
+	height:10%;
+	background-color:#00CCFF;
+    -moz-box-shadow: 1px 10px 5px #000000;
+    -webkit-box-shadow: 1px 10px 5px #000000;
+    box-shadow: 1px 10px 5px #000000;
+    position:fixed;
+}
+
+#voteEtudiant_validerVoter, #voteEtudiant_valeurRange {
+		width: auto;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		width: 40%;
+		margin-left:-20%;
+	}
+
+	#affichageEtudiant_voter {
+		width: auto;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		width: 40%;
+		margin-left:-20%;
+		display: none;
+	}
+}
+
+span {
+	display: inline;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	width: 40%;
+	margin-left:-20%;
+	
+}
+/*
+input {
+	width: auto;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	width: 40%;
+	margin-left:-20%;
+}
+*/
+
+   
