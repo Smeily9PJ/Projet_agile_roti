@@ -67,7 +67,7 @@ h1{
 	left: 195px;
 }
 .sep:before{
-	content: '•';
+	content: '!';
 	color: #3A5486;
 }
 
