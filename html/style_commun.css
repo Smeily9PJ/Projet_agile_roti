@@ -16,6 +16,13 @@ header  {
     position:fixed;
 }
 
+@media screen and (max-width: 320px) {	
+	#headerIcon  {
+		width:20%;
+		height:100%;
+	} 
+}
+
 @media screen and (min-width: 320px) {	
 	#headerIcon  {
 		width:20%;

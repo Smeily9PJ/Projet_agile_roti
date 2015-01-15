@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Votez ROTI">
-	<meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
-	<link rel="stylesheet" type="text/css" href="style_commun.css" />
-	<link rel="stylesheet" type="text/css" href="style_accueil.css" />
-	<title>Le ROTI c'est la vie</title>
-	<script type="text/javascript">
-		function create(){
-			document.getElementById('accueil_create').style.display = 'none';
-			document.getElementById('accueil_ClickCreate').style.display = 'block';
-			if(document.getElementById('accueil_join').style.display == 'none')
-				document.getElementById('accueil_ClickJoin').style.display = 'none';
-	    		document.getElementById('accueil_join').style.display = 'block';
-		}
-		function join(){
-			document.getElementById('accueil_join').style.display = 'none';
-			document.getElementById('accueil_ClickJoin').style.display = 'block';
-			if(document.getElementById('accueil_create').style.display == 'none')
-				document.getElementById('accueil_ClickCreate').style.display = 'none';
-	    		document.getElementById('accueil_create').style.display = 'block';
-		}
-	</script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Votez ROTI">
+    <meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
+    <link rel="stylesheet" type="text/css" href="style_commun.css" />
+    <link rel="stylesheet" type="text/css" href="style_accueil.css" />
+    <title>Le ROTI c'est la vie</title>
+    <script type="text/javascript">
+        function create(){
+            document.getElementById('accueil_create').style.display = 'none';
+            document.getElementById('accueil_ClickCreate').style.display = 'block';
+            if(document.getElementById('accueil_join').style.display == 'none')
+                document.getElementById('accueil_ClickJoin').style.display = 'none';
+                document.getElementById('accueil_join').style.display = 'block';
+        }
+        function join(){
+            document.getElementById('accueil_join').style.display = 'none';
+            document.getElementById('accueil_ClickJoin').style.display = 'block';
+            if(document.getElementById('accueil_create').style.display == 'none')
+                document.getElementById('accueil_ClickCreate').style.display = 'none';
+                document.getElementById('accueil_create').style.display = 'block';
+        }
+    </script>
 </head>
 
 	<body>
 		<header id="bandeau">
 			<a href="accueil.html"><img src="images/header/testImageHeader.png" id="headerIcon"/></a>
 	    </header>
-		<div id="accueil_create" onclick="create()">
-			<h1>Create</h1>
-		</div>
-		
-		<div id="accueil_join" onclick="join()">
-			<h1>Join</h1>
-		</div>
+		<img src="images/modes/imageTest.jpg" id="accueil_create" onclick="create()"></img>		
+		<img src="images/modes/imageTest2.jpg" id="accueil_join" onclick="join()"></img>
 		
 		<div id="accueil_infos">
 			<p>qu'est-ce que c'est ? | credit</p>
