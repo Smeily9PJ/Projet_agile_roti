@@ -1,5 +1,5 @@
-@media screen and (max-width: 320px) {		
-	#accueil_create {
+@media screen and (min-width: 320px) {		
+	#accueil_create, #accueil_join {
        background-color:grey; 
        width:40%; 
        height:15%; 
@@ -13,16 +13,7 @@
    }
    
    #accueil_join {
-       background-color:grey;  
-       width:40%; 
-       height:15%; 
-       padding:0px; 
-       top:14%; 
        left:50%; 
-       position: absolute;
-       -moz-border-radius: 25px;
-       -webkit-border-radius: 25px;
-       border-radius: 25px;
    }
    
    #accueil_infos {
@@ -40,8 +31,84 @@
    }
 }
 
+@media screen and (min-width: 480px) {		
+	#accueil_create, #accueil_join {
+       background-color:grey; 
+       width:40%; 
+       height:15%; 
+       padding:0px; 
+       top:14%; 
+       left:5%; 
+       position: absolute;
+       -moz-border-radius: 25px;
+       -webkit-border-radius: 25px;
+       border-radius: 25px;
+   }
+   
+   #accueil_join {
+       left:50%; 
+   }
+   
+   #accueil_infos {
+       top:92%; 
+       left:55%; 
+       position: absolute;
+   }
+   
+   #accueil_ClickCreate, #accueil_ClickJoin{
+       display:none; 
+       padding:20px;
+       top:45%; 
+       left:30%; 
+       position: absolute;
+   }
+}
+
+@media screen and (min-width: 720px) {	
+	#accueil_create, #accueil_join{
+       background-color:grey; 
+       width:22%; 
+       height:28%; 
+       padding:20px; 
+       top:35%; 
+       left:15%; 
+       position: absolute;
+       -moz-border-radius: 25px;
+       -webkit-border-radius: 25px;
+       border-radius: 25px;
+   }
+   
+   #accueil_join {
+       left:55%; 
+   }
+   
+   #accueil_create:hover, #accueil_join:hover{
+   	   -moz-box-shadow: 1px 8px 16px #000000;
+       -webkit-box-shadow: 1px 8px 16px #000000;
+       box-shadow: 1px 8px 16px #000000;
+   }
+   
+   #accueil_infos {
+       top:91%; 
+       left:65%; 
+       position: absolute;
+   }
+   
+   #accueil_ClickCreate, #accueil_ClickJoin {
+       display:none; 
+       padding:20px;
+       top:35%; 
+       left:15%; 
+       position: absolute;
+   }
+   
+   #accueil_ClickJoin {
+       left:55%; 
+   }
+}
+
 @media screen and (min-width: 1024px) {
-   #accueil_create {
+   #accueil_create, #accueil_join{
        background-color:grey; 
        width:22%; 
        height:38%; 
@@ -54,26 +121,11 @@
        border-radius: 25px;
    }
    
-   #accueil_create:hover{
-   	   -moz-box-shadow: 1px 8px 16px #000000;
-       -webkit-box-shadow: 1px 8px 16px #000000;
-       box-shadow: 1px 8px 16px #000000;
-   }
-   
    #accueil_join {
-       background-color:grey;  
-       width:22%; 
-       height:38%; 
-       padding:20px; 
-       top:35%; 
        left:55%; 
-       position: absolute;
-       -moz-border-radius: 25px;
-       -webkit-border-radius: 25px;
-       border-radius: 25px;
    }
    
-   #accueil_join:hover{
+   #accueil_create:hover, #accueil_join:hover{
    	   -moz-box-shadow: 1px 8px 16px #000000;
        -webkit-box-shadow: 1px 8px 16px #000000;
        box-shadow: 1px 8px 16px #000000;
@@ -85,7 +137,7 @@
        position: absolute;
    }
    
-   #accueil_ClickCreate {
+   #accueil_ClickCreate, #accueil_ClickJoin {
        display:none; 
        padding:20px;
        top:43%; 
@@ -94,10 +146,6 @@
    }
    
    #accueil_ClickJoin {
-       display:none; 
-       padding:20px; 
-       top:43%; 
        left:60%; 
-       position: absolute;
    }
 }

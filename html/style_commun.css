@@ -16,16 +16,30 @@ header  {
     position:fixed;
 }
 
-@media screen and (max-width: 320px) {	
+@media screen and (min-width: 320px) {	
 	#headerIcon  {
 		width:20%;
 		height:100%;
 	} 
 }
 
+@media screen and (min-width: 480px) {	
+	#headerIcon  {
+		width:20%;
+		height:100%;
+	} 
+}
+
+@media screen and (min-width: 720px) {	
+	#headerIcon  {
+		width:13%;
+		height:100%;
+	} 
+}
+
 @media screen and (min-width: 1024px) {
    #headerIcon  {
-		width:10%;
+		width:7%;
 		height:100%;
    } 
 } 
