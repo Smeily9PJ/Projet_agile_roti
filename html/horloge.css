@@ -1,0 +1,183 @@
+http://dmouronval.developpez.com/tutoriels/css/animation-css3-horloge/
+
+body {
+	font-family: 'Coda', cursive;
+	background: none repeat scroll 0 0 #E1E1E2;
+}
+h1{
+	color: #3A5486;
+	font: 700 18pt Verdana,sans-serif;
+	letter-spacing: 5px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000000;
+}
+#horloge {
+	height: 400px;
+	margin: 40px auto;
+	position: relative;
+	width: 400px;
+	border: 10px solid #3A5486;
+	border-radius: 50%;
+	background: url(http://www.developpez.net/template/images/logo.png) no-repeat scroll center 25% #FFFFFF;
+	box-shadow: 0 0 40px #8080A0, 0 0 50px 10px #CCCCCC inset;
+}
+#horloge:before {
+	border-radius: 50%;
+	box-shadow: -2px -2px 5px #000000 inset, -2px 2px 5px #000000 inset, 2px -2px 5px #000000 inset, 2px 2px 5px #000000 inset;
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+#seconde{
+	left: 198px;
+	top: 25px;
+	height: 180px;
+	border: 2px solid rgba( 110,150,180,0.8);
+}
+#minute{
+	left: 196px;
+	top: 55px;
+	height: 150px;
+	border: 4px solid rgba( 80,150,200,0.8);
+}
+#heure{
+	left: 194px;
+	top: 100px;
+	height: 100px;
+	border: 6px solid rgba( 10,50,128,0.8);
+}
+#centre{
+	border: 6px solid rgba(255,255,255,0.6);
+	left: 194px;
+	top: 194px;
+}
+.rond, .sep{
+	position: absolute;
+	border-radius: 50%;
+}
+.sep{
+	height: 10px;
+	width: 10px;
+	text-align: center;
+	line-height: 10px;
+	top: 195px;
+	left: 195px;
+}
+.sep:before{
+	content: '!';
+	color: #3A5486;
+}
+
+#h0{
+    -webkit-transform: translate(0px, -190px);
+    -o-transform: translate(0px, -190px);
+    transform: translate(0px, -190px);
+}
+#h1{
+    -webkit-transform: rotate(30deg) translate(0px, -190px);
+    -o-transform: rotate(30deg) translate(0px, -190px);
+    transform: rotate(30deg) translate(0px, -190px);
+}
+#h2{
+    -webkit-transform: rotate(60deg) translate(0px, -190px);
+    -o-transform: rotate(60deg) translate(0px, -190px);
+    transform: rotate(60deg) translate(0px, -190px);
+}
+#h3{
+    -webkit-transform: rotate(90deg) translate(0px, -190px);
+    -o-transform: rotate(90deg) translate(0px, -190px);
+    transform: rotate(90deg) translate(0px, -190px);
+}
+#h4{
+    -webkit-transform: rotate(120deg) translate(0px, -190px);
+    -o-transform: rotate(120deg) translate(0px, -190px);
+    transform: rotate(120deg) translate(0px, -190px);
+}
+#h5{
+    -webkit-transform: rotate(150deg) translate(0px, -190px);
+    -o-transform: rotate(150deg) translate(0px, -190px);
+    transform: rotate(150deg) translate(0px, -190px);
+}
+#h6{
+    -webkit-transform: rotate(180deg) translate(0px, -190px);
+    -o-transform: rotate(180deg) translate(0px, -190px);
+    transform: rotate(180deg) translate(0px, -190px);
+}
+#h7{
+    -webkit-transform: rotate(210deg) translate(0px, -190px);
+    -o-transform: rotate(210deg) translate(0px, -190px);
+    transform: rotate(210deg) translate(0px, -190px);
+}
+#h8{
+    -webkit-transform: rotate(240deg) translate(0px, -190px);
+    -o-transform: rotate(240deg) translate(0px, -190px);
+    transform: rotate(240deg) translate(0px, -190px);
+}
+#h9{
+    -webkit-transform: rotate(270deg) translate(0px, -190px);
+    -o-transform: rotate(270deg) translate(0px, -190px);
+    transform: rotate(270deg) translate(0px, -190px);
+}
+#h10{
+    -webkit-transform: rotate(300deg) translate(0px, -190px);
+    -o-transform: rotate(300deg) translate(0px, -190px);
+    transform: rotate(300deg) translate(0px, -190px);
+}
+#h11{
+    -webkit-transform: rotate(330deg) translate(0px, -190px);
+    -o-transform: rotate(330deg) translate(0px, -190px);
+    transform: rotate(330deg) translate(0px, -190px);
+}
+@-webkit-keyframes tour{
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-o-keyframes tour{
+    from{
+        -o-transform: rotate(0deg);
+    }
+    to{
+        -o-transform: rotate(360deg);
+    }
+}
+@keyframes tour{
+    from{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+#seconde{
+    -webkit-animation: tour 60s steps(60, end) infinite;
+    -webkit-transform-origin: 50% 175px;
+    -o-animation: tour 60s steps(60, end) infinite;
+    -o-transform-origin: 50% 175px;
+    animation: tour 60s steps(60, end) infinite;
+    transform-origin: 50% 175px;
+}
+#minute{
+    -webkit-animation: tour 3600s steps(60, end) infinite;
+    -webkit-transform-origin: 50% 145px;
+    -o-animation: tour 3600s steps(60, end) infinite;
+    -o-transform-origin: 50% 145px;
+    animation: tour 3600s steps(60, end) infinite;
+    transform-origin: 50% 145px;
+}
+#heure{
+    -webkit-animation: tour 43200s linear infinite;
+    -webkit-transform-origin: 50% 100px;
+    -o-animation: tour 43200s linear infinite;
+    -o-transform-origin: 50% 100px;
+    animation: tour 43200s linear infinite;
+    transform-origin: 50% 100px;
+}
