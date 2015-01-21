@@ -2,9 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="style_commun.css" />
-		<link rel="stylesheet" type="text/css" href="affichageProf.css" />
-		<link rel="stylesheet" type="text/css" href="horloge.css" />
+		<link rel="stylesheet" type="text/css" href="css/style_commun.css" />
+		<link rel="stylesheet" type="text/css" href="css/affichageProf.css" />
         <title>AffichageProf</title>
     </head>
 
@@ -45,38 +44,8 @@
 				</div>
 			</div>
 			<div class="SPACER"><hr /></div>
-			<div>
-				<div id="horloge" class="rond">
-					<div id="heure" class="rond"></div>
-					<div id="minute" class="rond"></div>
-					<div id="seconde" class="rond"></div>
-					<div id="centre" class="rond"></div>
-					<div class="sep" id="h0"></div>
-					<div class="sep" id="h1"></div>
-					<div class="sep" id="h2"></div>
-					<div class="sep" id="h3"></div>
-					<div class="sep" id="h4"></div>
-					<div class="sep" id="h5"></div>
-					<div class="sep" id="h6"></div>
-					<div class="sep" id="h7"></div>
-					<div class="sep" id="h8"></div>
-					<div class="sep" id="h9"></div>
-					<div class="sep" id="h10"></div>
-					<div class="sep" id="h11"></div>
-				</div>
-			</div>
-			<script>
-				var tt = new Date();
-				document.getElementById('seconde').style.webkitAnimationDelay = -(tt.getSeconds()) + 's';
-				document.getElementById('minute').style.webkitAnimationDelay = -(tt.getMinutes()*60 + tt.getSeconds()) + 's';
-				document.getElementById('heure').style.OAnimationDelay = -((tt.getHours()%12)*3600 + tt.getMinutes()*60 + tt.getSeconds()) + 's';
-				document.getElementById('seconde').style.OAnimationDelay = -(tt.getSeconds()) + 's';
-				document.getElementById('minute').style.OAnimationDelay = -(tt.getMinutes()*60 + tt.getSeconds()) + 's';
-				document.getElementById('heure').style.webkitAnimationDelay = -((tt.getHours()%12)*3600 + tt.getMinutes()*60 + tt.getSeconds()) + 's';
-				document.getElementById('seconde').style.animationDelay = -(tt.getSeconds()) + 's';
-				document.getElementById('minute').style.animationDelay = -(tt.getMinutes()*60 + tt.getSeconds()) + 's';
-				document.getElementById('heure').style.animationDelay = -((tt.getHours()%12)*3600 + tt.getMinutes()*60 + tt.getSeconds()) + 's';
-			</script>
+			
+			
 			<div>
 				<p class="COURBE">graph a faire en java</p>
 			</div>
@@ -84,6 +53,5 @@
 		</div>
 		
 		<script src="humeur.js" type="text/javascript" src="javascript.js"></script>
-		<script src="horloge.js" src="javascript.js"></script>
     </body>
 </html>
