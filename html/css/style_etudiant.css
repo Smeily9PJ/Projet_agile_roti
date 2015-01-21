@@ -41,18 +41,22 @@ input[type="range"]::-webkit-slider-thumb:active {
 #voteEtudiant_valeurVote {
   font-family: "Quantico", sans-serif;
   font-size: 18px;
+  top:18%;
   color: #579E81;
 }
-/*
-input {
-    width: auto;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    width: 40%;
-    margin-left:-20%;
+
+#voteEtudiant_validerVoter {
+    top :21%;
+    left:15%;
+    width: 10%;
+    height:5%;
 }
-*/
+/*
+#voteEtudiant_AttenteVote {
+	display:none;
+	text-align: left;
+	top:21%;
+}*/
 
 /* Paramètres fixes */
 

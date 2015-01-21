@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/style_commun.css" />
-		<link rel="stylesheet" type="text/css" href="css/style_prof.css" />
+        <style type="text/css">
+	    <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_prof.css" %>
+	    </style>
         <title>AffichageProf</title>
     </head>
 
