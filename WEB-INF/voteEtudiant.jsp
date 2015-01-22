@@ -7,9 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style_etudiant.css" />
 </head>
 <body>
-    <header id="bandeau">
-        <a href="accueil.html"><img src="${pageContext.request.contextPath}/images/header/testImageHeader.png" id="headerIcon"/></a>
-    </header>
+    <%@ include file="header.jsp" %>
     <div id="Etudiant_Attente">
     	<span id="Etudiant_Attente_Annonce">Prochain vote dans...</span>
 		<br/>
@@ -29,8 +27,7 @@
 	<button class="btn btn-vote" onclick="vote()" id="Etudiant_Btn_Voter">Voter</button>
 	</div>
 	<script src="${pageContext.request.contextPath}/javascript/voteEtudiant.js" type="text/javascript"></script>
-	<footer id="pied">
-        <p id="accueil_infos">qu'est-ce que c'est ? | credit</p>
-     </footer>
+	
+    <%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -1,3 +1,3 @@
 <header id="bandeau">
-        <a href="<%=request.getContextPath()+"/accueil"%>"><img src="images/header/testImageHeader.png" id="headerIcon"/></a>
+        <a href="<%=request.getContextPath()+"/accueil"%>"><img src="images/header/MEETING_TRACKER_logo.png" id="headerIcon"/></a>
     </header>
