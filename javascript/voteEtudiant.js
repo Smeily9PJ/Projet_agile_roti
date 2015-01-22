@@ -13,6 +13,7 @@ var secondes
 var minutes
 var SEC = 20 // Variables depart
 var MIN = 0// Variables depart
+var timing = 1000
 function vote() {
 	document.getElementById("Etudiant_Formulaire").style.display = "none";
 	document.getElementById("Etudiant_Attente").style.display = "block";
@@ -32,6 +33,7 @@ function chrono(){
 		if (minutes == 0){
 			document.getElementById("Etudiant_Formulaire").style.display = "block";
 			document.getElementById("Etudiant_Attente").style.display = "none";
+			timing+=500;
 		}else{
 			secondes=59; minutes--;
 			newChrono = minutes +" minutes et "+ secondes +"secondes.";
@@ -41,5 +43,5 @@ function chrono(){
 		newChrono = minutes +" minutes et "+ secondes +"secondes.";
 	}
 	chrono.textContent = newChrono;
-	setTimeout('chrono()',1000) //la fonction est relancée
+	setTimeout('chrono()',timing) //la fonction est relancée
 }
