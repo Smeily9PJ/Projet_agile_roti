@@ -6,14 +6,35 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 	
+	
 	<servlet>
-		<servlet-name>Servlet</servlet-name>
-		<servlet-class>testServlet.Servlet</servlet-class>
+		<servlet-name>Accueil</servlet-name>
+		<servlet-class>testServlet.Accueil</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>Servlet</servlet-name>
-		<url-pattern>/toto</url-pattern>
+		<servlet-name>Accueil</servlet-name>
+		<url-pattern>/accueil</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Creer</servlet-name>
+		<servlet-class>testServlet.Creer</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Creer</servlet-name>
+		<url-pattern>/creer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VoteEtudiant</servlet-name>
+		<servlet-class>testServlet.VoteEtudiant</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>VoteEtudiant</servlet-name>
+		<url-pattern>/rejoindre</url-pattern>
 	</servlet-mapping>
 
 </web-app>
