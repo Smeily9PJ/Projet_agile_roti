@@ -1,5 +1,5 @@
 body {
-    background-color:#E6FFFF;
+    background-color:#0e83cd;
 	color:black;
 	margin:0px;
 	padding:0px;
@@ -35,6 +35,80 @@ footer {
     -webkit-box-shadow: 0px -5px 2px  #000000;
     box-shadow: 0px -5px 2px  #000000;
     position:fixed;
+}
+
+.btn {
+	border-radius: 25px;
+	border: solid 1% #f7eff7;
+	cursor: pointer;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: fixed;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	background: #226FBE;
+	color: #fff;
+	overflow: hidden;
+	line-height:50%;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	width: 30%;
+	height: 200%;
+	background: rgba(255,255,255,0.1);
+	right: 0;
+	top: 0;
+	margin: -5px 0 0 -5px;
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: rotate(-20deg);
+	-moz-transform-origin: 0 0;
+	-moz-transform: rotate(-20deg);
+	-ms-transform-origin: 0 0;
+	-ms-transform: rotate(-20deg);
+	transform-origin: 0 0;
+	transform: rotate(-20deg);
+}
+
+.btn:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 3;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	font-size: 140%;
+	width: 60px;
+	left: auto;
+	right: 10px;
+	z-index: 2;
+}
+
+.btn:hover {
+	background: #2195DE;
+}
+
+.btn:active {
+	background: #2195DE;
+	top: 2px;
+}
+
+.btn-vote:hover:after {
+	width: 40%;
 }
 
 @media screen and (max-width: 320px) {	
