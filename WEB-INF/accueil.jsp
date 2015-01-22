@@ -9,14 +9,13 @@
     <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_accueil.css" %>
     </style>
     <title>Le ROTI c'est la vie</title>
-   <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>
 </head>
 	<body>
 		<%@ include file="header.jsp" %>
 		<img src="images/modes/Create.jpg" id="accueil_create" onclick="create()"></img>		
 		<img src="images/modes/Join.jpg" id="accueil_join" onclick="join()"></img>
 		<div id="accueil_ClickCreate">
-			<form METHOD="POST" ou "GET" ACTION="creer">
+			<form METHOD="POST" ACTION="creer">
 				<table><td>Numéro de session :</td></tr>
 					   <td>#529871</td></tr>
 					   <td>Mot de passe :</td></tr>
@@ -33,7 +32,8 @@
 				       <td><input type="submit" value="Rejoindre" name="action"></td></table>
 			</form>
 		</div>
-		
 		<%@ include file="footer.jsp" %>
+		
+   <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>
 	</body>
 </html>

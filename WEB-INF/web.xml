@@ -36,5 +36,15 @@
 		<servlet-name>VoteEtudiant</servlet-name>
 		<url-pattern>/rejoindre</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AffichageProf</servlet-name>
+		<servlet-class>testServlet.AffichageProf</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AffichageProf</servlet-name>
+		<url-pattern>/professeur</url-pattern>
+	</servlet-mapping>
 
 </web-app>
