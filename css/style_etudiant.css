@@ -1,4 +1,4 @@
-#voteEtudiant_validerVoter, #voteEtudiant_valeurRange, #voteEtudiant_valeurVote {
+#Etudiant_validerVoter, #Etudiant_valeurRange, #Etudiant_valeurVote {
         text-align: center;
         position: fixed;
         left: 5%;
@@ -38,26 +38,30 @@ input[type="range"]::-webkit-slider-thumb:active {
   box-shadow: 0px 0px 1px #3c6d59;
 }
 
-#voteEtudiant_valeurVote {
+#Etudiant_valeurVote {
   font-family: "Quantico", sans-serif;
   font-size: 18px;
   top:18%;
   color: #579E81;
 }
 
-#voteEtudiant_validerVoter {
+#Etudiant_validerVoter {
     top :21%;
     left:15%;
     width: 10%;
     height:5%;
 }
-/*
-#voteEtudiant_AttenteVote {
-	display:none;
-	text-align: left;
-	top:21%;
-}*/
 
+#Etudiant_Attente {
+	display:none;
+	top :15%;
+    left:5%;
+    width: 20%;
+    height:11%;
+    position:fixed;
+    margin-left:0%;
+    text-align: center;
+}
 /* Paramètres fixes */
 
 @media screen and (max-width: 480px) {      

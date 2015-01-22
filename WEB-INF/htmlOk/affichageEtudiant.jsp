@@ -4,7 +4,7 @@
 	<head>
 		<title>Vote pour le ROTI</title>
 		<style type="text/css">
-	    <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_etudiant.css" %>
+		    <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_etudiant.css" %>
 	    </style>
 	</head>
 	<body onload="chrono()">
