@@ -9,49 +9,31 @@
     <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_accueil.css" %>
     </style>
     <title>Le ROTI c'est la vie</title>
-    <script type="text/javascript">
-        function create(){
-            document.getElementById('accueil_create').style.display = 'none';
-            document.getElementById('accueil_ClickCreate').style.display = 'block';
-            if(document.getElementById('accueil_join').style.display == 'none')
-                document.getElementById('accueil_ClickJoin').style.display = 'none';
-                document.getElementById('accueil_join').style.display = 'block';
-        }
-        function join(){
-            document.getElementById('accueil_join').style.display = 'none';
-            document.getElementById('accueil_ClickJoin').style.display = 'block';
-            if(document.getElementById('accueil_create').style.display == 'none')
-                document.getElementById('accueil_ClickCreate').style.display = 'none';
-                document.getElementById('accueil_create').style.display = 'block';
-        }
-    </script>
+   <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>
 </head>
 	<body>
-		<header id="bandeau">
-			<a href="accueil.html"><img src="images/header/testImageHeader.png" id="headerIcon"/></a>
-	    </header>
+		<%@ include file="header.jsp" %>
 		<img src="images/modes/Create.jpg" id="accueil_create" onclick="create()"></img>		
 		<img src="images/modes/Join.jpg" id="accueil_join" onclick="join()"></img>
 		<div id="accueil_ClickCreate">
-			<form METHOD="POST" ou "GET" ACTION="">
+			<form METHOD="POST" ou "GET" ACTION="creer">
 				<table><td>Numéro de session :</td></tr>
 					   <td>#529871</td></tr>
 					   <td>Mot de passe :</td></tr>
 					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-					   <td><input type="submit" value="Creer"></td></table>	
+					   <td><input type="submit" value="Creer" name="action"></td></table>	
 			</form>
 		</div>
 		<div id="accueil_ClickJoin">
-			<form METHOD="POST" ou "GET" ACTION="">
+			<form METHOD="POST" ACTION="rejoindre">
 			    <table><td>Numéro de session :</td></tr>
 					   <td><input type=text name="accueil_text_idSession"></td></tr>
 					   <td>Mot de passe :</td></tr>
 					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-				       <td><input type="submit" value="Rejoindre"></td></table>
+				       <td><input type="submit" value="Rejoindre" name="action"></td></table>
 			</form>
 		</div>
-		<footer id="pied">
-           <p id="accueil_infos">qu'est-ce que c'est ? | credit</p>
-        </footer>
+		
+		<%@ include file="footer.jsp" %>
 	</body>
 </html>
