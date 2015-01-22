@@ -26,7 +26,7 @@
 <!--		<input onClick="vote()" type=submit value="Voter" name="envoyer" id="Etudiant_validerVoter"/>   -->
 
 	</form>
-	<button onclick="vote()" id="Etudiant_validerVoter">Coucou</button>
+	<button class="btn btn-vote" onclick="vote()" id="Etudiant_Btn_Voter">Voter</button>
 	</div>
 	<script src="${pageContext.request.contextPath}/javascript/voteEtudiant.js" type="text/javascript"></script>
 	<footer id="pied">

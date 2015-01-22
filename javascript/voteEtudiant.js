@@ -11,7 +11,7 @@ function miseAJourValeurRange(){
 
 var secondes
 var minutes
-var SEC = 20 // Variables depart
+var SEC = 5 // Variables depart
 var MIN = 0// Variables depart
 var timing = 1000
 function vote() {
