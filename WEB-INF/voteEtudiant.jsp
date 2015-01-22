@@ -15,6 +15,7 @@
 		<br/>
 		<span id="Etudiant_Attente_Chrono">1 minutes et 00 secondes.</span>
 		<br/><br/>
+		<progress id="Etudiant_Attente_Loading" value="100" max="100"></progress>
 	</div>
     <div id="Etudiant_Formulaire">
 	<form method=POST action="">

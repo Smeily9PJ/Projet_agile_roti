@@ -9,21 +9,27 @@ function miseAJourValeurRange(){
 	
 }
 
+var secondes
+var minutes
+var SEC = 20 // Variables depart
+var MIN = 0// Variables depart
 function vote() {
 	document.getElementById("Etudiant_Formulaire").style.display = "none";
 	document.getElementById("Etudiant_Attente").style.display = "block";
+	secondes=SEC;
+	minutes=MIN;
 	chrono();
 }
 
-var secondes=20
-var minutes=0
 
 function chrono(){
+	var bar = document.getElementById("Etudiant_Attente_Loading");
 	var chrono = document.getElementById("Etudiant_Attente_Chrono");
 	var newChrono ;
+	var percent = (minutes*60 + secondes)*100 / (MIN*60 + SEC);
+	bar.value = percent;
 	if (secondes == 0){
 		if (minutes == 0){
-			newChrono = "Maintenant !";
 			document.getElementById("Etudiant_Formulaire").style.display = "block";
 			document.getElementById("Etudiant_Attente").style.display = "none";
 		}else{
