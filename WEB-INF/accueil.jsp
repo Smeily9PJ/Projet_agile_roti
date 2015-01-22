@@ -20,7 +20,7 @@
 					   <td>#529871</td></tr>
 					   <td>Mot de passe :</td></tr>
 					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-					   <td><input type="submit" value="Creer" name="action"></td></table>	
+					   <td><input id="Accueil_bouton_create" class="btn" type="submit" value="Creer" name="action"></td></table>	
 			</form>
 		</div>
 		<div id="accueil_ClickJoin">
@@ -29,7 +29,7 @@
 					   <td><input type=text name="accueil_text_idSession"></td></tr>
 					   <td>Mot de passe :</td></tr>
 					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-				       <td><input type="submit" value="Rejoindre" name="action"></td></table>
+				       <td><input id="Accueil_bouton_join" class="btn" type="submit" value="Rejoindre" name="action"></td></table>
 			</form>
 		</div>
 		<%@ include file="footer.jsp" %>

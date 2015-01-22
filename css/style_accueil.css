@@ -21,6 +21,20 @@
     display:none; 
     padding:20px; 
     position: fixed;
+    color:white;
+    letter-spacing: 1px;
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
+    top:18%;
+}
+
+#Accueil_bouton_create, #Accueil_bouton_join {
+	top :95%;
+    left:45%;
+    width: 50%;
+    height:25%;
+    position:absolute;
+    margin-left:0px;
 }
 
 @media screen and (max-width: 480px) {		
@@ -32,11 +46,6 @@
 	}  
 	#accueil_join {
 		left:50%; 
-	}
-	#accueil_infos {
-		top:88%; 
-		left:30%;
-		position: fixed;
 	}
 	#accueil_ClickCreate, #accueil_ClickJoin{
 		top:40%; 
@@ -54,11 +63,6 @@
     #accueil_join {
         top:60%; 
     }
-    #accueil_infos {
-        top:88%; 
-        left:30%; 
-        position: fixed;
-    }
     #accueil_ClickCreate, #accueil_ClickJoin{
         top:20%; 
         left:50%; 
@@ -75,11 +79,6 @@
 	#accueil_join {
 		left:50%; 
 	} 
-	#accueil_infos {
-		top:92%; 
-		left:55%; 
-		position: fixed;
-	}
 	#accueil_ClickCreate, #accueil_ClickJoin{
 		top:45%; 
 		left:30%; 
@@ -99,11 +98,6 @@
        left:55%; 
    }
    
-   #accueil_infos {
-       top:91%; 
-       left:65%; 
-       position: fixed;
-   }
    
    #accueil_ClickCreate, #accueil_ClickJoin {
        top:35%; 
@@ -126,12 +120,6 @@
    
    #accueil_join {
        left:55%; 
-   }
-   
-   #accueil_infos {
-       top:93%; 
-       left:85%; 
-       position: fixed;
    }
    
    #accueil_ClickCreate, #accueil_ClickJoin {
