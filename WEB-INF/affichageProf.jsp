@@ -15,7 +15,7 @@
 		<div class="DIV_BODDY">
 			<div class="PARTIE_GAUCHE">
 				<div class="INFORMATION_LABEL">
-					<form method="post" action="affichageProf.html">
+					
 						<label>Session :</label>
 						<br />
 						<label>Personnes connect&eacute;es :</label>
@@ -23,7 +23,7 @@
 						<label>Avis moyen :</label>					
 						<br /><br />
 						<!-- <label>Humeur g&eacute;n&eacute;rale :</label>	 -->
-					</form>
+
 				</div>
 				<div class="RECEPTION_INFORMATION">
 					<input type="text" name="idSession" id="idSession" readonly />
@@ -37,15 +37,16 @@
 				<br>
 				<p id="affichageProf_chono"> 0 : 0 : 0 </p>
 				<div class="BOUTONS">
-					<form method="post" action="accueil">
+					<form METHOD="POST" ACTION="accueil">
 						<!-- <input class="BOUTON" type="submit" value="Lancer vote" name="lancerVote" id="lancerVote" /> -->
 						<br />
-						<input class="BOUTON" type="submit" value="Fin de session" name="finDeSession" id="finDeSession" />
+						<input class="BOUTON" type="submit" value="Fin de session" name="action" id="finDeSession" >
 					</form>
 				</div>
 			</div>
 			<div class="PARTIE_DROITE">
 				<p class="MONCADRE"></p>
+				<canvas id="affichageProf_canvas" width="600" height="600">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
 			</div>
 		</div>
 		
