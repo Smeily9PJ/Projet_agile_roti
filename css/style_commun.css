@@ -38,38 +38,40 @@ footer {
     font-family: 'MV Boli'; 
 }
 
-.infos, .infos p{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	font-size: 0;
+#infos_roti, #infos_credit {
+	left:35%;
+	width:15%;
+	height:4%;
+	top:95%;
+	position:fixed;
 }
 
-.infos h3 {
-	display: block;
-	width: 150px;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	background: #555;
+#infos_credit {
+	left:50%;
 }
 
-.infos li{
-    display: inline-block;
-	position: relative;
-	font-size: 12px;
-}
-.infos p {
-	left: -999em;
-	position: absolute;
-}
-.infos li:hover > p{
-  left: 0;
+#infos_txt_roti, #infos_txt_credit{
+	width:25%;
+	height:13%;
+	top:80%;
+	left:25%;
+	position:fixed;
+	text-align:left;
 }
 
-.infos li li:hover > p {
-	left: 150px;
-	top: 0
+#infos_txt_credit{
+	left:50%;
+	width:35%;
+	text-align:left;
+	display:none;
+}
+
+#infos_roti:hover #infos_txt_roti{
+	display:none;
+}
+
+#infos_credit:hover #infos_txt_credit{
+	display:block;
 }
 
 .btn {

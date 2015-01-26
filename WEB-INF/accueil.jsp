@@ -8,7 +8,7 @@
     <style type="text/css">
     <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_accueil.css" %>
     </style>
-    <title>Le ROTI c'est la vie</title>
+    <title>MEETING TRACKER</title>
 </head>
 	<body>
 		<%@ include file="header.jsp" %>
