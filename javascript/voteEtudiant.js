@@ -35,12 +35,12 @@ function chrono(){
 			document.getElementById("Etudiant_Attente").style.display = "none";
 			timing+=500;
 		}else{
-			secondes=59; minutes--;
 			newChrono = minutes +" minutes et "+ secondes +"secondes.";
+			secondes=59; minutes--;
 		}
 	}else{
-		secondes--;
 		newChrono = minutes +" minutes et "+ secondes +"secondes.";
+		secondes--;
 	}
 	chrono.textContent = newChrono;
 	setTimeout('chrono()',timing) //la fonction est relancée

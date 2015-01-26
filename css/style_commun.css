@@ -57,21 +57,13 @@ footer {
 	left:25%;
 	position:fixed;
 	text-align:left;
+	visibility:hidden;
 }
 
 #infos_txt_credit{
 	left:50%;
 	width:35%;
 	text-align:left;
-	display:none;
-}
-
-#infos_roti:hover #infos_txt_roti{
-	display:none;
-}
-
-#infos_credit:hover #infos_txt_credit{
-	display:block;
 }
 
 .btn {
