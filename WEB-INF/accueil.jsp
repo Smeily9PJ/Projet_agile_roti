@@ -12,26 +12,30 @@
 </head>
 	<body>
 		<%@ include file="header.jsp" %>
-		<img src="images/modes/Create.jpg" id="accueil_create" onclick="create()"></img>		
-		<img src="images/modes/Join.jpg" id="accueil_join" onclick="join()"></img>
+		<div id="accueil_create" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+			<a onclick="create()" class="hi-icon hi-icon-mobile"><img src="images/modes/Create.jpg"/></a>
+		</div>		
+		<div id="accueil_join" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+			<a onclick="join()" class="hi-icon hi-icon-mobile"><img src="images/modes/Join.jpg"/></a>
+		</div>
 		<div id="accueil_ClickCreate">
 			<form METHOD="POST" ACTION="creer">
-				<table><td>Numéro de session :</td></tr>
-					   <td>#529871</td></tr>
-					   <td>Mot de passe :</td></tr>
-					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-					   <td><input id="Accueil_bouton_create" class="btn" type="submit" value="Creer" name="action"></td></table>	
+				<table><tr><td>Numéro de session :</td></tr>
+					   <tr><td>#529871</td></tr>
+					   <tr><td>Mot de passe :</td></tr>
+					   <tr><td><input type=password name="accueil_text_mdpSession"/></td></tr></table>	
+				<input id="Accueil_bouton_create" class="btn" type="submit" value="Creer" name="action"/>
 			</form>
 		</div>
 		<div id="accueil_ClickJoin">
 			<form METHOD="POST" ACTION="rejoindre">
-			    <table><td>Numéro de session :</td></tr>
-					   <td><input type=text name="accueil_text_idSession"></td></tr>
-					   <td>Mot de passe :</td></tr>
-					   <td><input type=password name="accueil_text_mdpSession"/></td></tr>
-				       <td><input id="Accueil_bouton_join" class="btn" type="submit" value="Rejoindre" name="action"></td></table>
+			    <table><tr><td>Numéro de session :</td></tr>
+					   <tr><td><input type=text name="accueil_text_idSession"></td></tr>
+					   <tr><td>Mot de passe :</td></tr>
+					   <tr><td><input type=password name="accueil_text_mdpSession"/></td></tr></table>
+				<input id="Accueil_bouton_join" class="btn" type="submit" value="Rejoindre" name="action"/>
 			</form>
-		</div>
+		</div>	
 		<%@ include file="footer.jsp" %>
 		
    <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>

@@ -8,10 +8,10 @@
   l'auditoire et son ressenti.
  </div>
   <div id="infos_txt_credit">
- 	Licence Pro - Développement Qualité et Logiciel</br>
+ 	Licence Pro - Développement Qualité et Logiciel<br>
  	TIRADON Pierre . 
  	SIRE DE VILAR Arnaud . 
- 	PELISSOU Julie</br>
+ 	PELISSOU Julie<br>
  	PEDURAND Claire . 
  	BONIS Maxime
  </div>

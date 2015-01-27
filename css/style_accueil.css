@@ -1,22 +1,4 @@
 /* Paramètres fixes */
-
-#accueil_create, #accueil_join{
-    background-color:grey; 
-    padding:0px;  
-    position: fixed;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
-    background-repeat:no-repeat;
-    background-position:50% 50%;
-}
-
-#accueil_create:hover, #accueil_join:hover{
-    -moz-box-shadow: 1px 8px 16px #000000;
-    -webkit-box-shadow: 1px 8px 16px #000000;
-    box-shadow: 1px 8px 16px #000000;
-}
-
 #accueil_ClickCreate, #accueil_ClickJoin{
     display:none; 
     padding:20px; 
@@ -87,11 +69,10 @@
 
 @media screen and (min-width: 720px) {	
 	#accueil_create, #accueil_join{
-       width:22%; 
-       height:28%; 
-       padding:20px; 
-       top:35%; 
-       left:15%; 
+       top:0%; 
+       left:0%;
+       margin-left:0%;
+       margin-top:0%;
    }
    
    #accueil_join {
@@ -110,16 +91,17 @@
 }
 
 @media screen and (min-width: 1024px){
-   #accueil_create, #accueil_join{
-       width:22%;
-       height:38%;
-       padding:20px;
-       top:35%;
-       left:20%;
+   #accueil_create, #accueil_join {
+       top:32%;
+       left:19%;
+       width: 0%;
+	   height: 0%;
+	   position:absolute;
+       
    }
    
    #accueil_join {
-       left:55%; 
+       left:55%;
    }
    
    #accueil_ClickCreate, #accueil_ClickJoin {
@@ -130,4 +112,92 @@
    #accueil_ClickJoin {
        left:60%; 
    }
+}
+
+
+.hi-icon-wrap {
+	text-align: center;
+	margin: 0 auto;
+	padding: 2em 0 3em;
+}
+
+.hi-icon-wrap img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position :relative;
+}
+
+.hi-icon {
+	display: inline-block;
+	font-size: 0px;
+	cursor: pointer;
+	width: 25%;
+	height: 35%;
+	border-radius: 50%;
+	text-align: center;
+	position: fixed;
+	z-index: 1;
+	color: #fff;
+}
+
+.hi-icon:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	content: '';
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
+.hi-icon:before {
+	font-family: 'ecoicon';
+	speak: none;
+	font-size: 48px;
+	line-height: 90px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+}
+
+.hi-icon-effect-1 .hi-icon {
+	background: rgba(255,255,255,0.1);
+	-webkit-transition: background 0.2s, color 0.2s;
+	-moz-transition: background 0.2s, color 0.2s;
+	transition: background 0.2s, color 0.2s;
+}
+
+.hi-icon-effect-1 .hi-icon:after {
+	top: -7px;
+	left: -7px;
+	padding: 7px;
+	box-shadow: 0 0 0 4px #fff;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	-webkit-transform: scale(.8);
+	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+	-moz-transform: scale(.8);
+	-ms-transform: scale(.8);
+	transition: transform 0.2s, opacity 0.2s;
+	transform: scale(.8);
+	opacity: 0;
+}
+
+/* Effect 1a */
+.hi-icon-effect-1a .hi-icon:hover {
+	background: rgba(255,255,255,1);
+	color: #41ab6b;
+}
+
+.hi-icon-effect-1a .hi-icon:hover:after {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
 }
