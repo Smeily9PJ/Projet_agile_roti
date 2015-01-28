@@ -1,12 +1,22 @@
-#Etudiant_Btn_Voter, #Etudiant_valeurRange, #Etudiant_valeurVote {
+#Etudiant_Btn_Voter, #Etudiant_valeurRange, #Etudiant_valeurVote, #Etudiant_Attente {
         text-align: center;
         position: fixed;
-        left: 5%;
+        left: 40%;
         width: 20%;
         margin-left:0%;
-        top :15%
+        top :20%;
 }
 
+#vote_content, #vote_mecontent {
+	    position: fixed;
+        left: 36%;
+        margin-left:0%;
+        top :18%;
+}
+
+#vote_content {
+        left: 61%;
+}
 
 input[type="range"] {
   -webkit-appearance: none !important;
@@ -39,15 +49,17 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 #Etudiant_valeurVote {
-  font-family: "Quantico", sans-serif;
-  font-size: 18px;
-  top:18%;
-  color: #C2E0FF;
+    color:white;
+    letter-spacing: 1px;
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
+  	font-size: 18px;
+  	top:17%;
 }
 
 #Etudiant_Btn_Voter {
-    top :21%;
-    left:15%;
+    top :25%;
+    left:45%;
     width: 10%;
     height:5%;
     position:fixed;
@@ -55,13 +67,12 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 #Etudiant_Attente {
 	display:none;
-	top :15%;
-    left:5%;
     width: 20%;
     height:11%;
-    position:fixed;
-    margin-left:0%;
-    text-align: center;
+    color:white;
+    letter-spacing: 1px;
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
 }
 /* Paramètres fixes */
 
