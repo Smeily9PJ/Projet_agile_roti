@@ -1,6 +1,6 @@
 /* Paramètres fixes */
 #accueil_ClickCreate, #accueil_ClickJoin{
-    display:none; 
+    visibility:hidden; 
     padding:20px; 
     position: fixed;
     color:white;
@@ -19,102 +19,7 @@
     margin-left:0px;
 }
 
-@media screen and (max-width: 480px) {		
-	#accueil_create, #accueil_join {
-		width:40%; 
-		height:15%;  
-		top:20%; 
-		left:5%; 
-	}  
-	#accueil_join {
-		left:50%; 
-	}
-	#accueil_ClickCreate, #accueil_ClickJoin{
-		top:40%; 
-		left:20%; 
-	}
-}
-
-@media screen and (min-width: 320px) and (max-height: 250px) and (max-width: 720px) {      
-    #accueil_create, #accueil_join {
-        width:40%; 
-        height:15%;  
-        top:30%; 
-        left:5%; 
-    }  
-    #accueil_join {
-        top:60%; 
-    }
-    #accueil_ClickCreate, #accueil_ClickJoin{
-        top:20%; 
-        left:50%; 
-    }
-}
-
-@media screen and (min-width: 480px) {		
-	#accueil_create, #accueil_join {
-		width:40%; 
-		height:15%; 
-		top:20%; 
-		left:5%; 
-	} 
-	#accueil_join {
-		left:50%; 
-	} 
-	#accueil_ClickCreate, #accueil_ClickJoin{
-		top:45%; 
-		left:30%; 
-	}
-}
-
-@media screen and (min-width: 720px) {	
-	#accueil_create, #accueil_join{
-       top:0%; 
-       left:0%;
-       margin-left:0%;
-       margin-top:0%;
-   }
-   
-   #accueil_join {
-       left:55%; 
-   }
-   
-   
-   #accueil_ClickCreate, #accueil_ClickJoin {
-       top:35%; 
-       left:15%; 
-   }
-   
-   #accueil_ClickJoin {
-       left:55%; 
-   }
-}
-
-@media screen and (min-width: 1024px){
-   #accueil_create, #accueil_join {
-       top:32%;
-       left:19%;
-       width: 0%;
-	   height: 0%;
-	   position:absolute;
-       
-   }
-   
-   #accueil_join {
-       left:55%;
-   }
-   
-   #accueil_ClickCreate, #accueil_ClickJoin {
-       top:43%; 
-       left:25%; 
-   }
-   
-   #accueil_ClickJoin {
-       left:60%; 
-   }
-}
-
-
+/* ICONES CREATION ET JOIN */
 .hi-icon-wrap {
 	text-align: center;
 	margin: 0 auto;
@@ -200,4 +105,105 @@
 	-ms-transform: scale(1);
 	transform: scale(1);
 	opacity: 1;
+}
+/* FIN ICONE CREATION ET JOIN */
+
+@media screen and (max-width: 480px) {		
+	#accueil_create, #accueil_join {
+		width:40%; 
+		height:15%;  
+		top:20%; 
+		left:5%; 
+	}  
+	#accueil_join {
+		left:50%; 
+	}
+	#accueil_ClickCreate, #accueil_ClickJoin{
+		top:40%; 
+		left:20%; 
+	}
+}
+
+@media screen and (min-width: 320px) and (max-height: 250px) and (max-width: 720px) {      
+    #accueil_create, #accueil_join {
+        width:40%; 
+        height:15%;  
+        top:30%; 
+        left:5%; 
+    }  
+    #accueil_join {
+        top:60%; 
+    }
+    #accueil_ClickCreate, #accueil_ClickJoin{
+        top:20%; 
+        left:50%; 
+    }
+}
+
+@media screen and (min-width: 480px) {
+	#accueil_join {
+		top:20%; 
+		left:50%; 
+		width: 0%;
+	    height: 0%;
+	    position:absolute;
+	} 
+	
+	 #accueil_ClickJoin{
+		top:31%; 
+		left:55%; 
+	}
+}
+
+@media screen and (max-width: 720px) {
+	#accueil_create, #accueil_ClickCreate {
+	    display : none;
+	}
+}
+
+@media screen and (min-width: 720px) {
+	#accueil_create, #accueil_join{
+       top:32%;
+       left:19%;
+       width: 0%;
+	   height: 0%;
+	   position:absolute;
+   }
+   
+   #accueil_join {
+       left:55%; 
+   }
+   
+   
+   #accueil_ClickCreate, #accueil_ClickJoin {
+       top:43%; 
+       left:25%; 
+   }
+   
+   #accueil_ClickJoin {
+       left:60%; 
+   }
+}
+
+@media screen and (min-width: 1024px){
+   #accueil_create, #accueil_join {
+       top:32%;
+       left:19%;
+       width: 0%;
+	   height: 0%;
+	   position:absolute;
+   }
+   
+   #accueil_join {
+       left:55%;
+   }
+   
+   #accueil_ClickCreate, #accueil_ClickJoin {
+       top:43%; 
+       left:25%; 
+   }
+   
+   #accueil_ClickJoin {
+       left:60%; 
+   }
 }

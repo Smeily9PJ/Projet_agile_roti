@@ -35,11 +35,11 @@ function chrono(){
 			document.getElementById("Etudiant_Formulaire").style.display = "block";
 			document.getElementById("Etudiant_Attente").style.display = "none";
 		}else{
-			newChrono = minutes +" minutes et "+ secondes +"secondes.";
+			newChrono = minutes +" minutes et "+ secondes +" secondes.";
 			secondes=59; minutes--;
 		}
 	}else{
-		newChrono = minutes +" minutes et "+ secondes +"secondes.";
+		newChrono = minutes +" minutes et "+ secondes +" secondes.";
 		secondes--;
 	}
 	chrono.textContent = newChrono;
