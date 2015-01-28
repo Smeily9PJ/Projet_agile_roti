@@ -110,7 +110,7 @@
 
 @media screen and (max-width: 480px) {		
     #accueil_ClickJoin{
-		top:10%; 
+    	top:10%; 
 		left:10%;
 	}
 }
