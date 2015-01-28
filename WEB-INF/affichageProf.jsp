@@ -48,10 +48,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="PARTIE_DROITE">
-				<p class="MONCADRE"></p>
-				<canvas id="affichageProf_canvas" width="600" height="600">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
-			</div>
+			<canvas id="affichageProf_canvas" width="700" height="400">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
 		</div>
 		
 		<%@ include file="footer.jsp" %>

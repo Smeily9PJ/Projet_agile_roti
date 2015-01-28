@@ -4,11 +4,11 @@ min-width:400px;
 height:90%;
 min-height:400px;
 text-align:center;
-margin:auto;
+
 }
 
 .INFORMATION_LABEL{
-	position:relative;
+position:relative;
 vertical-align:top;
 text-align:left;
 margin-right:10%;
@@ -56,11 +56,9 @@ left:5%;
 top:10%;
 }
 
-.PARTIE_DROITE {
+#affichageProf_canvas {
 position:fixed;
-width:40%;
-height:30%;
-padding:10%;
+padding:5%;
 background:white;
 border:1px solid #DDD;
 border-radius:5px;
@@ -70,7 +68,4 @@ left:35%;
 top:20%;
 }
 
-	
-.COURBE{
 
-}
