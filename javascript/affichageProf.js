@@ -56,20 +56,21 @@ function afficherBaseCourbe(){
 	        alert("Impossible de récupérer le context du canvas");
 	        return;
 	    }
-	      
+
+        var width = canvas.getAttribute('width');
+        var height = canvas.getAttribute('height');
 	  context.beginPath();//On démarre un nouveau tracé
 
 	  context.lineWidth = 10;
 	  context.moveTo(0, 0);
-      context.lineTo(0, 1000);
-	  context.moveTo(0, 1000);
-      context.lineTo(2000, 1000);
-      context.stroke();//On trace seulement les lignes.
+      context.lineTo(0, height);
+      context.lineTo(width, height);
+      context.stroke();
       context.closePath(); //fin
 }
 
 var xBase = 0;
-var yBase = 0;
+var yBase = 400;
 function tracerCourbe(){
     var canvas = document.getElementById('affichageProf_canvas');
     if(!canvas)
@@ -84,20 +85,19 @@ function tracerCourbe(){
         alert("Impossible de récupérer le context du canvas");
         return;
     }
-        
-        //var xBase = 0 ; //abscisse du dernier point, temps du dernier vote
-        //var yBase = 0; //ordonnée du dernier point, derniere moyenne enregistré
+    
+    	//a récup dans bdd
         var xDest = xBase+10; //abscisse du point a tracer, temps du vote en cours
-        var yDest = yBase+10; //ordonnée du point a tracer, moyenne courante
+        var yDest = yBase-10; //ordonnée du point a tracer, moyenne courante
 
         context.beginPath();//On démarre un nouveau tracé
         context.lineJoin = "round";
         context.lineCap = "round";
         context.strokeStyle = "blue";
-
+        context.moveTo(xBase, yBase);
+        context.lineTo(xDest,yDest);
         context.stroke();//On trace seulement les lignes.
         context.closePath(); //fin
-        
         xBase = xDest;
         yBase = yDest;
 }

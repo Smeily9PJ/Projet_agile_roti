@@ -48,7 +48,7 @@
 					</form>
 				</div>
 			</div>
-				<canvas id="affichageProf_canvas" width="2000" height="1000">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
+			<canvas id="affichageProf_canvas" width="700" height="400">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
 		</div>
 		
 		<%@ include file="footer.jsp" %>
