@@ -13,10 +13,10 @@
 	<body>
 		<%@ include file="header.jsp" %>
 		<div id="accueil_create" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
-			<a onclick="create()" class="hi-icon hi-icon-mobile"><img src="images/modes/Create.jpg"/></a>
+			<a onclick="create()" class="hi-icon hi-icon-mobile"><img src="images/modes/CreateMini.jpg"/></a>
 		</div>		
 		<div id="accueil_join" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
-			<a onclick="join()" class="hi-icon hi-icon-mobile"><img src="images/modes/Join.jpg"/></a>
+			<a onclick="join()" class="hi-icon hi-icon-mobile"><img src="images/modes/JoinMini.jpg"/></a>
 		</div>
 		<div id="accueil_ClickCreate">
 			<form METHOD="POST" ACTION="creer">
