@@ -2,7 +2,16 @@ var secondes = 0;
 var minutes = 0;
 var heures = 0;
 
+function initialisation(){
+	afficherBaseCourbe();
+	chrono();
+}
+
 function chrono(){
+	//lancer l'affichage de la courbe tous les intervalles données
+	if(secondes%10 == 0){
+		tracerCourbe();
+	}
 	var chrono = document.getElementById("affichageProf_chono");
 	var newChrono ;
 	if (secondes == 59){
@@ -17,6 +26,7 @@ function chrono(){
 	newChrono = heures + " : " + minutes + " : "  + secondes;
 	chrono.textContent = newChrono;
 	setTimeout('chrono()',1000) //la fonction est relancée
+	
 }
 
 
@@ -32,34 +42,69 @@ function afficherLaBonneHumeur (){
 }
 
 
-/*window.onload = function()
-{
+function afficherBaseCourbe(){
+	  var canvas = document.getElementById('affichageProf_canvas');
+	    if(!canvas)
+	    {
+	        alert("Impossible de récupérer le canvas");
+	        return;
+	    }
+
+	    var context = canvas.getContext('2d');
+	    if(!context)
+	    {
+	        alert("Impossible de récupérer le context du canvas");
+	        return;
+	    }
+	      
+	  context.beginPath();//On démarre un nouveau tracé
+	  context.moveTo(0, 0);
+      context.lineTo(0, 600);
+	  context.moveTo(0, 600);
+      context.lineTo(600, 600);
+      context.stroke();//On trace seulement les lignes.
+      context.closePath(); //fin
+}
+
+var xBase = 0;
+var yBase = 0;
+function tracerCourbe(){
     var canvas = document.getElementById('affichageProf_canvas');
-        if(!canvas)
-        {
-            alert("Impossible de récupérer le canvas");
-            return;
-        }
+    if(!canvas)
+    {
+        alert("Impossible de récupérer le canvas");
+        return;
+    }
 
     var context = canvas.getContext('2d');
-        if(!context)
-        {
-            alert("Impossible de récupérer le context du canvas");
-            return;
-        }
+    if(!context)
+    {
+        alert("Impossible de récupérer le context du canvas");
+        return;
+    }
         
-        var xBase = 0 ; //a récuperer
-        var yBase = 300; //a récuperer aussi
-        var yDest = 100;
-        var xDest = 100;
-        var taille = 600;
+        //var xBase = 0 ; //abscisse du dernier point, temps du dernier vote
+        //var yBase = 0; //ordonnée du dernier point, derniere moyenne enregistré
+        var xDest = xBase+10; //abscisse du point a tracer, temps du vote en cours
+        var yDest = yBase+10; //ordonnée du point a tracer, moyenne courante
 
         context.beginPath();//On démarre un nouveau tracé
-        context.moveTo(xBase, yBase);//On se déplace au coin inférieur gauche
-        context.lineTo(0, taille);
-        context.lineTo(0, taille);
-        context.lineTo(-taille, 0);
-        context.lineTo(0, -taille);
+        context.lineJoin = "round";
+        context.lineCap = "round";
+        context.strokeStyle = "blue";
+        context.moveTo(xBase, yBase);//On se déplace au point précédemment tracé
+        //context.lineTo(xDest, yDest);//on trace une ligne jusqu'a ces coordonnées
+
+        context.lineTo(600, 0);//on trace une ligne jusqu'a ces coordonnées
+        context.lineTo(0, 600);//on trace une ligne jusqu'a ces coordonnées
+
+        context.moveTo(600, 600);//On se déplace au point précédemment tracé
+
+        context.lineTo(-600, 0);//on trace une ligne jusqu'a ces coordonnées
+        context.lineTo(0, -600);//on trace une ligne jusqu'a ces coordonnées
         context.stroke();//On trace seulement les lignes.
-        context.closePath();
-}*/
+        context.closePath(); //fin
+        
+        xBase = xDest;
+        yBase = yDest;
+}

@@ -19,9 +19,9 @@
 			<a onclick="join()" class="hi-icon hi-icon-mobile"><img src="images/modes/JoinMini.jpg"/></a>
 		</div>
 		<div id="accueil_ClickCreate">
-			<form METHOD="POST" ACTION="creer">
+			<form METHOD="POST" ACTION="professeur">
 				<table><tr><td>Numéro de session :</td></tr>
-					   <tr><td>#529871</td></tr>
+					   <tr><td><%= session.getAttribute("identifiant") %></td></tr>
 					   <tr><td>Mot de passe :</td></tr>
 					   <tr><td><input type=password name="accueil_text_mdpSession"/></td></tr></table>	
 				<input id="Accueil_bouton_create" class="btn" type="submit" value="Creer" name="action"/>

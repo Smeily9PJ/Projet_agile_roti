@@ -1,7 +1,6 @@
 package testServlet;
 
 import java.io.IOException;
-import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,32 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Accueil extends HttpServlet {
+public class AffichageProf extends HttpServlet {
 	public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
-		this.creerIdSession(request);
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
-}
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/affichageProf.jsp" ).forward( request, response );
+	}
+	
+	
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		HttpSession session = request.getSession();
 		if(request.getParameter("action").equals("Creer")){
+			String mdp = request.getParameter("accueil_text_mdpSession");
+			session.setAttribute("mdp", mdp);
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/affichageProf.jsp" ).forward( request, response );
 		}
-		if(request.getParameter("action").equals("Rejoindre")){
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/voteEtudiant.jsp" ).forward( request, response );
-		}
 		if(request.getParameter("action").equals("Fin de session")){
-			session.invalidate();
-			this.creerIdSession(request);
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
 		}
 	}
-	
-	private void creerIdSession(HttpServletRequest request){
-		HttpSession session = request.getSession();
-		Random rnd = new Random();
-		int id= rnd.nextInt(10000);
-		//vérifier qu'il n'y a pas de doublon avec la BDD
-		session.setAttribute("identifiant",id);
-	}
-	
 }

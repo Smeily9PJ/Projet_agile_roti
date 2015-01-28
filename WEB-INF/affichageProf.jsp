@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +9,7 @@
         <title>Le ROTI c'est la vie</title>
     </head>
 
-    <body onload="chrono()">
+    <body onload="initialisation()">
 		
 		<%@ include file="header.jsp" %>
 		
@@ -16,9 +17,11 @@
 			<div class="PARTIE_GAUCHE">
 				<div class="INFORMATION_LABEL">
 					
-						<label>Session :</label>
+						<label>Id session :</label>
 						<br />
-						<label>Personnes connect&eacute;es :</label>
+						<label>Mdp session :</label>
+						<br />
+						<label>Personnes connectées :</label>
 						<br />
 						<label>Avis moyen :</label>					
 						<br /><br />
@@ -26,12 +29,13 @@
 
 				</div>
 				<div class="RECEPTION_INFORMATION">
-					<input type="text" name="idSession" id="idSession" readonly />
+					<input type="text" name="idSession" id="idSession" value="<%= session.getAttribute("identifiant") %>" readonly />
 					<br />
-					<input type="text" name="nbPersonne" id="nbPersonne" readonly />
+					<input type="text" name="mdpSession" id="mdpSession" value="<%= session.getAttribute("mdp") %>" readonly />
 					<br />
-					<input type="text" name="avisMoyen" id="avisMoyen" readonly />
+					<input type="text" name="nbPersonne" id="nbPersonne" value="xx" readonly />
 					<br />
+					<input type="text" name="avisMoyen" id="avisMoyen" value="x" readonly />
 					<!-- <img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 /> -->
 				</div>
 				<br>
@@ -46,7 +50,7 @@
 			</div>
 			<div class="PARTIE_DROITE">
 				<p class="MONCADRE"></p>
-				<canvas id="affichageProf_canvas" width="600" height="600">Navigateur pas � jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
+				<canvas id="affichageProf_canvas" width="600" height="600">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
 			</div>
 		</div>
 		
