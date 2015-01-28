@@ -58,10 +58,12 @@ function afficherBaseCourbe(){
 	    }
 	      
 	  context.beginPath();//On démarre un nouveau tracé
+
+	  context.lineWidth = 10;
 	  context.moveTo(0, 0);
-      context.lineTo(0, 600);
-	  context.moveTo(0, 600);
-      context.lineTo(600, 600);
+      context.lineTo(0, 1000);
+	  context.moveTo(0, 1000);
+      context.lineTo(2000, 1000);
       context.stroke();//On trace seulement les lignes.
       context.closePath(); //fin
 }
@@ -92,16 +94,7 @@ function tracerCourbe(){
         context.lineJoin = "round";
         context.lineCap = "round";
         context.strokeStyle = "blue";
-        context.moveTo(xBase, yBase);//On se déplace au point précédemment tracé
-        //context.lineTo(xDest, yDest);//on trace une ligne jusqu'a ces coordonnées
 
-        context.lineTo(600, 0);//on trace une ligne jusqu'a ces coordonnées
-        context.lineTo(0, 600);//on trace une ligne jusqu'a ces coordonnées
-
-        context.moveTo(600, 600);//On se déplace au point précédemment tracé
-
-        context.lineTo(-600, 0);//on trace une ligne jusqu'a ces coordonnées
-        context.lineTo(0, -600);//on trace une ligne jusqu'a ces coordonnées
         context.stroke();//On trace seulement les lignes.
         context.closePath(); //fin
         
