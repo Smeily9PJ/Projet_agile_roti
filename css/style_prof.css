@@ -58,14 +58,15 @@ top:10%;
 
 #affichageProf_canvas {
 position:fixed;
-padding:5%;
-background:white;
-border:1px solid #DDD;
-border-radius:5px;
--webkit-border-radius:5px;
--moz-border-radius:5px;
+padding-right:5%;
+padding-left:7%;
+padding-top:5%;
+padding-bottom:5%;
+background-image:url("images/fondCourbe/courbeBase.jpg");
+background-repeat: no-repeat;
+background-size: 100% 100%;
 left:35%;
 top:20%;
+overflow: auto;
+overflow-y: scroll;
 }
-
-
