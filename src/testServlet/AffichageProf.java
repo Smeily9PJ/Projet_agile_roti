@@ -19,6 +19,7 @@ public class AffichageProf extends HttpServlet {
 		if(request.getParameter("action").equals("Creer")){
 			String mdp = request.getParameter("accueil_text_mdpSession");
 			session.setAttribute("mdp", mdp);
+			session.setAttribute("timing", request.getParameter("numeric"));
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/affichageProf.jsp" ).forward( request, response );
 		}
 		if(request.getParameter("action").equals("Fin de session")){
