@@ -117,7 +117,6 @@ footer {
 
 .btn:active {
 	background: #2195DE;
-	top: 2px;
 }
 
 .btn-vote:hover:after {

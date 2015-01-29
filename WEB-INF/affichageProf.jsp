@@ -44,7 +44,7 @@
 					<form METHOD="POST" ACTION="accueil">
 						<!-- <input class="BOUTON" type="submit" value="Lancer vote" name="lancerVote" id="lancerVote" /> -->
 						<br />
-						<input class="BOUTON" type="submit" value="Fin de session" name="action" id="finDeSession" >
+						<input class="btn btn-finSession" type="submit" value="Fin de session" name="action" id="finDeSession" >
 					</form>
 				</div>
 			</div>

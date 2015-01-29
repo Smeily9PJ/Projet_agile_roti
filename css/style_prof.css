@@ -4,7 +4,6 @@ min-width:400px;
 height:90%;
 min-height:400px;
 text-align:center;
-
 }
 
 .INFORMATION_LABEL{
@@ -69,4 +68,8 @@ left:35%;
 top:20%;
 overflow: auto;
 overflow-y: scroll;
+}
+
+.btn-finSession {
+	height: 30px;
 }
