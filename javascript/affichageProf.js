@@ -1,17 +1,12 @@
 var secondes = 0;
 var minutes = 0;
 var heures = 0;
-
-function initialisation(){
-	afficherGraduationCourbe();
-	chrono();
-}
+var numeroPoint = 0;
+var abscissePointsDejaTrace = [0];
+var ordonneePointsDejaTrace = [400];
 
 function chrono(){
-	//lancer l'affichage de la courbe tous les intervalles données
-	//if(secondes%10 == 0){
-		tracerCourbe();
-//	}
+	tracerCourbe();
 	var chrono = document.getElementById("affichageProf_chono");
 	var newChrono ;
 	if (secondes == 59){
@@ -30,25 +25,6 @@ function chrono(){
 }
 
 
-
-
-var numeroDeLHumeurAAfficher = 2;
-function afficherLaBonneHumeur (){
-	switch(numeroDeLHumeurAAfficher){
-		case 1: document.getElementById("smiley").src='images/humeurs/sonne.png'; break;
-		case 2: document.getElementById("smiley").src='images/humeurs/dodo.png'; break;
-		default: document.getElementById("smiley").src='images/humeurs/sonne.png'; break;
-	}
-}
-
-
-function afficherGraduationCourbe(){
-	
-	  //afficher les graduations
-}
-
-var xBase = 0;
-var yBase = 400;
 function tracerCourbe(){
     var canvas = document.getElementById('affichageProf_canvas');
     if(!canvas)
@@ -63,26 +39,32 @@ function tracerCourbe(){
         alert("Impossible de récupérer le context du canvas");
         return;
     }
-    
-    	//a récup dans bdd
-        var xDest = xBase+50; //abscisse du point a tracer, temps du vote en cours
-        var yDest = yBase-5; //ordonnée du point a tracer, moyenne courante
 
-        
-		if(secondes >= 10){
-			context.scale(0.75,1);
+
+	context.clearRect(1,2,700, 400);
+	context.clearRect(0,0,700, 400);
+    context.lineWidth = 3;
+    context.lineJoin = "round";
+    context.lineCap = "round";
+    context.strokeStyle = "black";
+		if(numeroPoint%10 == 0){
+			context.clearRect(0,0,700, 400);
+			context.beginPath();
+			for(var i =1; i <= numeroPoint; i++){
+				if(abscissePointsDejaTrace[i]-2 > abscissePointsDejaTrace[i-1]){
+					abscissePointsDejaTrace[i] -= 2;
+				}
+				context.moveTo(abscissePointsDejaTrace[i-1], ordonneePointsDejaTrace[i-1]);
+		        context.lineTo(abscissePointsDejaTrace[i], ordonneePointsDejaTrace[i]);
+			}
 		}
-        context.
-        context.lineWidth = 3;
-        context.lineJoin = "round";
-        context.lineCap = "round";
-        context.strokeStyle = "black";
-        
-        
-        context.moveTo(xBase, yBase);
-        context.lineTo(xDest,yDest);
+		var newX = abscissePointsDejaTrace[numeroPoint]+10; //a récuperer dans bdd
+		var newY = 350; //a récuperer dans bdd
+		context.moveTo(abscissePointsDejaTrace[numeroPoint], ordonneePointsDejaTrace[numeroPoint]);
+	    context.lineTo(newX,newY);
+	    numeroPoint += 1;
+	    abscissePointsDejaTrace.push(newX);
+	    ordonneePointsDejaTrace.push(newY);
         context.stroke();
-
-        xBase = xDest;
-        yBase = yDest;
+        context.closePath();
 }
