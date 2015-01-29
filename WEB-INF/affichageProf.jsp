@@ -9,7 +9,7 @@
         <title>Le ROTI c'est la vie</title>
     </head>
 
-    <body onload="initialisation()">
+    <body onload="chrono()">
 		
 		<%@ include file="header.jsp" %>
 		
@@ -48,11 +48,13 @@
 					</form>
 				</div>
 			</div>
+			<div id="bgCanvas">
 			<canvas id="affichageProf_canvas" width="700" height="400">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
+			</div>
 		</div>
 		
 		<%@ include file="footer.jsp" %>
-		
 		<script src="${pageContext.request.contextPath}/javascript/affichageProf.js" type="text/javascript"></script>
+		
     </body>
 </html>

@@ -3,15 +3,15 @@ var minutes = 0;
 var heures = 0;
 
 function initialisation(){
-	afficherBaseCourbe();
+	afficherGraduationCourbe();
 	chrono();
 }
 
 function chrono(){
 	//lancer l'affichage de la courbe tous les intervalles données
-	if(secondes%10 == 0){
+	//if(secondes%10 == 0){
 		tracerCourbe();
-	}
+//	}
 	var chrono = document.getElementById("affichageProf_chono");
 	var newChrono ;
 	if (secondes == 59){
@@ -42,31 +42,9 @@ function afficherLaBonneHumeur (){
 }
 
 
-function afficherBaseCourbe(){
-	  var canvas = document.getElementById('affichageProf_canvas');
-	    if(!canvas)
-	    {
-	        alert("Impossible de récupérer le canvas");
-	        return;
-	    }
-
-	    var context = canvas.getContext('2d');
-	    if(!context)
-	    {
-	        alert("Impossible de récupérer le context du canvas");
-	        return;
-	    }
-
-        var width = canvas.getAttribute('width');
-        var height = canvas.getAttribute('height');
-	  context.beginPath();//On démarre un nouveau tracé
-
-	  context.lineWidth = 10;
-	  context.moveTo(0, 0);
-      context.lineTo(0, height);
-      context.lineTo(width, height);
-      context.stroke();
-      context.closePath(); //fin
+function afficherGraduationCourbe(){
+	
+	  //afficher les graduations
 }
 
 var xBase = 0;
@@ -87,17 +65,24 @@ function tracerCourbe(){
     }
     
     	//a récup dans bdd
-        var xDest = xBase+10; //abscisse du point a tracer, temps du vote en cours
-        var yDest = yBase-10; //ordonnée du point a tracer, moyenne courante
+        var xDest = xBase+50; //abscisse du point a tracer, temps du vote en cours
+        var yDest = yBase-5; //ordonnée du point a tracer, moyenne courante
 
-        context.beginPath();//On démarre un nouveau tracé
+        
+		if(secondes >= 10){
+			context.scale(0.75,1);
+		}
+        context.
+        context.lineWidth = 3;
         context.lineJoin = "round";
         context.lineCap = "round";
-        context.strokeStyle = "blue";
+        context.strokeStyle = "black";
+        
+        
         context.moveTo(xBase, yBase);
         context.lineTo(xDest,yDest);
-        context.stroke();//On trace seulement les lignes.
-        context.closePath(); //fin
+        context.stroke();
+
         xBase = xDest;
         yBase = yDest;
 }
