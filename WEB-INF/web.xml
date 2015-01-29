@@ -47,4 +47,13 @@
 		<url-pattern>/professeur</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>QueryServlet</servlet-name>
+		<servlet-class>queryServlet.QueryServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>QueryServlet</servlet-name>
+		<url-pattern>/query</url-pattern>
+	</servlet-mapping>
 </web-app>
