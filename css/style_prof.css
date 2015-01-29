@@ -44,9 +44,19 @@ hr{
 clear:both;
 }
 
-.BOUTON{
+.BOUTONS{
+top:60%;	
 min-width:150px;
 width:150px;
+}
+
+.BOUTONS #pause{
+top:50%;
+}
+
+.BOUTONS #reprise {
+top:50%;
+left:20%;
 }
 
 .HEURE{
@@ -75,5 +85,13 @@ overflow-y: scroll;
 }
 
 .btn-finSession {
+	height: 30px;
+}
+
+.btn-pause {
+	height: 30px;
+}
+
+.btn-reprise {
 	height: 30px;
 }

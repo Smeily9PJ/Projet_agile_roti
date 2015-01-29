@@ -5,25 +5,33 @@ var numeroPoint = 0;
 var abscissePointsDejaTrace = [0];
 var ordonneePointsDejaTrace = [400];
 
+var etatChrono = 0; // 0 = arret, 1 = marche
+
 function chrono(){
-	tracerCourbe();
-	var chrono = document.getElementById("affichageProf_chono");
-	var newChrono ;
-	if (secondes == 59){
-		if (minutes == 59){
-			secondes=0;minutes=0;heures++;
+	if(etatChrono == 1) {
+		tracerCourbe();
+		var chrono = document.getElementById("affichageProf_chono");
+		var newChrono ;
+		if (secondes == 59){
+			if (minutes == 59){
+				secondes=0;minutes=0;heures++;
+			}else{
+				secondes=0; minutes++;
+			}
 		}else{
-			secondes=0; minutes++;
+			secondes++;
 		}
-	}else{
-		secondes++;
+		newChrono = heures + " : " + minutes + " : "  + secondes;
+		chrono.textContent = newChrono;
+		setTimeout('chrono()',1000) //la fonction est relancée
 	}
-	newChrono = heures + " : " + minutes + " : "  + secondes;
-	chrono.textContent = newChrono;
-	setTimeout('chrono()',1000) //la fonction est relancée
-	
 }
 
+function start() { etatChrono = 1; chrono()}
+
+function pause() {
+	etatChrono = 0;
+}
 
 function tracerCourbe(){
     var canvas = document.getElementById('affichageProf_canvas');

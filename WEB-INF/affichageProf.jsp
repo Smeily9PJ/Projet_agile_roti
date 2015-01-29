@@ -9,7 +9,7 @@
         <title>MEETING TRACKER</title>
     </head>
 
-    <body onload="chrono()">
+    <body onload="start()">
 		
 		<%@ include file="header.jsp" %>
 		
@@ -50,6 +50,8 @@
 						<br />
 						<input class="btn btn-finSession" type="submit" value="Fin de session" name="action" id="finDeSession" >
 					</form>
+					<button onclick="pause()" class="btn btn-pause" id="pause" >Pause</button>
+					<button onclick="start()" class="btn btn-reprise" id="reprise" >Reprise</button>
 				</div>
 			</div>
 			<div id="bgCanvas">
