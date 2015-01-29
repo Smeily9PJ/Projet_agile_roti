@@ -10,7 +10,7 @@
     </style>
     <title>MEETING TRACKER</title>
 </head>
-	<body>
+	<body onload="setup()">
 		<%@ include file="header.jsp" %>
 		<div id="accueil_create" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
 			<a onclick="create()" class="hi-icon hi-icon-mobile"><img src="images/modes/CreateMini.jpg"/></a>
@@ -23,7 +23,9 @@
 				<table><tr><td>Numéro de session :</td></tr>
 					   <tr><td><%= session.getAttribute("identifiant") %></td></tr>
 					   <tr><td>Mot de passe :</td></tr>
-					   <tr><td><input type=password name="accueil_text_mdpSession"/></td></tr></table>	
+					   <tr><td><input type=password name="accueil_text_mdpSession"/></td></tr>
+					   <tr><td>Timing vote (sec) :</td></tr>
+					   <tr><td><input type=text name="numeric"/></td></tr></table>	
 				<input id="Accueil_bouton_create" class="btn" type="submit" value="Creer" name="action"/>
 			</form>
 		</div>
@@ -39,5 +41,8 @@
 		<%@ include file="footer.jsp" %>
 		
    <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>
+   <script src="${pageContext.request.contextPath}/javascript/JavaScriptUtil.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/javascript/Parsers.js" type="text/javascript"></script>
+   <script src="${pageContext.request.contextPath}/javascript/InputMask.js" type="text/javascript"></script>
 	</body>
 </html>
