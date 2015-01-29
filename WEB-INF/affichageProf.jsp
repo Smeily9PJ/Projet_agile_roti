@@ -6,7 +6,7 @@
         <style type="text/css">
 	    	<%@ include file="../css/style_commun.css" %><%@ include file="../css/style_prof.css" %>
 	    </style>
-        <title>Le ROTI c'est la vie</title>
+        <title>MEETING TRACKER</title>
     </head>
 
     <body onload="chrono()">
@@ -23,7 +23,9 @@
 						<br />
 						<label>Personnes connectées :</label>
 						<br />
-						<label>Avis moyen :</label>					
+						<label>Avis moyen :</label>	
+						<br />
+						<label>Timing vote :</label>						
 						<br /><br />
 						<!-- <label>Humeur g&eacute;n&eacute;rale :</label>	 -->
 
@@ -36,6 +38,8 @@
 					<input type="text" name="nbPersonne" id="nbPersonne" value="xx" readonly />
 					<br />
 					<input type="text" name="avisMoyen" id="avisMoyen" value="x" readonly />
+					<br />
+					<input type="text" name="timingVote" id="timingVote" value="x" readonly />
 					<!-- <img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 /> -->
 				</div>
 				<br>
