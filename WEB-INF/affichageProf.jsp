@@ -39,7 +39,7 @@
 					<br />
 					<input type="text" name="avisMoyen" id="avisMoyen" value="x" readonly />
 					<br />
-					<input type="text" name="timingVote" id="timingVote" value="x" readonly />
+					<input type="text" name="timingVote" id="timingVote" value="<%= session.getAttribute("timing") %>" readonly />
 					<!-- <img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 /> -->
 				</div>
 				<br>
