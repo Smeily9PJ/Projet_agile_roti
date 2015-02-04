@@ -51,6 +51,51 @@ public class Bdd {
 			}
 			return resultat;
 		}
+		public ResultSet faireSelectParam(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
+			ResultSet resultat = null;
+			if(valeurs.size() == typeValeur.size()){
+				PreparedStatement preparedStatement;
+				try {
+					preparedStatement = this.getConnexion().prepareStatement(requete);
+					for(int i = 0; i< typeValeur.size(); i++){
+						switch(typeValeur.get(i)){
+						case "int":preparedStatement.setInt(i+1, Integer.parseInt(valeurs.get(i)));
+							break;
+						case "String" :preparedStatement.setString(i+1, valeurs.get(i));
+							break;
+						}
+					}				
+					resultat = preparedStatement.executeQuery();
+				} catch (SQLException e) {
+					System.out.println(e);
+				}
+			}else{
+				System.out.println("erreur : tailles listes différentes pour le delete !!!!! valeurs : " +valeurs.size()+" types : " +typeValeur.size() );
+			}
+			return resultat;
+		}
+		
+		public void faireDelete(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
+			if(valeurs.size() == typeValeur.size()){
+				PreparedStatement preparedStatement;
+				try {
+					preparedStatement = this.getConnexion().prepareStatement(requete);
+					for(int i = 0; i< typeValeur.size(); i++){
+						switch(typeValeur.get(i)){
+						case "int":preparedStatement.setInt(i+1, Integer.parseInt(valeurs.get(i)));
+							break;
+						case "String" :preparedStatement.setString(i+1, valeurs.get(i));
+							break;
+						}
+					}				
+					int resultat = preparedStatement.executeUpdate();
+				} catch (SQLException e) {
+					System.out.println(e);
+				}
+			}else{
+				System.out.println("erreur : tailles listes différentes pour le delete !!!!! valeurs : " +valeurs.size()+" types : " +typeValeur.size() );
+			}
+		}
 		
 		public void faireInsert(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
 			if(valeurs.size() == typeValeur.size()){

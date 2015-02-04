@@ -3,6 +3,7 @@ package testServlet;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.servlet.ServletException;
@@ -20,17 +21,22 @@ public class Accueil extends HttpServlet {
 }
 	public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
 		HttpSession session = request.getSession();
+		Bdd bdd = new Bdd();
+		bdd.connexionBdd();
 		if(request.getParameter("action").equals("Creer")){
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/affichageProf.jsp" ).forward( request, response );
 		}
-		if(request.getParameter("action").equals("Rejoindre")){
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/voteEtudiant.jsp" ).forward( request, response );
-		}
 		if(request.getParameter("action").equals("Fin de session")){
+			ArrayList<String> valeurs = new ArrayList<>();
+			valeurs.add(session.getAttribute("identifiant").toString());
+			ArrayList<String> typeValeurs = new ArrayList<>();
+			typeValeurs.add("int");
+			bdd.faireDelete("delete from session where ID_Session=?",valeurs,typeValeurs);
 			session.invalidate();
 			this.creerIdSession(request);
 			this.getServletContext().getRequestDispatcher( "/WEB-INF/accueil.jsp" ).forward( request, response );
 		}
+		bdd.closeConnexion();
 	}
 	
 	private void creerIdSession(HttpServletRequest request){
