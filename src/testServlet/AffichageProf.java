@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,29 +33,19 @@ public class AffichageProf extends HttpServlet {
 			bdd.connexionBdd();
 
 			/* Exécution d'une requête d'écriture */
-			int ident = Integer.parseInt(session.getAttribute("identifiant")
-					.toString());
+			String identifiant = session.getAttribute("identifiant").toString();
 			String mdpp = session.getAttribute("mdp").toString();
-			int tim = Integer.parseInt(session.getAttribute("timing")
-					.toString());
-
+			String timing =session.getAttribute("timing").toString();
+			ArrayList<String> valeurs = new ArrayList<>();
+			valeurs.add(identifiant);
+			valeurs.add(mdpp);
+			valeurs.add(timing);
+			ArrayList<String> typeValeurs = new ArrayList<>();
+			typeValeurs.add("int");
+			typeValeurs.add("String");
+			typeValeurs.add("int");
 			/* Création de l'objet gérant les requêtes préparées */
-			PreparedStatement preparedStatement;
-			try {
-				preparedStatement = bdd
-						.getConnexion()
-						.prepareStatement(
-								"insert into session (ID_Session, password, interval_Vote) values (?, ?, ?);");
-				preparedStatement.setInt(1, ident);
-				preparedStatement.setString(2, mdpp);
-				preparedStatement.setInt(3, tim);
-				int resultat = preparedStatement.executeUpdate();
-
-				/* Exécution de la requête */
-
-			} catch (SQLException e) {
-			}
-
+			bdd.faireInsert("insert into session (ID_Session, password, interval_Vote) values (?, ?, ?);", valeurs, typeValeurs);
 			bdd.closeConnexion();
 			this.getServletContext()
 					.getRequestDispatcher("/WEB-INF/affichageProf.jsp")

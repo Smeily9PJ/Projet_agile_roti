@@ -4,15 +4,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 
 public class Bdd { 
 	 	private  Connection connexion = null;
 	 	private  Statement statement = null;
-	 	private  ResultSet resultat = null;
 	   
 	   public void connexionBdd(){
 		   try {
@@ -41,44 +42,40 @@ public class Bdd {
 			return statement;
 		}
 	
-		public ResultSet getResultat() {
-			return resultat;
-		}
-		
 		public ResultSet faireSelect(String requete){
+			ResultSet resultat = null;
 			try {
 				resultat = statement.executeQuery(requete );
 			} catch (SQLException e) {
 				System.out.println(e);
 			}
-			return this.resultat;
-		}
-		
-		public int faireInsert(String requete){
-			int resultat = 0 ;
-			try {
-				resultat = statement.executeUpdate( requete );
-				 if(resultat ==0){
-			    	   System.out.println("echec inert");
-			       }
-			       if(resultat ==1){
-			    	   System.out.println("reussite insert");
-			       }
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 			return resultat;
 		}
 		
+		public void faireInsert(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
+			if(valeurs.size() == typeValeur.size()){
+				PreparedStatement preparedStatement;
+				try {
+					preparedStatement = this.getConnexion().prepareStatement(requete);
+					for(int i = 0; i< typeValeur.size(); i++){
+						switch(typeValeur.get(i)){
+						case "int":preparedStatement.setInt(i+1, Integer.parseInt(valeurs.get(i)));
+							break;
+						case "String" :preparedStatement.setString(i+1, valeurs.get(i));
+							break;
+						}
+					}				
+					int resultat = preparedStatement.executeUpdate();
+				} catch (SQLException e) {
+					System.out.println(e);
+				}
+			}else{
+				System.out.println("erreur : tailles listes différentes pour l'insert !!!!! valeurs : " +valeurs.size()+" types : " +typeValeur.size() );
+			}
+		}
+		
 	   public void closeConnexion(){
-		   if ( resultat != null ) {
-		        try {
-		            /* On commence par fermer le ResultSet */
-		            resultat.close();
-		        } catch ( SQLException ignore ) {
-		        }
-		    }
-		    if ( statement != null ) {
+		     if ( statement != null ) {
 		        try {
 		            /* Puis on ferme le Statement */
 		            statement.close();
