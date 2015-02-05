@@ -69,12 +69,13 @@ public class VoteEtudiant extends HttpServlet {
 				typeValeurs.add("int");
 				if(!resultat.next()){
 					int id = this.creerIdVote(request,bdd);
-					valeurs.add("3");
+					System.out.println(request.getParameter("valeurVote"));
+					valeurs.add(request.getParameter("valeurVote"));
 					valeurs.add(String.valueOf(id));
 					typeValeurs.add("int");
 					bdd.faireInsert("insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ", valeurs, typeValeurs);
 				}else{
-					valeurs.add(0,"4");
+					valeurs.add(0,request.getParameter("valeurVote"));
 					bdd.faireInsert("update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;",valeurs, typeValeurs);
 				}
 			} catch (SQLException e) {
