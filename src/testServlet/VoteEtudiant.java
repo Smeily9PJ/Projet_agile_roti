@@ -65,7 +65,6 @@ public class VoteEtudiant extends HttpServlet {
 			ArrayList<String> valeurs = new ArrayList<>();
 			valeurs.add(session.getAttribute("identifiantSession").toString());
 			valeurs.add(session.getAttribute("identifiantEtudiant").toString());
-			System.out.println("idEtu : "+session.getAttribute("identifiantEtudiant")+ " et idSess : "+session.getAttribute("identifiantSession"));
 			ArrayList<String> typeValeurs = new ArrayList<>();
 			typeValeurs.add("int");
 			typeValeurs.add("int");
@@ -74,7 +73,6 @@ public class VoteEtudiant extends HttpServlet {
 				typeValeurs.add("int");
 				if(!resultat.next()){
 					int id = this.creerIdVote(request,bdd);
-					System.out.println(request.getParameter("valeurVote"));
 					valeurs.add(request.getParameter("valeurVote"));
 					valeurs.add(String.valueOf(id));
 					typeValeurs.add("int");

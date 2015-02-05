@@ -15,15 +15,39 @@ import javax.servlet.http.HttpSession;
 import queryServlet.Bdd;
 
 public class AffichageProf extends HttpServlet {
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		this.getServletContext()
-				.getRequestDispatcher("/WEB-INF/affichageProf.jsp")
-				.forward(request, response);
+	private String ID_Session ;
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String resultat = "invalide";
+		response.setContentType("text/xml");
+		response.setHeader("Cache-Control", "no-cache");
+		float moyenne =0;
+			Bdd bdd = new Bdd();
+			bdd.connexionBdd();
+			ArrayList<String> valeurs = new ArrayList<>();
+			System.out.println(ID_Session);
+			valeurs.add(ID_Session);
+			ArrayList<String> typeValeurs = new ArrayList<>();
+			typeValeurs.add("String");
+			ResultSet resultatSelect = bdd.faireSelectParam("select * from vote where ID_Session = ? ; ",valeurs, typeValeurs);
+			try {
+				ArrayList<Integer> listeVote = new ArrayList<Integer>();
+				while (resultatSelect.next()){
+					listeVote.add(resultatSelect.getInt("valeur"));
+				}
+				for(int val : listeVote){
+					moyenne += val;
+				}
+				moyenne = moyenne/listeVote.size();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		response.getWriter().write("<message>"+moyenne+"</message>");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		ID_Session = session.getAttribute("identifiant").toString();
 		if (request.getParameter("action").equals("Creer")) {
 			String mdp = request.getParameter("accueil_text_mdpSession");
 			session.setAttribute("mdp", mdp);

@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div id="bgCanvas">
-			<canvas id="affichageProf_canvas" width="700" height="400">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur.</canvas> 
+			<canvas id="affichageProf_canvas" width="700" height="400">Navigateur pas à jour pour afficher la courbe, veuillez mettre votre navigateur à jour.</canvas> 
 			</div>
 		</div>
 		

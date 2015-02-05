@@ -4,12 +4,12 @@ var heures = 0;
 var numeroPoint = 0;
 var abscissePointsDejaTrace = [0];
 var ordonneePointsDejaTrace = [400];
+var moyenne = 0;
 
 var etatChrono = 0; // 0 = arret, 1 = marche
 
 function chrono(){
 	if(etatChrono == 1) {
-		tracerCourbe();
 		var chrono = document.getElementById("affichageProf_chono");
 		var newChrono ;
 		if (secondes == 59){
@@ -23,11 +23,14 @@ function chrono(){
 		}
 		newChrono = heures + " : " + minutes + " : "  + secondes;
 		chrono.textContent = newChrono;
+		if(((minutes+ 60*heures) % document.getElementById("timingVote").value) == 0 && minutes > 0 && secondes == 0){
+			tracerCourbe();
+		}
 		setTimeout('chrono()',1000) //la fonction est relancée
 	}
 }
 
-function start() { etatChrono = 1; chrono()}
+function start() { if(etatChrono == 0){etatChrono = 1; chrono();}}
 
 function pause() {
 	etatChrono = 0;
@@ -66,8 +69,10 @@ function tracerCourbe(){
 		        context.lineTo(abscissePointsDejaTrace[i], ordonneePointsDejaTrace[i]);
 			}
 		}
-		var newX = abscissePointsDejaTrace[numeroPoint]+10; //a récuperer dans bdd
-		var newY = 350; //a récuperer dans bdd
+		valider();
+		alert(moyenne);
+		var newX = abscissePointsDejaTrace[numeroPoint]+10; 
+		var newY = 400 - ((moyenne)*80);
 		context.moveTo(abscissePointsDejaTrace[numeroPoint], ordonneePointsDejaTrace[numeroPoint]);
 	    context.lineTo(newX,newY);
 	    numeroPoint += 1;
@@ -75,4 +80,39 @@ function tracerCourbe(){
 	    ordonneePointsDejaTrace.push(newY);
         context.stroke();
         context.closePath();
+}
+
+
+
+
+function valider() {
+	if (window.XMLHttpRequest) {
+		requete = new XMLHttpRequest();
+		requete.open("GET", "professeur", true);
+		requete.onreadystatechange = majIHM;
+		requete.send(null);
+	} else if (window.ActiveXObject) {
+		requete = new ActiveXObject("Microsoft.XMLHTTP");
+		if (requete) {
+			requete.open("GET", "professeur", true);
+			requete.onreadystatechange = majIHM;
+			requete.send();
+		}
+	} else {
+		alert("Le navigateur ne supporte pas la technologie Ajax");
+	}
+}
+ 
+function majIHM() {
+ 
+	if (requete.readyState == 4) {
+		if (requete.status == 200) {
+			// exploitation des données de la réponse
+			var messageTag = requete.responseXML.getElementsByTagName("message")[0];
+			moyenne = messageTag.childNodes[0].nodeValue;
+		} else {
+			alert('Une erreur est survenue lors de la mise à jour de la page.'
+					+ '\n\nCode retour = ' + requete.statusText);
+		}
+	}
 }
