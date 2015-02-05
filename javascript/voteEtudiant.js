@@ -23,7 +23,6 @@ function vote() {
 	chronometre = setTimeout('chrono()',1000);
 }
 
-
 function chrono(){
 	var bar = document.getElementById("Etudiant_Attente_Loading");
 	var chrono = document.getElementById("Etudiant_Attente_Chrono");

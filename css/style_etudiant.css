@@ -74,6 +74,17 @@ input[type="range"]::-webkit-slider-thumb:active {
     font-family: "Quantico", sans-serif;
     font-weight: 700;
 }
+
+#Etudiant_Attente_Loading {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+
+  width: 250px;
+  height: 20px;
+  color :blue;
+}
+
 /* Paramètres fixes */
 
 @media screen and (max-width: 480px) {      
