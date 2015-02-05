@@ -97,7 +97,8 @@ public class Bdd {
 			}
 		}
 		
-		public void faireInsert(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
+		public int faireInsert(String requete, ArrayList<String> valeurs, ArrayList<String> typeValeur){
+			int resultat = 0;
 			if(valeurs.size() == typeValeur.size()){
 				PreparedStatement preparedStatement;
 				try {
@@ -110,13 +111,14 @@ public class Bdd {
 							break;
 						}
 					}				
-					int resultat = preparedStatement.executeUpdate();
+					resultat = preparedStatement.executeUpdate();
 				} catch (SQLException e) {
 					System.out.println(e);
 				}
 			}else{
 				System.out.println("erreur : tailles listes différentes pour l'insert !!!!! valeurs : " +valeurs.size()+" types : " +typeValeur.size() );
 			}
+			return resultat;
 		}
 		
 	   public void closeConnexion(){

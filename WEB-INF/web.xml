@@ -56,4 +56,14 @@
 		<servlet-name>QueryServlet</servlet-name>
 		<url-pattern>/query</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AjouterVote</servlet-name>
+		<servlet-class>testServlet.AjouterVote</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AjouterVote</servlet-name>
+		<url-pattern>/ajouterVote</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 	<title>MEETING TRACKER</title>
@@ -18,15 +18,17 @@
     <div id="Etudiant_Formulaire">
 	<form method=POST action="">
 		<img src="images/humeurs/content.gif" id="vote_content"/>
-		<input type="range" min="1" max="5" step="1" value="3" id="Etudiant_valeurRange" onchange="miseAJourValeurRange()"/>
+		<input type="range" min="1" max="5" step="1" value="3" id="Etudiant_valeurRange" name="valeurVote" onchange="miseAJourValeurRange()"/>
 		<img src="images/humeurs/mecontent.gif" id="vote_mecontent"/>
 		<br/>
 		<span id="Etudiant_valeurVote">3</span> 
 		<br/>
-<!--		<input onClick="vote()" type=submit value="Voter" name="envoyer" id="Etudiant_validerVoter"/>   -->
 
 	</form>
-	<button class="btn btn-vote" onclick="vote()" id="Etudiant_Btn_Voter">Voter</button>
+	
+	<form method=POST action="rejoindre">
+	<button class="btn btn-vote" onclick="vote();" id="Etudiant_Btn_Voter" name="action" value="Voter" >Voter</button>
+	</form>
 	</div>
 	<div id="Etudiant_Emotions">
 	<img src="images/humeurs/humeur_colere.gif" id="emo_colere"/>
