@@ -14,6 +14,7 @@ var minutes
 var SEC = 5 // Variables depart
 var MIN = 0// Variables depart
 var chronometre;
+
 function vote() {
 	document.getElementById("Etudiant_Formulaire").style.display = "none";
 	document.getElementById("Etudiant_Attente").style.display = "block";
