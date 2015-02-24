@@ -4,7 +4,8 @@ var heures = 0;
 var numeroPoint = 0;
 var abscissePointsDejaTrace = [0];
 var ordonneePointsDejaTrace = [400];
-var moyenne = 0;
+var moyenne = 3;
+var nbPersonnes=0;
 
 var etatChrono = 0; // 0 = arret, 1 = marche
 
@@ -29,6 +30,7 @@ function chrono(){
 		setTimeout('chrono()',1000) //la fonction est relancée
 	}
 }
+
 
 function start() { if(etatChrono == 0){etatChrono = 1; chrono();}}
 
@@ -70,7 +72,10 @@ function tracerCourbe(){
 			}
 		}
 		valider();
-		alert(moyenne);
+
+		document.getElementById("nbPersonne").value = nbPersonnes;
+		document.getElementById("avisMoyen").value = moyenne;
+		
 		var newX = abscissePointsDejaTrace[numeroPoint]+10; 
 		var newY = 400 - ((moyenne-1)*100);
 		context.moveTo(abscissePointsDejaTrace[numeroPoint], ordonneePointsDejaTrace[numeroPoint]);
@@ -104,12 +109,14 @@ function valider() {
 }
  
 function majIHM() {
- 
 	if (requete.readyState == 4) {
 		if (requete.status == 200) {
 			// exploitation des données de la réponse
-			var messageTag = requete.responseXML.getElementsByTagName("message")[0];
-			moyenne = messageTag.childNodes[0].nodeValue;
+			var reponse = requete.responseText.split("&");
+			moyenne = reponse[0];
+			nbPersonnes = reponse[1];
+//			moyenne = messageTag.childNodes[0].nodeValue;
+//			nbPersonnes = messageTag2.childNodes[0].nodeValue;
 		} else {
 			alert('Une erreur est survenue lors de la mise à jour de la page.'
 					+ '\n\nCode retour = ' + requete.statusText);
