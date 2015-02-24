@@ -28,14 +28,6 @@
 	</form>
 	
 	</div>
-	<div id="Etudiant_Emotions" onclick="voteEmo()">
-	<img src="images/humeurs/humeur_colere.gif" id="emo_colere"/>
-	<img src="images/humeurs/humeur_triste.gif" id="emo_triste"/>
-	<img src="images/humeurs/humeur_blaze.gif" id="emo_blaze"/><br>
-	<img src="images/humeurs/humeur_dort.gif" id="emo_dort"/>
-	<img src="images/humeurs/humeur_rigole.gif" id="emo_rigole"/>
-	<img src="images/humeurs/humeur_content.gif" id="emo_content"/>
-	</div>
 	<script src="${pageContext.request.contextPath}/javascript/voteEtudiant.js" type="text/javascript"></script>
 	
     <%@ include file="footer.jsp" %>

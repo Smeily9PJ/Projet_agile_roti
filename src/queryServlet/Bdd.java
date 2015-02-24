@@ -126,6 +126,7 @@ public class Bdd {
 		        try {
 		            /* Puis on ferme le Statement */
 		            statement.close();
+		            statement = null;
 		        } catch ( SQLException ignore ) {
 		        }
 		    }
@@ -133,9 +134,9 @@ public class Bdd {
 		        try {
 		            /* Et enfin on ferme la connexion */
 		            connexion.close();
+		            connexion = null;
 		        } catch ( SQLException ignore ) {
 		        }
 		    }
 	   }
-	   
 	}

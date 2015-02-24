@@ -45,8 +45,3 @@ function chrono(){
 	chrono.textContent = newChrono;
 	chronometre = setTimeout('chrono()',1000); //la fonction est relancée
 }
-
-function voteEmo() {
-	document.getElementById("Etudiant_Emotions").style.display = "none";
-	window.alert("Votre emotion a ete enregistree !");
-}
