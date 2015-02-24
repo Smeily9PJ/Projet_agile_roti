@@ -72,7 +72,7 @@ function tracerCourbe(){
 		valider();
 		alert(moyenne);
 		var newX = abscissePointsDejaTrace[numeroPoint]+10; 
-		var newY = 400 - ((moyenne)*80);
+		var newY = 400 - ((moyenne-1)*100);
 		context.moveTo(abscissePointsDejaTrace[numeroPoint], ordonneePointsDejaTrace[numeroPoint]);
 	    context.lineTo(newX,newY);
 	    numeroPoint += 1;
