@@ -4,14 +4,10 @@ import static org.junit.Assert.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,8 +19,9 @@ import queryServlet.Bdd;
 	Préconditions aux tests : avoir une ligne avec un id de 30 dans la table Session
 							  ne pas avoir d'id de 10 dans la table Session
 */
-public class Test_queryServlet_Bdd {
+public class Test_Bdd {
 
+	@SuppressWarnings("serial")
 	public static final ArrayList <String> LIST_TYPE_VALEURS_TABLE_SESSION = new ArrayList <String> (){{
 	    add("int");
 	    add("String");
@@ -62,13 +59,13 @@ public class Test_queryServlet_Bdd {
 	
 	@Test
 	public void test_getConnexion() {
-		Test_queryServlet_Bdd.simulationConnexion();
+		Test_Bdd.simulationConnexion();
 		assertNotEquals (null, baseDeDonee.getConnexion());
 	}
 	
 	@Test
 	public void test_getStatement() {
-		Test_queryServlet_Bdd.simulationStatement();
+		Test_Bdd.simulationStatement();
 		assertNotEquals(null, baseDeDonee.getStatement());
 	}
 	
@@ -76,7 +73,7 @@ public class Test_queryServlet_Bdd {
 	public void test_faireSelect() {
 		String requete = "SELECT * FROM Session WHERE Id_Session = 30";
 		ResultSet resultat = baseDeDonee.faireSelect(requete);
-		String resultatString = Test_queryServlet_Bdd.retourTableSession(resultat);
+		String resultatString = Test_Bdd.retourTableSession(resultat);
 		assertEquals("30 abc 200|", resultatString);
 	}
 
@@ -89,7 +86,7 @@ public class Test_queryServlet_Bdd {
 		ArrayList<String> typeValeur = new ArrayList<String>(){{add("int");}};
 		
 		ResultSet resultat = baseDeDonee.faireSelectParam(requete, valeurs, typeValeur);
-		String resultatString = Test_queryServlet_Bdd.retourTableSession(resultat);
+		String resultatString = Test_Bdd.retourTableSession(resultat);
 		assertEquals("30 abc 200|", resultatString);
 	}
 	
@@ -101,11 +98,11 @@ public class Test_queryServlet_Bdd {
 		
 		this.lancerInsert();
 		ResultSet resultat = baseDeDonee.faireSelect(requeteSelect);
-		String retourString = Test_queryServlet_Bdd.retourTableSession(resultat);
+		String retourString = Test_Bdd.retourTableSession(resultat);
 		assertEquals(messageAttenduApresInsert, retourString);
 		
 		this.lancerDelete();
-		retourString = Test_queryServlet_Bdd.retourTableSession(resultat);
+		retourString = Test_Bdd.retourTableSession(resultat);
 		assertEquals(messageAttenduApresDelete, retourString);
 	}
 	
@@ -118,7 +115,7 @@ public class Test_queryServlet_Bdd {
 		ResultSet resultat = baseDeDonee.faireSelect(requeteSelect);
 		this.lancerDelete();
 		
-		String retourString = Test_queryServlet_Bdd.retourTableSession(resultat);
+		String retourString = Test_Bdd.retourTableSession(resultat);
 		assertEquals(messageAttenduApresInsert, retourString);
 	}
 	
@@ -135,8 +132,8 @@ public class Test_queryServlet_Bdd {
 			   System.out.println(e);
 			}
 		   try {
-		       connexion = DriverManager.getConnection( Test_queryServlet_Bdd.url, 
-		    		   Test_queryServlet_Bdd.utilisateur, Test_queryServlet_Bdd.motDePasse );
+		       connexion = DriverManager.getConnection( Test_Bdd.url, 
+		    		   Test_Bdd.utilisateur, Test_Bdd.motDePasse );
 		   } catch ( SQLException e ) {
 			   System.out.println(e);
 		   }
@@ -151,8 +148,8 @@ public class Test_queryServlet_Bdd {
 			   System.out.println(e);
 			}
 		   try {
-			   Connection connexion = DriverManager.getConnection( Test_queryServlet_Bdd.url, 
-					   Test_queryServlet_Bdd.utilisateur, Test_queryServlet_Bdd.motDePasse );
+			   Connection connexion = DriverManager.getConnection( Test_Bdd.url, 
+					   Test_Bdd.utilisateur, Test_Bdd.motDePasse );
 		       statement = connexion.createStatement();
 		   } catch ( SQLException e ) {
 			   System.out.println(e);
