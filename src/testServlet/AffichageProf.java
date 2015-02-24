@@ -25,24 +25,25 @@ public class AffichageProf extends HttpServlet {
 			Bdd bdd = new Bdd();
 			bdd.connexionBdd();
 			ArrayList<String> valeurs = new ArrayList<>();
-			System.out.println(ID_Session);
 			valeurs.add(ID_Session);
 			ArrayList<String> typeValeurs = new ArrayList<>();
 			typeValeurs.add("String");
 			ResultSet resultatSelect = bdd.faireSelectParam("select * from vote where ID_Session = ? ; ",valeurs, typeValeurs);
+			int nbPersonnes = 0;
 			try {
 				ArrayList<Integer> listeVote = new ArrayList<Integer>();
 				while (resultatSelect.next()){
 					listeVote.add(resultatSelect.getInt("valeur"));
 				}
 				for(int val : listeVote){
+					nbPersonnes++;
 					moyenne += val;
 				}
 				moyenne = moyenne/listeVote.size();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		response.getWriter().write("<message>"+moyenne+"</message>");
+		response.getWriter().write(moyenne+"&"+nbPersonnes);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,7 +63,7 @@ public class AffichageProf extends HttpServlet {
 			typeValeurs.add("int");
 			typeValeurs.add("String");
 			typeValeurs.add("int");
-			bdd.faireInsert("insert into session (ID_Session, password, interval_Vote) values (?, ?, ?);", valeurs, typeValeurs);
+			bdd.faireInsert("insert into session (ID_Session, password, interval_Vote) values (?, ?, ?);", valeurs, typeValeurs);			
 			bdd.closeConnexion();
 			this.getServletContext().getRequestDispatcher("/WEB-INF/affichageProf.jsp").forward(request, response);
 		}
