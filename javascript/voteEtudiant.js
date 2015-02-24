@@ -14,6 +14,7 @@ var minutes
 var SEC = 5 // Variables depart
 var MIN = 0// Variables depart
 var chronometre;
+
 function vote() {
 	document.getElementById("Etudiant_Formulaire").style.display = "none";
 	document.getElementById("Etudiant_Attente").style.display = "block";
@@ -43,4 +44,9 @@ function chrono(){
 	}
 	chrono.textContent = newChrono;
 	chronometre = setTimeout('chrono()',1000); //la fonction est relancée
+}
+
+function voteEmo() {
+	document.getElementById("Etudiant_Emotions").style.display = "none";
+	window.alert("Votre emotion a ete enregistree !");
 }
