@@ -17,7 +17,7 @@
 	</div>
     <div id="Etudiant_Formulaire">
     
-	<form method=POST action="rejoindre">
+	<form method=POST action="VoterHumeur">
 		<img src="images/humeurs/content.gif" id="vote_content"/>
 		<input type="range" min="1" max="5" step="1" value="3" id="Etudiant_valeurRange" name="valeurVote" onchange="miseAJourValeurRange()"/>
 		<img src="images/humeurs/mecontent.gif" id="vote_mecontent"/>
