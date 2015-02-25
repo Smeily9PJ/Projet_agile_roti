@@ -25,6 +25,7 @@ function chrono(){
 		newChrono = heures + " : " + minutes + " : "  + secondes;
 		chrono.textContent = newChrono;
 		if(((minutes+ 60*heures) % document.getElementById("timingVote").value) == 0 && minutes > 0 && secondes == 0){
+			valider();
 			tracerCourbe();
 		}
 		setTimeout('chrono()',1000) //la fonction est relancée
@@ -53,7 +54,6 @@ function tracerCourbe(){
         return;
     }
 
-
 	context.clearRect(1,2,700, 400);
 	context.clearRect(0,0,700, 400);
     context.lineWidth = 3;
@@ -71,11 +71,9 @@ function tracerCourbe(){
 		        context.lineTo(abscissePointsDejaTrace[i], ordonneePointsDejaTrace[i]);
 			}
 		}
-		valider();
-
+		alert("moy3 "+ moyenne);
 		document.getElementById("nbPersonne").value = nbPersonnes;
 		document.getElementById("avisMoyen").value = moyenne;
-		
 		var newX = abscissePointsDejaTrace[numeroPoint]+10; 
 		var newY = 400 - ((moyenne-1)*100);
 		context.moveTo(abscissePointsDejaTrace[numeroPoint], ordonneePointsDejaTrace[numeroPoint]);
@@ -115,8 +113,7 @@ function majIHM() {
 			var reponse = requete.responseText.split("&");
 			moyenne = reponse[0];
 			nbPersonnes = reponse[1];
-//			moyenne = messageTag.childNodes[0].nodeValue;
-//			nbPersonnes = messageTag2.childNodes[0].nodeValue;
+			alert('moy1 '+ moyenne );
 		} else {
 			alert('Une erreur est survenue lors de la mise à jour de la page.'
 					+ '\n\nCode retour = ' + requete.statusText);

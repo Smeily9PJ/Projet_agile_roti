@@ -5,17 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
-import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import java.io.FileReader;
 
 import queryServlet.Bdd;
 
@@ -25,65 +20,63 @@ public class VoteEtudiant extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp")
 				.forward(request, response);
 	}
-
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Bdd bdd = new Bdd();
 		bdd.connexionBdd();
-		if (request.getParameter("action").equals("Rejoindre")) {
-			try {
-				Integer.parseInt(request.getParameter("accueil_text_idSession"));
+		switch(request.getParameter("action")) {
+		case "colere" : 
+			System.out.println("1");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		case "triste" : 
+			System.out.println("2");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		case "blaze" : 
+			System.out.println("3");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		case "dort" : 
+			System.out.println("4");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		case "rigole" :
+			System.out.println("5");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		case "content" : 
+			System.out.println("6");
+			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
+			break;
+		default:
+			if (request.getParameter("action").equals("Voter")) {
+				HttpSession session = request.getSession();
 				ArrayList<String> valeurs = new ArrayList<>();
-				valeurs.add(request.getParameter("accueil_text_idSession"));
-				valeurs.add(request.getParameter("accueil_text_mdpSession"));
+				valeurs.add(session.getAttribute("identifiantSession").toString());
+				valeurs.add(session.getAttribute("identifiantEtudiant").toString());
 				ArrayList<String> typeValeurs = new ArrayList<>();
 				typeValeurs.add("int");
-				typeValeurs.add("String");
-				ResultSet resultat = bdd.faireSelectParam("select * from session where ID_Session=? and password=?;",valeurs, typeValeurs);
+				typeValeurs.add("int");
+				ResultSet resultat = bdd.faireSelectParam("select * from vote where ID_Session = ? and ID_Etudiant = ? ;", valeurs, typeValeurs);
 				try {
-					if (resultat.next()) {
-						if(this.ajouterEtudiant(request,bdd,request.getParameter("accueil_text_idSession"))){
-							HttpSession session = request.getSession();
-							session.setAttribute("identifiantSession",request.getParameter("accueil_text_idSession"));
-							this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
-						}else{
-							this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
-						}
-					} else {
-						this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+					typeValeurs.add("int");
+					if(!resultat.next()){
+						int id = this.creerIdVote(request,bdd);
+						valeurs.add(request.getParameter("valeurVote"));
+						valeurs.add(String.valueOf(id));
+						typeValeurs.add("int");
+						bdd.faireInsert("insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ", valeurs, typeValeurs);
+					}else{
+						valeurs.add(0,request.getParameter("valeurVote"));
+						bdd.faireInsert("update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;",valeurs, typeValeurs);
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			} catch (Exception e) {
-				this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
 			}
-		}
-		if (request.getParameter("action").equals("Voter")) {
-			HttpSession session = request.getSession();
-			ArrayList<String> valeurs = new ArrayList<>();
-			valeurs.add(session.getAttribute("identifiantSession").toString());
-			valeurs.add(session.getAttribute("identifiantEtudiant").toString());
-			ArrayList<String> typeValeurs = new ArrayList<>();
-			typeValeurs.add("int");
-			typeValeurs.add("int");
-			ResultSet resultat = bdd.faireSelectParam("select * from vote where ID_Session = ? and ID_Etudiant = ? ;", valeurs, typeValeurs);
-			try {
-				typeValeurs.add("int");
-				if(!resultat.next()){
-					int id = this.creerIdVote(request,bdd);
-					valeurs.add(request.getParameter("valeurVote"));
-					valeurs.add(String.valueOf(id));
-					typeValeurs.add("int");
-					bdd.faireInsert("insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ", valeurs, typeValeurs);
-				}else{
-					valeurs.add(0,request.getParameter("valeurVote"));
-					bdd.faireInsert("update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;",valeurs, typeValeurs);
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
 		}
 		bdd.closeConnexion();
 	}
@@ -106,31 +99,4 @@ public class VoteEtudiant extends HttpServlet {
 		}while(!trouve);
 		return id;
 	}
-	
-	private boolean ajouterEtudiant(HttpServletRequest request, Bdd bdd,String parameter) {
-		HttpSession session = request.getSession();
-		Random rnd = new Random();
-		ResultSet resultat = null;
-		boolean trouve = false;
-		int id;
-		do{
-			id= rnd.nextInt(10000);
-			try {
-				resultat = bdd.faireSelect( "SELECT *  FROM etudiant where ID_Etudiant = "+ id +" ;" );
-				if(!resultat.next()){
-					trouve = true;
-				}
-			} catch (SQLException e) {
-				System.out.println(e);
-			}
-		}while(!trouve);
-		session.setAttribute("identifiantEtudiant",id);
-		ArrayList<String> valeurs = new ArrayList<>();
-		valeurs.add(String.valueOf(id));
-		ArrayList<String> typeValeurs = new ArrayList<>();
-		typeValeurs.add("int");
-		int valeurRetourInsert = bdd.faireInsert("insert into etudiant (ID_Etudiant) values (?);", valeurs, typeValeurs);
-		return valeurRetourInsert != 0;
-	}
-	
 }

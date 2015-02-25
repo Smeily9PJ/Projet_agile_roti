@@ -6,6 +6,42 @@ span {
     position:absolute;
 }
 
+#Emotion_colere {
+	background-image: url("../images/humeurs/humeur_colere.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_triste {
+	background-image: url("../images/humeurs/humeur_triste.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_dort {
+	background-image: url("../images/humeurs/humeur_dort.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_blaze {
+	background-image: url("../images/humeurs/humeur_blaze.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_rigole {
+	background-image: url("../images/humeurs/humeur_rigole.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_content {
+	background-image: url("../images/humeurs/humeur_content.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
 @media screen and (max-width: 480px) {      
 
 span {
