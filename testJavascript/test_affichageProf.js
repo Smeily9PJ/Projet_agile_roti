@@ -1,0 +1,1 @@
+/** Pas de return dans les fonctions **/
