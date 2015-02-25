@@ -39,7 +39,7 @@ public class AffichageProf extends HttpServlet {
 					nbPersonnes++;
 					moyenne += val;
 				}
-				moyenne = moyenne/listeVote.size();
+				moyenne = moyenne/nbPersonnes;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
