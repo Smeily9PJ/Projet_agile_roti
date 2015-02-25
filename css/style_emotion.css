@@ -6,6 +6,42 @@ span {
     position:absolute;
 }
 
+#Emotion_colere {
+	background-image: url("../images/humeurs/humeur_colere.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_triste {
+	background-image: url("../images/humeurs/humeur_triste.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_dort {
+	background-image: url("../images/humeurs/humeur_dort.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_blaze {
+	background-image: url("../images/humeurs/humeur_blaze.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_rigole {
+	background-image: url("../images/humeurs/humeur_rigole.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
+#Emotion_content {
+	background-image: url("../images/humeurs/humeur_content.gif");
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
 @media screen and (max-width: 480px) {      
 
 span {
@@ -14,7 +50,6 @@ span {
 }	
 	
 #Emotion_colere {
-	background-image: url("images/humeurs/humeur_colere.gif");
 	top: 30%;
 	left : 15%;
 	width: 15%;
@@ -22,7 +57,6 @@ span {
 }
 
 #Emotion_triste {
-	background-image: url("images/humeurs/humeur_triste.gif");
 	top: 30%;
 	left : 40%;
 	width: 15%;
@@ -30,7 +64,6 @@ span {
 }
 
 #Emotion_blaze {
-	background-image: url("images/humeurs/humeur_blaze.gif");
 	top: 30%;
 	left : 65%;
 	width: 15%;
@@ -38,7 +71,6 @@ span {
 }
 
 #Emotion_dort {
-	background-image: url("images/humeurs/humeur_dort.gif");
 	top: 50%;
 	left : 15%;
 	width: 15%;
@@ -46,7 +78,6 @@ span {
 }
 
 #Emotion_rigole {
-	background-image: url("images/humeurs/humeur_rigole.gif");
 	top: 50%;
 	left : 40%;
 	width: 15%;
@@ -54,7 +85,6 @@ span {
 }
 
 #Emotion_content {
-	background-image: url("images/humeurs/humeur_content.gif");
 	top: 50%;
 	left : 65%;
 	width: 15%;
@@ -70,7 +100,6 @@ span {
 }	
 	
 #Emotion_colere {
-	background-image: url("images/humeurs/humeur_colere.gif");
 	top: 30%;
 	left : 15%;
 	width: 15%;
@@ -78,7 +107,6 @@ span {
 }
 
 #Emotion_triste {
-	background-image: url("images/humeurs/humeur_triste.gif");
 	top: 30%;
 	left : 40%;
 	width: 15%;
@@ -86,7 +114,6 @@ span {
 }
 
 #Emotion_blaze {
-	background-image: url("images/humeurs/humeur_blaze.gif");
 	top: 30%;
 	left : 65%;
 	width: 15%;
@@ -94,7 +121,6 @@ span {
 }
 
 #Emotion_dort {
-	background-image: url("images/humeurs/humeur_dort.gif");
 	top: 50%;
 	left : 15%;
 	width: 15%;
@@ -102,7 +128,6 @@ span {
 }
 
 #Emotion_rigole {
-	background-image: url("images/humeurs/humeur_rigole.gif");
 	top: 50%;
 	left : 40%;
 	width: 15%;
@@ -110,7 +135,6 @@ span {
 }
 
 #Emotion_content {
-	background-image: url("images/humeurs/humeur_content.gif");
 	top: 50%;
 	left : 65%;
 	width: 15%;
@@ -125,7 +149,6 @@ span {
 	left:17%;
 }	
 #Emotion_colere {
-	background-image: url("images/humeurs/humeur_colere.gif");
 	top: 30%;
 	left : 15%;
 	width: 15%;
@@ -133,7 +156,6 @@ span {
 }
 
 #Emotion_triste {
-	background-image: url("images/humeurs/humeur_triste.gif");
 	top: 30%;
 	left : 40%;
 	width: 15%;
@@ -141,7 +163,6 @@ span {
 }
 
 #Emotion_blaze {
-	background-image: url("images/humeurs/humeur_blaze.gif");
 	top: 30%;
 	left : 65%;
 	width: 15%;
@@ -149,7 +170,6 @@ span {
 }
 
 #Emotion_dort {
-	background-image: url("images/humeurs/humeur_dort.gif");
 	top: 50%;
 	left : 15%;
 	width: 15%;
@@ -157,7 +177,6 @@ span {
 }
 
 #Emotion_rigole {
-	background-image: url("images/humeurs/humeur_rigole.gif");
 	top: 50%;
 	left : 40%;
 	width: 15%;
@@ -165,7 +184,6 @@ span {
 }
 
 #Emotion_content {
-	background-image: url("images/humeurs/humeur_content.gif");
 	top: 50%;
 	left : 65%;
 	width: 15%;
@@ -176,7 +194,6 @@ span {
 @media screen and (min-width: 720px) { 
 	
 #Emotion_colere {
-	background-image: url("images/humeurs/humeur_colere.gif");
 	top: 30%;
 	left : 15%;
 	width: 15%;
@@ -184,7 +201,6 @@ span {
 }
 
 #Emotion_triste {
-	background-image: url("images/humeurs/humeur_triste.gif");
 	top: 30%;
 	left : 40%;
 	width: 15%;
@@ -192,7 +208,6 @@ span {
 }
 
 #Emotion_blaze {
-	background-image: url("images/humeurs/humeur_blaze.gif");
 	top: 30%;
 	left : 65%;
 	width: 15%;
@@ -200,7 +215,6 @@ span {
 }
 
 #Emotion_dort {
-	background-image: url("images/humeurs/humeur_dort.gif");
 	top: 50%;
 	left : 15%;
 	width: 15%;
@@ -208,7 +222,6 @@ span {
 }
 
 #Emotion_rigole {
-	background-image: url("images/humeurs/humeur_rigole.gif");
 	top: 50%;
 	left : 40%;
 	width: 15%;
@@ -216,7 +229,6 @@ span {
 }
 
 #Emotion_content {
-	background-image: url("images/humeurs/humeur_content.gif");
 	top: 50%;
 	left : 65%;
 	width: 15%;
@@ -231,7 +243,6 @@ span {
 }
 	
 #Emotion_colere {
-	background-image: url("images/humeurs/humeur_colere.gif");
 	top: 40%;
 	left : 33%;
 	width: 5%;
@@ -239,7 +250,6 @@ span {
 }
 
 #Emotion_triste {
-	background-image: url("images/humeurs/humeur_triste.gif");
 	top: 40%;
 	left : 39%;
 	width: 5%;
@@ -247,7 +257,6 @@ span {
 }
 
 #Emotion_blaze {
-	background-image: url("images/humeurs/humeur_blaze.gif");
 	top: 40%;
 	left : 45%;
 	width: 5%;
@@ -255,7 +264,6 @@ span {
 }
 
 #Emotion_dort {
-	background-image: url("images/humeurs/humeur_dort.gif");
 	top: 40%;
 	left : 51%;
 	width: 5%;
@@ -263,7 +271,6 @@ span {
 }
 
 #Emotion_rigole {
-	background-image: url("images/humeurs/humeur_rigole.gif");
 	top: 40%;
 	left : 57%;
 	width: 5%;
@@ -271,7 +278,6 @@ span {
 }
 
 #Emotion_content {
-	background-image: url("images/humeurs/humeur_content.gif");
 	top: 40%;
 	left : 63%;
 	width: 5%;
