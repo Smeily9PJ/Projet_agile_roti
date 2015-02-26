@@ -34,7 +34,7 @@ public class SourceServletAffichageProf {
 		bdd.connexionBdd();
 	}
 
-	public void finalize() {
+	protected void finalize() {
 		this.bdd.closeConnexion();
 	}
 

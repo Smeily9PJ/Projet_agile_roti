@@ -30,7 +30,7 @@ public class ServletAjouterVote extends HttpServlet  {
 		try {
 			typeValeurs.add("int");
 			if(!resultat.next()){
-				int id = this.creerIdVote(request,bdd);
+				int id = this.creerIdVote(bdd);
 				System.out.println("valeur vote : " + request.getParameter("valeurVote"));
 				valeurs.add(request.getParameter("valeurVote"));
 				valeurs.add(String.valueOf(id));
@@ -47,7 +47,7 @@ public class ServletAjouterVote extends HttpServlet  {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
 	}
 	
-	private int creerIdVote(HttpServletRequest request, Bdd bdd) {
+	private int creerIdVote(Bdd bdd) {
 		Random rnd = new Random();
 		ResultSet resultat = null;
 		boolean trouve = false;
