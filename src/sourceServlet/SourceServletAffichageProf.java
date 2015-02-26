@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import servlet.ServletAffichageProf;
 import baseDeDonnees.Bdd;
 
 public class SourceServletAffichageProf {
@@ -21,19 +22,21 @@ public class SourceServletAffichageProf {
 	private String mdp;
 	private HttpSession session;
 	private HttpServletRequest requete;
+	private final ServletAffichageProf servlet;
 
-	public SourceServletAffichageProf(HttpServletRequest request) {
+	public SourceServletAffichageProf(HttpServletRequest request,
+			ServletAffichageProf servletActuelle) {
 		this.session = request.getSession();
 		this.mdp = request.getParameter("accueil_text_mdpSession");
 		this.requete = request;
 		this.bdd = new Bdd();
+		this.servlet = servletActuelle;
 		bdd.connexionBdd();
 	}
 
 	public void finalize() {
 		this.bdd.closeConnexion();
 	}
-	
 
 	public void creationDonneesInsertProfesseur() {
 		ArrayList<String> valeurs = new ArrayList<String>();
@@ -48,7 +51,8 @@ public class SourceServletAffichageProf {
 
 	public void detailSession() {
 		this.session.setAttribute("mdp", mdp);
-		this.session.setAttribute("timing", this.requete.getParameter("numeric"));
+		this.session.setAttribute("timing",
+				this.requete.getParameter("numeric"));
 	}
 
 }

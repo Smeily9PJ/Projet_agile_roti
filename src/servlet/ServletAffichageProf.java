@@ -17,10 +17,10 @@ public class ServletAffichageProf extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		SourceServletAffichageProf source = new SourceServletAffichageProf(request);
+		SourceServletAffichageProf source = new SourceServletAffichageProf(request, this);
 		if (request.getParameter("action").equals("Creer")) {
-			source.creationDonneesInsertProfesseur();
 			source.detailSession();
+			source.creationDonneesInsertProfesseur();
 			this.getServletContext().getRequestDispatcher("/WEB-INF/affichageProf.jsp")
 					.forward(request, response);
 		}
