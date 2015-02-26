@@ -8,62 +8,62 @@
 	
 	
 	<servlet>
-		<servlet-name>Accueil</servlet-name>
-		<servlet-class>testServlet.Accueil</servlet-class>
+		<servlet-name>ServletAccueil</servlet-name>
+		<servlet-class>servlet.ServletAccueil</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>Accueil</servlet-name>
+		<servlet-name>ServletAccueil</servlet-name>
 		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>VoteEmotion</servlet-name>
-		<servlet-class>testServlet.VoteEmotion</servlet-class>
+		<servlet-name>ServletVoteEmotion</servlet-name>
+		<servlet-class>servlet.ServletVoteEmotion</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>VoteEmotion</servlet-name>
+		<servlet-name>ServletVoteEmotion</servlet-name>
 		<url-pattern>/rejoindre</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>VoteEtudiant</servlet-name>
-		<servlet-class>testServlet.VoteEtudiant</servlet-class>
+		<servlet-name>ServletVoteEtudiant</servlet-name>
+		<servlet-class>servlet.ServletVoteEtudiant</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>VoteEtudiant</servlet-name>
+		<servlet-name>ServletVoteEtudiant</servlet-name>
 		<url-pattern>/VoterHumeur</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>AffichageProf</servlet-name>
-		<servlet-class>testServlet.AffichageProf</servlet-class>
+		<servlet-name>ServletAffichageProf</servlet-name>
+		<servlet-class>servlet.ServletAffichageProf</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>AffichageProf</servlet-name>
+		<servlet-name>ServletAffichageProf</servlet-name>
 		<url-pattern>/professeur</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>QueryServlet</servlet-name>
-		<servlet-class>queryServlet.QueryServlet</servlet-class>
+		<servlet-name>Bdd</servlet-name>
+		<servlet-class>baseDeDonnees.Bdd</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>QueryServlet</servlet-name>
+		<servlet-name>Bdd</servlet-name>
 		<url-pattern>/query</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>AjouterVote</servlet-name>
-		<servlet-class>testServlet.AjouterVote</servlet-class>
+		<servlet-name>ServletAjouterVote</servlet-name>
+		<servlet-class>servlet.ServletAjouterVote</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>AjouterVote</servlet-name>
+		<servlet-name>ServletAjouterVote</servlet-name>
 		<url-pattern>/ajouterVote</url-pattern>
 	</servlet-mapping>
 </web-app>
