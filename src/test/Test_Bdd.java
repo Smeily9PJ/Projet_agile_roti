@@ -13,7 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import queryServlet.Bdd;
+import baseDeDonnees.Bdd;
 
 /**
 	Préconditions aux tests : avoir une ligne avec un id de 30 dans la table Session
