@@ -11,6 +11,8 @@ import baseDeDonnees.Bdd;
 public class SourceServletAffichageProf {
 
 	private final static ArrayList<String> TYPE_VALEUR = new ArrayList<String>() {
+		private static final long serialVersionUID = -2288323471518509226L;
+
 		{
 			add("int");
 			add("String");
@@ -22,15 +24,13 @@ public class SourceServletAffichageProf {
 	private String mdp;
 	private HttpSession session;
 	private HttpServletRequest requete;
-	private final ServletAffichageProf servlet;
-
+	
 	public SourceServletAffichageProf(HttpServletRequest request,
 			ServletAffichageProf servletActuelle) {
 		this.session = request.getSession();
 		this.mdp = request.getParameter("accueil_text_mdpSession");
 		this.requete = request;
 		this.bdd = new Bdd();
-		this.servlet = servletActuelle;
 		bdd.connexionBdd();
 	}
 
