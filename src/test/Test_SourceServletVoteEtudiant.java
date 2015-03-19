@@ -48,4 +48,9 @@ public class Test_SourceServletVoteEtudiant {
 		assertEquals(6, SourceServletVoteEtudiant.afficherNumeroHumeur("content"));
 	}
 	
+	@Test
+	public void test_afficherNumeroHumeur_voter() {
+		assertEquals(7, SourceServletVoteEtudiant.afficherNumeroHumeur("voter"));
+	}
+	
 }
