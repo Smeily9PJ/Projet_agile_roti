@@ -25,27 +25,6 @@ public class ServletVoteEtudiant extends HttpServlet {
 			throws ServletException, IOException {
 		Bdd bdd = new Bdd();
 		bdd.connexionBdd();
-<<<<<<< HEAD
-<<<<<<< HEAD
-		HttpSession session = request.getSession();
-		String idEtudiant = session.getAttribute("identifiantEtudiant")
-				.toString();
-
-		if (request.getParameter("action").equals("Voter")) {
-			ArrayList<String> valeurs = new ArrayList<>();
-			valeurs.add(session.getAttribute("identifiantSession").toString());
-			valeurs.add(idEtudiant);
-			ArrayList<String> typeValeurs = new ArrayList<>();
-			typeValeurs.add("int");
-			typeValeurs.add("int");
-			ResultSet resultat = bdd
-					.faireSelectParam(
-							"select * from vote where ID_Session = ? and ID_Etudiant = ? ;",
-							valeurs, typeValeurs);
-			try {
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 		switch (request.getParameter("action")) {
 		case "colere":
 			System.out.println("1");
@@ -92,35 +71,14 @@ public class ServletVoteEtudiant extends HttpServlet {
 				valeurs.add(session.getAttribute("identifiantEtudiant")
 						.toString());
 				ArrayList<String> typeValeurs = new ArrayList<>();
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 				typeValeurs.add("int");
-<<<<<<< HEAD
-				if (!resultat.next()) {
-					int id = this.creerIdVote(request, bdd);
-					valeurs.add(request.getParameter("valeurVote"));
-					valeurs.add(String.valueOf(id));
-=======
 				typeValeurs.add("int");
 				ResultSet resultat = bdd
 						.faireSelectParam(
 								"select * from vote where ID_Session = ? and ID_Etudiant = ? ;",
 								valeurs, typeValeurs);
 				try {
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 					typeValeurs.add("int");
-<<<<<<< HEAD
-<<<<<<< HEAD
-					bdd.faireInsert(
-							"insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ",
-							valeurs, typeValeurs);
-				} else {
-					valeurs.add(0, request.getParameter("valeurVote"));
-					bdd.faireInsert(
-							"update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;",
-							valeurs, typeValeurs);
-=======
-=======
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 					if (!resultat.next()) {
 						int id = this.creerIdVote(request, bdd);
 						valeurs.add(request.getParameter("valeurVote"));
@@ -137,40 +95,11 @@ public class ServletVoteEtudiant extends HttpServlet {
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 				}
-<<<<<<< HEAD
-<<<<<<< HEAD
-			} catch (SQLException e) {
-				e.printStackTrace();
-=======
 				this.getServletContext()
 						.getRequestDispatcher("/WEB-INF/voteEtudiant.jsp")
 						.forward(request, response);
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
-=======
-				this.getServletContext()
-						.getRequestDispatcher("/WEB-INF/voteEtudiant.jsp")
-						.forward(request, response);
->>>>>>> branch 'master' of https://github.com/Smeily9PJ/Projet_agile_roti.git
 			}
-			this.getServletContext()
-					.getRequestDispatcher("/WEB-INF/voteEtudiant.jsp")
-					.forward(request, response);
-		} else {
-			ArrayList<String> typeValeursEmotion = new ArrayList<>();
-			typeValeursEmotion.add("String");
-			typeValeursEmotion.add("int");
-			ArrayList<String> valeursEmotion = new ArrayList<>();
-			valeursEmotion.add(request.getParameter("action"));
-			valeursEmotion.add(idEtudiant);
-			bdd.faireInsert(
-					"update etudiant set emotion = ? where ID_Etudiant = ? ;",
-					valeursEmotion, typeValeursEmotion);
-
-			this.getServletContext()
-					.getRequestDispatcher("/WEB-INF/voteEtudiant.jsp")
-					.forward(request, response);
 		}
 		bdd.closeConnexion();
 	}
