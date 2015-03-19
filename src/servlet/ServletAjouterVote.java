@@ -40,7 +40,7 @@ public class ServletAjouterVote extends HttpServlet  {
 		try {
 			typeValeurs.add("int");
 			if(!resultat.next()){
-				int id = this.creerIdVote(bdd);
+				int id = SourceServletAjouterVote.creerIdSession(bdd);
 				System.out.println("valeur vote : " + request.getParameter("valeurVote"));
 				valeurs.add(request.getParameter("valeurVote"));
 				valeurs.add(String.valueOf(id));
