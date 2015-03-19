@@ -10,14 +10,6 @@ import sourceServlet.SourceServletVoteEtudiant;
 
 public class Test_SourceServletVoteEtudiant {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
 	public void test_afficherNumeroHumeur_colere() {
 		assertEquals(1, SourceServletVoteEtudiant.afficherNumeroHumeur("colere"));
