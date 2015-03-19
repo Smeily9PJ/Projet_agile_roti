@@ -11,12 +11,55 @@ import baseDeDonnees.Bdd;
 
 public class SourceServletVoteEtudiant {
 	
+	private HttpSession session;
+	private ArrayList <String> valeurs;
+	private ArrayList<String> typeValeurs;
+	private HttpServletRequest requete;
+	
+	public SourceServletVoteEtudiant(HttpServletRequest request){
+		this.session = requete.getSession();
+		
+		this.valeurs = new ArrayList<String>();
+		this.valeurs.add(session.getAttribute("identifiantSession").toString());
+		this.valeurs.add(session.getAttribute("identifiantEtudiant").toString());
+		
+		this.typeValeurs = new ArrayList<String>();
+		this.typeValeurs.add("int");
+		this.typeValeurs.add("int");
+		
+		this.requete = request;
+	}
+	
+	public void ajouterVote(Bdd bdd){
+		String requeteSelect = "select * from vote where ID_Session = ? and ID_Etudiant = ? ;";
+		String requeteInsert = "insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ";
+		String requeteUpdate = "update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;";
+		
+		ResultSet resultat = bdd.faireSelectParam(requeteSelect,valeurs, typeValeurs);
+		try {
+			typeValeurs.add("int");
+			if (!resultat.next()) {
+				int id = SourceServletVoteEtudiant.creerIdVote(bdd);
+				valeurs.add(requete.getParameter("valeurVote"));
+				valeurs.add(String.valueOf(id));
+				typeValeurs.add("int");
+				bdd.faireInsert(requeteInsert,valeurs, typeValeurs);
+			} 
+			else {
+				valeurs.add(0, requete.getParameter("valeurVote"));
+				bdd.faireInsert(requeteUpdate,valeurs, typeValeurs);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+		
 	public static int creerIdVote(Bdd bdd) {
 		return SourceServlet.creerId(bdd, "vote", "ID_Vote");
 	}
-	
-	public static int afficherNumeroHumeur(String action){
 		
+	public static int afficherNumeroHumeur(String action){
+			
 		int num = 0;
 		switch (action) {
 			case "colere":  num=1; break;
@@ -30,39 +73,5 @@ public class SourceServletVoteEtudiant {
 		System.out.println(num);
 		return num;
 	}
-	
-	public static void effectuerVote(HttpServletRequest requete, Bdd bdd){
-		
-		HttpSession session = requete.getSession();
-		ArrayList<String> valeurs = new ArrayList<>();
-		valeurs.add(session.getAttribute("identifiantSession").toString());
-		valeurs.add(session.getAttribute("identifiantEtudiant").toString());
-		ArrayList<String> typeValeurs = new ArrayList<>();
-		typeValeurs.add("int");
-		typeValeurs.add("int");
-		
-		ResultSet resultat = bdd.faireSelectParam(
-						"select * from vote where ID_Session = ? and ID_Etudiant = ? ;",
-						valeurs, typeValeurs);
-		try {
-			typeValeurs.add("int");
-			if (!resultat.next()) {
-				int id = SourceServletVoteEtudiant.creerIdVote(bdd);
-				valeurs.add(requete.getParameter("valeurVote"));
-				valeurs.add(String.valueOf(id));
-				typeValeurs.add("int");
-				bdd.faireInsert(
-						"insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ",
-						valeurs, typeValeurs);
-			} else {
-				valeurs.add(0, requete.getParameter("valeurVote"));
-				bdd.faireInsert(
-						"update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;",
-						valeurs, typeValeurs);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-	}
+			
 }
