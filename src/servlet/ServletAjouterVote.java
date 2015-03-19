@@ -15,10 +15,20 @@ import javax.servlet.http.HttpSession;
 import baseDeDonnees.Bdd;
 
 public class ServletAjouterVote extends HttpServlet  {
+	
+	private Bdd bdd;
+	
+	public ServletAjouterVote (){
+		this.bdd = new Bdd();
+		this.bdd.connexionBdd();
+	}
+	
+	protected void finalize(){
+		this.bdd.closeConnexion();
+	}
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		Bdd bdd = new Bdd();
-		bdd.connexionBdd();
 		ArrayList<String> valeurs = new ArrayList<>();
 		valeurs.add(session.getAttribute("identifiantSession").toString());
 		valeurs.add(session.getAttribute("identifiantEtudiant").toString());
@@ -43,27 +53,7 @@ public class ServletAjouterVote extends HttpServlet  {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		bdd.closeConnexion();
 		this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
 	}
 	
-	private int creerIdVote(Bdd bdd) {
-		Random rnd = new Random();
-		ResultSet resultat = null;
-		boolean trouve = false;
-		int id;
-		do{
-			id= rnd.nextInt(10000);
-			try {
-				resultat = bdd.faireSelect( "SELECT *  FROM vote where ID_Vote = "+ id +" ;" );
-				if(!resultat.next()){
-					trouve = true;
-				}
-			} catch (SQLException e) {
-				System.out.println(e);
-			}
-		}while(!trouve);
-		return id;
-	}
-
 }
