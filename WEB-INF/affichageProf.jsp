@@ -17,34 +17,23 @@
 			<div class="PARTIE_GAUCHE">
 				<div class="INFORMATION_LABEL">
 					
-						<label>Id session :</label>
+						<label>Id session : <b><%= session.getAttribute("identifiant") %></b></label>
 						<br />
-						<label>Mdp session :</label>
+						<label>Mdp session : <b><%= session.getAttribute("mdp") %></b></label>
 						<br />
-						<label>Personnes connectées :</label>
+						<label>Personnes connectées : <b id="nbPersonne">?</b></label>
 						<br />
-						<label>Avis moyen :</label>
+						<label>Avis moyen : <b id="avisMoyen">?</b></label>
 						<br />
-						<label>Timing vote :</label>						
-						<br />
+						<label>Timing vote : <b id="timingVote"><%= session.getAttribute("timing") %></b></label>						
+						<br /><br />
 						<label>Humeur majoritaire :</label>	
 						<br /><br />
 						<!-- <label>Humeur g&eacute;n&eacute;rale :</label>	 -->
 
 				</div>
-				<div class="RECEPTION_INFORMATION">
-					<input type="text" name="idSession" id="idSession" value="<%= session.getAttribute("identifiant") %>" readonly />
-					<br />
-					<input type="text" name="mdpSession" id="mdpSession" value="<%= session.getAttribute("mdp") %>" readonly />
-					<br />
-					<input type="text" name="nbPersonne" id="nbPersonne" value="?" readonly />
-					<br />
-					<input type="text" name="avisMoyen" id="avisMoyen" value="?" readonly />
-					<br />
-					<input type="text" name="timingVote" id="timingVote" value="<%= session.getAttribute("timing") %>" readonly />
-					<br />
-					<input type="image" name="humeurMajoritaire" id="humeurMajoritaire" width="50" height="50" src="images/humeurs/interrogation.jpg" readonly />
-					
+				<div class="IMAGE_HUMEUR_MAJ">
+					<img name="humeurMajoritaire" id="humeurMajoritaire" width="50" height="50" src="images/humeurs/interrogation.jpg" />	
 					<!-- <img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 /> -->
 				</div>
 				<br>

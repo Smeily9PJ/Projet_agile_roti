@@ -19,19 +19,19 @@ left:10%;
 top:90%;
 }
 
-
-.RECEPTION_INFORMATION{
+.IMAGE_HUMEUR_MAJ{
 position:relative;
-vertical-align:top;
 text-align:center;
-margin-left:10%;
-margin-right:10%;
-left:90%;
-top:-37%;
+left:50%;
+top:30%;
+color:white;
+letter-spacing: 1px;
+font-family: "Quantico", sans-serif;
+font-weight: 700;
 }
 
 .BOUTONS{
-	position:relative;
+position:relative;
 margin-left:10%;
 left:-3%;
 top:0%;
@@ -51,12 +51,16 @@ width:150px;
 }
 
 .BOUTONS #pause{
-top:50%;
+top:45%;
 }
 
 .BOUTONS #reprise {
-top:50%;
+top:45%;
 left:20%;
+}
+
+#humeurMajoritaire {
+	
 }
 
 .HEURE{
