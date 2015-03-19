@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sourceServlet.SourceServletAjouterVote;
 import baseDeDonnees.Bdd;
 
 public class ServletAjouterVote extends HttpServlet  {
