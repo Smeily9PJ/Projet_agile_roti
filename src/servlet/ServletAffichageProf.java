@@ -49,8 +49,8 @@ public class ServletAffichageProf extends HttpServlet {
 		try {
 			ArrayList<Integer> listeVote = new ArrayList<Integer>();
 			while (resultatSelect.next()) {
-				humeurMajoritaire = trouverHumeurMajoritaire(
-						resultatSelect.getInt("Id_Etudiant"), bdd);
+				humeurMajoritaire = "colere";
+						//trouverHumeurMajoritaire(resultatSelect.getInt("Id_Etudiant"), bdd);
 				listeVote.add(resultatSelect.getInt("valeur"));
 			}
 			for (int val : listeVote) {
@@ -67,11 +67,11 @@ public class ServletAffichageProf extends HttpServlet {
 	}
 
 	private String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
-		String humeur = "colere";
+		String humeur = "";
 		ArrayList<String> valeurs = new ArrayList<String>();
 		valeurs.add(String.valueOf(idEtudiant));
 		ArrayList<String> typeValeurs = new ArrayList<String>();
-		valeurs.add("int");
+		typeValeurs.add("int");
 		ResultSet resultatHumeur = bdd.faireSelectParam(
 				"select emotion where ID_Etudiant=?", valeurs, typeValeurs);
 		HashMap<String, Integer> listeHumeurs = new HashMap<>();

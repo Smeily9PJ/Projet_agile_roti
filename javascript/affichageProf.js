@@ -83,8 +83,14 @@ function tracerCourbe() {
 					ordonneePointsDejaTrace[i]);
 		}
 	}
-	document.getElementById("nbPersonne").value = nbPersonnes;
-	document.getElementById("avisMoyen").value = moyenne;
+
+	var nbPersonne = document.getElementById("nbPersonne");
+	nbPersonne.textContent = nbPersonnes;
+	
+
+	var avisMoyen = document.getElementById("avisMoyen");
+	avisMoyen.textContent = moyenne ;
+	
 	switch (humeur) {
 	case "colere":
 		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_colere.gif";
