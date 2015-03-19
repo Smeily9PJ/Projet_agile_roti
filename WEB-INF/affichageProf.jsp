@@ -23,9 +23,11 @@
 						<br />
 						<label>Personnes connectées :</label>
 						<br />
-						<label>Avis moyen :</label>	
+						<label>Avis moyen :</label>
 						<br />
 						<label>Timing vote :</label>						
+						<br />
+						<label>Humeur majoritaire :</label>	
 						<br /><br />
 						<!-- <label>Humeur g&eacute;n&eacute;rale :</label>	 -->
 
@@ -40,6 +42,9 @@
 					<input type="text" name="avisMoyen" id="avisMoyen" value="?" readonly />
 					<br />
 					<input type="text" name="timingVote" id="timingVote" value="<%= session.getAttribute("timing") %>" readonly />
+					<br />
+					<input type="image" name="humeurMajoritaire" id="humeurMajoritaire" width="50" height="50" src="images/humeurs/interrogation.jpg" readonly />
+					
 					<!-- <img id="smiley" src="images/humeurs/sonne.png" onclick="afficherLaBonneHumeur();" alt="Smiley" width=40 height=40 /> -->
 				</div>
 				<br>
