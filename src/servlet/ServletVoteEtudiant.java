@@ -12,19 +12,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sourceServlet.SourceServletVoteEtudiant;
 import baseDeDonnees.Bdd;
 
 public class ServletVoteEtudiant extends HttpServlet {
+	
+	private Bdd bdd;
+	
+	public ServletVoteEtudiant (){
+		this.bdd = new Bdd();
+		this.bdd.connexionBdd();
+	}
+	
+	protected void finalize(){
+		this.bdd.closeConnexion();
+	}
+	
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp")
-				.forward(request, response);
+		.forward(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Bdd bdd = new Bdd();
-		bdd.connexionBdd();
 		switch (request.getParameter("action")) {
 		case "colere":
 			System.out.println("1");
@@ -80,7 +92,7 @@ public class ServletVoteEtudiant extends HttpServlet {
 				try {
 					typeValeurs.add("int");
 					if (!resultat.next()) {
-						int id = this.creerIdVote(request, bdd);
+						int id = SourceServletVoteEtudiant.creerIdVote(bdd);
 						valeurs.add(request.getParameter("valeurVote"));
 						valeurs.add(String.valueOf(id));
 						typeValeurs.add("int");
@@ -101,27 +113,6 @@ public class ServletVoteEtudiant extends HttpServlet {
 						.forward(request, response);
 			}
 		}
-		bdd.closeConnexion();
 	}
 
-	private int creerIdVote(HttpServletRequest request, Bdd bdd) {
-		Random rnd = new Random();
-		ResultSet resultat = null;
-		boolean trouve = false;
-		int id;
-		do {
-			id = rnd.nextInt(10000);
-			try {
-				resultat = bdd
-						.faireSelect("SELECT *  FROM vote where ID_Vote = "
-								+ id + " ;");
-				if (!resultat.next()) {
-					trouve = true;
-				}
-			} catch (SQLException e) {
-				System.out.println(e);
-			}
-		} while (!trouve);
-		return id;
-	}
 }
