@@ -27,7 +27,9 @@ function chrono() {
 		}
 		newChrono = heures + " : " + minutes + " : " + secondes;
 		chrono.textContent = newChrono;
-		if (((minutes + 60 * heures) % document.getElementById("timingVote").value) == 0
+		var timing = document.getElementById("timingVote");
+		var valueTiming = timing.innerText || timing.textContent;
+		if (((minutes + 60 * heures) % valueTiming) == 0
 				&& minutes > 0 && secondes == 0) {
 			valider();
 		}
