@@ -29,9 +29,7 @@ public class ServletAccueil extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		Bdd bdd = new Bdd();
-		bdd.connexionBdd();
-		session.setAttribute("identifiant", SourceServletAccueil.creerIdSession(bdd));
+		session.setAttribute("identifiant", SourceServletAccueil.creerIdSession(this.bdd));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp")
 				.forward(request, response);
 	}
