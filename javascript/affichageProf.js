@@ -86,30 +86,37 @@ function tracerCourbe() {
 
 	var nbPersonne = document.getElementById("nbPersonne");
 	nbPersonne.textContent = nbPersonnes;
-	
 
 	var avisMoyen = document.getElementById("avisMoyen");
 	avisMoyen.textContent = moyenne ;
+
+	var src = document.getElementById("humeurMajoritaire").src;
+	var structureSrc = src.split("/");
+	src="";
+	for(var i = 0 ; i+1 < structureSrc.length ; i++){
+		src += structureSrc[i] + "/";
+	}
 	
 	switch (humeur) {
 	case "colere":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_colere.gif";
+		src += "humeur_colere.gif";
 		break;
 	case "content":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_content.gif";
+		src += "humeur_content.gif";
 		break;
 	case "triste":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_triste.gif";
+		src += "humeur_triste.gif";
 		break;
 	case "dort":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_dort.gif";
+		src += "humeur_dort.gif";
 		break;
 	case "rigole":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_rigole.gif";
+		src += "humeur_rigole.gif";
 		break;
 	case "blaze":
-		document.getElementById("humeurMajoritaire").src = "images/humeurs/humeur_blaze.gif";
+		src += "humeur_blaze.gif";
 	}
+	document.getElementById("humeurMajoritaire").src = src;
 	var newX = abscissePointsDejaTrace[numeroPoint] + 10;
 	var newY = 400 - ((moyenne - 1) * 100);
 	context.moveTo(abscissePointsDejaTrace[numeroPoint],
@@ -147,7 +154,7 @@ function majIHM() {
 			var reponse = requete.responseText.split("&");
 			moyenne = reponse[0];
 			nbPersonnes = reponse[1];
-			humeur = reponse[3];
+			humeur = reponse[2];
 			tracerCourbe();
 		} else {
 			alert('Une erreur est survenue lors de la mise à jour de la page.'

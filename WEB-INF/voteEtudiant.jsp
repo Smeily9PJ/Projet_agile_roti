@@ -24,7 +24,7 @@
 		<br/>
 		<span id="Etudiant_valeurVote">3</span> 
 		<br/>
-	<button class="btn btn-vote" onclick="vote()" id="Etudiant_Btn_Voter" name="action" value="Voter" >Voter</button>
+	<button class="btn btn-vote" onclick="vote()" id="Etudiant_Btn_Voter" name="action" value="voter" >Voter</button>
 	</form>
 	
 	</div>
