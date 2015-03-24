@@ -38,7 +38,7 @@ public class ServletVoteEtudiant extends HttpServlet {
 
 		if (numHumeur == 7){
 			SourceServletVoteEtudiant vote = new SourceServletVoteEtudiant(request);
-			vote.ajouterVote(bdd);
+			vote.ajouterVote(bdd, request.getParameter("valeurVote"));
 		}
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);

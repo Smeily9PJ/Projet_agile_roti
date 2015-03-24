@@ -11,13 +11,11 @@ import baseDeDonnees.Bdd;
 
 public class SourceServletVoteEtudiant {
 	
-	private HttpSession session;
 	private ArrayList <String> valeurs;
 	private ArrayList<String> typeValeurs;
-	private HttpServletRequest requete;
 	
 	public SourceServletVoteEtudiant(HttpServletRequest request){
-		this.session = requete.getSession();
+		HttpSession session = request.getSession();
 		
 		this.valeurs = new ArrayList<String>();
 		this.valeurs.add(session.getAttribute("identifiantSession").toString());
@@ -26,32 +24,19 @@ public class SourceServletVoteEtudiant {
 		this.typeValeurs = new ArrayList<String>();
 		this.typeValeurs.add("int");
 		this.typeValeurs.add("int");
-		
-		this.requete = request;
 	}
 	
-	public void ajouterVote(Bdd bdd){
-		String requeteSelect = "select * from vote where ID_Session = ? and ID_Etudiant = ? ;";
-		String requeteInsert = "insert into vote (ID_Session,ID_Etudiant, valeur,ID_Vote) values ( ?, ?, ?, ? ); ";
-		String requeteUpdate = "update vote set valeur = ? where ID_Session = ? and ID_Etudiant = ? ;";
-		
-		ResultSet resultat = bdd.faireSelectParam(requeteSelect,valeurs, typeValeurs);
-		try {
-			typeValeurs.add("int");
-			if (!resultat.next()) {
-				int id = SourceServletVoteEtudiant.creerIdVote(bdd);
-				valeurs.add(requete.getParameter("valeurVote"));
-				valeurs.add(String.valueOf(id));
-				typeValeurs.add("int");
-				bdd.faireInsert(requeteInsert,valeurs, typeValeurs);
-			} 
-			else {
-				valeurs.add(0, requete.getParameter("valeurVote"));
-				bdd.faireInsert(requeteUpdate,valeurs, typeValeurs);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public void setValeur (ArrayList <String> valeurs){
+		this.valeurs = valeurs;
+	}
+	
+	public void setTypeValeur (ArrayList<String> typeValeurs){
+		this.typeValeurs = typeValeurs;
+	}
+	
+	public void ajouterVote(Bdd bdd, String valeurVote){
+		Vote v = new Vote(valeurs, typeValeurs);
+		v.ajouterVote(bdd, valeurVote);
 	}
 		
 	public static int creerIdVote(Bdd bdd) {
