@@ -1,7 +1,5 @@
 package sourceServlet;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +10,7 @@ import baseDeDonnees.Bdd;
 public class SourceServletVoteEtudiant {
 	
 	private ArrayList <String> valeurs;
-	private ArrayList<String> typeValeurs;
+	private ArrayList <String> typeValeurs;
 	
 	public SourceServletVoteEtudiant(HttpServletRequest request){
 		HttpSession session = request.getSession();
