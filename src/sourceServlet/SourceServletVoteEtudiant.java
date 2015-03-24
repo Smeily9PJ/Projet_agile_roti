@@ -26,14 +26,6 @@ public class SourceServletVoteEtudiant {
 		this.typeValeurs.add("int");
 	}
 	
-	public void setValeur (ArrayList <String> valeurs){
-		this.valeurs = valeurs;
-	}
-	
-	public void setTypeValeur (ArrayList<String> typeValeurs){
-		this.typeValeurs = typeValeurs;
-	}
-	
 	public void ajouterVote(Bdd bdd, String valeurVote){
 		Vote v = new Vote(valeurs, typeValeurs);
 		v.ajouterVote(bdd, valeurVote);
