@@ -33,7 +33,6 @@ public class ServletAffichageProf extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("passsssssAJAX");
 		String humeurMajoritaire = "";
 		response.setContentType("text/xml");
 		response.setHeader("Cache-Control", "no-cache");
@@ -49,8 +48,7 @@ public class ServletAffichageProf extends HttpServlet {
 		try {
 			ArrayList<Integer> listeVote = new ArrayList<Integer>();
 			while (resultatSelect.next()) {
-				humeurMajoritaire = "colere";
-						//trouverHumeurMajoritaire(resultatSelect.getInt("Id_Etudiant"), bdd);
+				humeurMajoritaire = trouverHumeurMajoritaire(resultatSelect.getInt("Id_Etudiant"), bdd);
 				listeVote.add(resultatSelect.getInt("valeur"));
 			}
 			for (int val : listeVote) {
@@ -61,19 +59,17 @@ public class ServletAffichageProf extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println(moyenne + "&" + nbPersonnes + "&" + humeurMajoritaire);
 		response.getWriter().write(
 				moyenne + "&" + nbPersonnes + "&" + humeurMajoritaire);
 	}
 
 	private String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
-		String humeur = "";
+		String humeur = "colere";
 		ArrayList<String> valeurs = new ArrayList<String>();
 		valeurs.add(String.valueOf(idEtudiant));
 		ArrayList<String> typeValeurs = new ArrayList<String>();
 		typeValeurs.add("int");
-		ResultSet resultatHumeur = bdd.faireSelectParam(
-				"select emotion where ID_Etudiant=?", valeurs, typeValeurs);
+		ResultSet resultatHumeur = bdd.faireSelectParam("select emotion from etudiant where ID_Etudiant=?", valeurs, typeValeurs);
 		HashMap<String, Integer> listeHumeurs = new HashMap<>();
 		listeHumeurs.put("colere", 0);
 		listeHumeurs.put("blaze", 0);
@@ -90,6 +86,7 @@ public class ServletAffichageProf extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 		Set cles = listeHumeurs.keySet();
 		Iterator it = cles.iterator();
 		while (it.hasNext()) {

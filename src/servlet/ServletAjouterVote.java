@@ -33,7 +33,6 @@ public class ServletAjouterVote extends HttpServlet  {
 		ArrayList<String> valeurs = new ArrayList<>();
 		valeurs.add(session.getAttribute("identifiantSession").toString());
 		valeurs.add(session.getAttribute("identifiantEtudiant").toString());
-		System.out.println("idEtu : "+session.getAttribute("identifiantEtudiant")+ " et idSess : "+session.getAttribute("identifiantSession"));
 		ArrayList<String> typeValeurs = new ArrayList<>();
 		typeValeurs.add("int");
 		typeValeurs.add("int");
@@ -42,7 +41,6 @@ public class ServletAjouterVote extends HttpServlet  {
 			typeValeurs.add("int");
 			if(!resultat.next()){
 				int id = SourceServletAjouterVote.creerIdSession(bdd);
-				System.out.println("valeur vote : " + request.getParameter("valeurVote"));
 				valeurs.add(request.getParameter("valeurVote"));
 				valeurs.add(String.valueOf(id));
 				typeValeurs.add("int");

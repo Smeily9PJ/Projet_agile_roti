@@ -45,7 +45,6 @@ public class SourceServletVoteEtudiant {
 			case "content": num=6; break;
 			case "voter":   num=7; break;
 		}
-		System.out.println(num);
 		return num;
 	}
 			

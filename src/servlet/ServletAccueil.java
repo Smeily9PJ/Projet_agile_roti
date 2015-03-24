@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -48,8 +50,26 @@ public class ServletAccueil extends HttpServlet {
 			valeurs.add(session.getAttribute("identifiant").toString());
 			@SuppressWarnings("serial")
 			ArrayList<String> typeValeurs = new ArrayList<String>() {{add("int");}};
-			bdd.faireDelete("DELETE FROM session WHERE id_session=?", valeurs, typeValeurs);
-			session.invalidate();
+			ResultSet idsEtudiants = bdd.faireSelectParam("select ID_Etudiant from vote where ID_Session=?", valeurs, typeValeurs);
+			bdd.faireDelete("DELETE FROM vote WHERE ID_Session=?", valeurs, typeValeurs);
+			try {
+				while(idsEtudiants.next()){
+					ArrayList<String> valeur = new ArrayList<String>();
+					try {
+						valeurs.add(String.valueOf(idsEtudiants.getInt(0)));
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					@SuppressWarnings("serial")
+					ArrayList<String> typeValeur = new ArrayList<String>() {{add("int");}};
+					bdd.faireDelete("DELETE FROM etudiant WHERE ID_Etudiant=?", valeur, typeValeur);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			bdd.faireDelete("DELETE FROM session WHERE ID_Session=?", valeurs, typeValeurs);
 			int id = SourceServletAccueil.creerIdSession(bdd);
 			this.getServletContext()
 					.getRequestDispatcher("/WEB-INF/accueil.jsp")

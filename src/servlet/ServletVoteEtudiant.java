@@ -39,6 +39,15 @@ public class ServletVoteEtudiant extends HttpServlet {
 		if (numHumeur == 7){
 			SourceServletVoteEtudiant vote = new SourceServletVoteEtudiant(request);
 			vote.ajouterVote(bdd, request.getParameter("valeurVote"));
+		}else {
+			HttpSession session = request.getSession();
+			ArrayList<String> valeurs = new ArrayList<String>();
+			valeurs.add(request.getParameter("action"));
+			valeurs.add(session.getAttribute("identifiantEtudiant").toString());
+			ArrayList<String> typeValeurs = new ArrayList<String>();
+			typeValeurs.add("String");
+			typeValeurs.add("int");
+			bdd.faireInsert("update etudiant set emotion = ? where ID_Etudiant = ?", valeurs, typeValeurs);
 		}
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/voteEtudiant.jsp").forward(request, response);
