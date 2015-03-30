@@ -33,6 +33,7 @@ public class ServletAffichageProf extends HttpServlet {
 		this.bdd.closeConnexion();
 	}
 
+	//public void calculHumeur
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String humeurMajoritaire = "";

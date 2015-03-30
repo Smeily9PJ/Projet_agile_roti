@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import sourceServlet.HumeurMajoritaire;
+import sourceServlet.Humeur;
 import baseDeDonnees.Bdd;
 
 /***
@@ -31,16 +31,16 @@ import baseDeDonnees.Bdd;
  * 		INSERT INTO Etudiant values (205, "rigole");
  */
 
-public class Test_HumeurMajoritaire {
+public class Test_Humeur {
 
 	private Bdd bdd;
 	
-	private HumeurMajoritaire humeurColere;
-	private HumeurMajoritaire humeurBlaze;
-	private HumeurMajoritaire humeurDort;
-	private HumeurMajoritaire humeurContent;
-	private HumeurMajoritaire humeurTriste;
-	private HumeurMajoritaire humeurRigole;
+	private Humeur humeurColere;
+	private Humeur humeurBlaze;
+	private Humeur humeurDort;
+	private Humeur humeurContent;
+	private Humeur humeurTriste;
+	private Humeur humeurRigole;
 	
 	private int ETUDIANT_COLERE = 200;
 	private int ETUDIANT_BLAZE = 201;
@@ -53,12 +53,12 @@ public class Test_HumeurMajoritaire {
 	public void setUp() throws Exception {
 		this.bdd = new Bdd();
 		this.bdd.connexionBdd();
-		this.humeurColere = new HumeurMajoritaire (ETUDIANT_COLERE, this.bdd);
-		this.humeurBlaze = new HumeurMajoritaire (ETUDIANT_BLAZE, this.bdd);
-		this.humeurDort = new HumeurMajoritaire (ETUDIANT_DORT, this.bdd);
-		this.humeurContent = new HumeurMajoritaire (ETUDIANT_CONTENT, this.bdd);
-		this.humeurTriste = new HumeurMajoritaire (ETUDIANT_TRISTE, this.bdd);
-		this.humeurRigole = new HumeurMajoritaire (ETUDIANT_RIGOLE, this.bdd);
+		this.humeurColere = new Humeur (ETUDIANT_COLERE, this.bdd);
+		this.humeurBlaze = new Humeur (ETUDIANT_BLAZE, this.bdd);
+		this.humeurDort = new Humeur (ETUDIANT_DORT, this.bdd);
+		this.humeurContent = new Humeur (ETUDIANT_CONTENT, this.bdd);
+		this.humeurTriste = new Humeur (ETUDIANT_TRISTE, this.bdd);
+		this.humeurRigole = new Humeur (ETUDIANT_RIGOLE, this.bdd);
 	}
 
 	@After

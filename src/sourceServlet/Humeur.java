@@ -9,7 +9,7 @@ import java.util.Set;
 
 import baseDeDonnees.Bdd;
 
-public class HumeurMajoritaire {
+public class Humeur {
 	
 	private int idEtudiant;
 	private Bdd bdd;
@@ -17,7 +17,7 @@ public class HumeurMajoritaire {
 	private HashMap<String, Integer> listeHumeurs ;
 	private ResultSet humeurEtudiant;
 
-	public HumeurMajoritaire (int idEtudiant, Bdd bdd){
+	public Humeur (int idEtudiant, Bdd bdd){
 		this.idEtudiant = idEtudiant;
 		this.bdd = bdd;
 		this.humeur = "colere";

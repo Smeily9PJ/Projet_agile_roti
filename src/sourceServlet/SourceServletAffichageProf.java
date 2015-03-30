@@ -61,7 +61,7 @@ public class SourceServletAffichageProf {
 	}
 	
 	public static String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
-		HumeurMajoritaire humeur = new HumeurMajoritaire(idEtudiant, bdd);
+		Humeur humeur = new Humeur(idEtudiant, bdd);
 		return humeur.trouverHumeurMajoritaire();
 	}
 
