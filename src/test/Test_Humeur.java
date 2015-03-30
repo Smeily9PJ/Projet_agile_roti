@@ -74,33 +74,33 @@ public class Test_Humeur {
 	}
 
 	@Test
-	public void trouverHumeurMajoritaire_colere() {
-		assertEquals ("colere", this.humeurColere.trouverHumeurMajoritaire());
+	public void trouverHumeur_colere() {
+		assertEquals ("colere", this.humeurColere.trouverHumeur());
 	}
 	
 	@Test
-	public void trouverHumeurMajoritaire_blaze() {
-		assertEquals ("blaze", this.humeurBlaze.trouverHumeurMajoritaire());
+	public void trouverHumeur_blaze() {
+		assertEquals ("blaze", this.humeurBlaze.trouverHumeur());
 	}
 	
 	@Test
-	public void trouverHumeurMajoritaire_dort() {
-		assertEquals ("dort", this.humeurDort.trouverHumeurMajoritaire());
+	public void trouverHumeur_dort() {
+		assertEquals ("dort", this.humeurDort.trouverHumeur());
 	}
 	
 	@Test
-	public void trouverHumeurMajoritaire_content() {
-		assertEquals ("content", this.humeurContent.trouverHumeurMajoritaire());
+	public void trouverHumeur_content() {
+		assertEquals ("content", this.humeurContent.trouverHumeur());
 	}
 	
 	@Test
-	public void trouverHumeurMajoritaire_triste() {
-		assertEquals ("triste", this.humeurTriste.trouverHumeurMajoritaire());
+	public void trouverHumeur_triste() {
+		assertEquals ("triste", this.humeurTriste.trouverHumeur());
 	}
 	
 	@Test
-	public void trouverHumeurMajoritaire_rigole() {
-		assertEquals ("rigole", this.humeurRigole.trouverHumeurMajoritaire());
+	public void trouverHumeur_rigole() {
+		assertEquals ("rigole", this.humeurRigole.trouverHumeur());
 	}
 
 }
