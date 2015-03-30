@@ -117,34 +117,36 @@ function initialisationContext(context){
 function modificationDonneesPage(context){
 	var nbPersonne = document.getElementById("nbPersonne");
 	nbPersonne.textContent = nbPersonnes;
-	var avisMoyen = document.getElementById("avisMoyen");
-	avisMoyen.textContent = moyenne ;
-	var src = document.getElementById("humeurMajoritaire").src;
-	var structureSrc = src.split("/");
-	src="";
-	for(var i = 0 ; i+1 < structureSrc.length ; i++){
-		src += structureSrc[i] + "/";
-	}	
-	switch (humeur) {
-	case "colere":
-		src += "humeur_colere.gif";
-		break;
-	case "content":
-		src += "humeur_content.gif";
-		break;
-	case "triste":
-		src += "humeur_triste.gif";
-		break;
-	case "dort":
-		src += "humeur_dort.gif";
-		break;
-	case "rigole":
-		src += "humeur_rigole.gif";
-		break;
-	case "blaze":
-		src += "humeur_blaze.gif";
+	if(nbPersonnes != 0){
+		var avisMoyen = document.getElementById("avisMoyen");
+		avisMoyen.textContent = moyenne ;
+		var src = document.getElementById("humeurMajoritaire").src;
+		var structureSrc = src.split("/");
+		src="";
+		for(var i = 0 ; i+1 < structureSrc.length ; i++){
+			src += structureSrc[i] + "/";
+		}	
+		switch (humeur) {
+		case "colere":
+			src += "humeur_colere.gif";
+			break;
+		case "content":
+			src += "humeur_content.gif";
+			break;
+		case "triste":
+			src += "humeur_triste.gif";
+			break;
+		case "dort":
+			src += "humeur_dort.gif";
+			break;
+		case "rigole":
+			src += "humeur_rigole.gif";
+			break;
+		case "blaze":
+			src += "humeur_blaze.gif";
+		}
+		document.getElementById("humeurMajoritaire").src = src;
 	}
-	document.getElementById("humeurMajoritaire").src = src;
 }
 
 function valider() {
