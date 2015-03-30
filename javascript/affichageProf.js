@@ -57,22 +57,27 @@ function pause() {
 }
 
 function maj() {
-	var canvas = document.getElementById('affichageProf_canvas');
-	if (!canvas) {
-		alert("Impossible de récupérer le canvas");
-		return;
+	var nbPersonne = document.getElementById("nbPersonne");
+	nbPersonne.textContent = nbPersonnes;
+	if(nbPersonnes != 0){
+		var canvas = document.getElementById('affichageProf_canvas');
+		if (!canvas) {
+			alert("Impossible de récupérer le canvas");
+			return;
+		}
+		var context = canvas.getContext('2d');
+		if (!context) {
+			alert("Impossible de récupérer le context du canvas");
+			return;
+		}
+		initialisationContext(context);
+		miseALEchelleCourbe(context);
+		modificationDonneesPage(context);
+		ajoutDerniereMoyenne(context);
+		context.stroke();
+		context.closePath();
 	}
-	var context = canvas.getContext('2d');
-	if (!context) {
-		alert("Impossible de récupérer le context du canvas");
-		return;
-	}
-	initialisationContext(context);
-	miseALEchelleCourbe(context);
-	modificationDonneesPage(context);
-	ajoutDerniereMoyenne(context);
-	context.stroke();
-	context.closePath();
+	
 }
 
 function ajoutDerniereMoyenne(context){
@@ -115,9 +120,6 @@ function initialisationContext(context){
 }
 
 function modificationDonneesPage(context){
-	var nbPersonne = document.getElementById("nbPersonne");
-	nbPersonne.textContent = nbPersonnes;
-	if(nbPersonnes != 0){
 		var avisMoyen = document.getElementById("avisMoyen");
 		avisMoyen.textContent = moyenne ;
 		var src = document.getElementById("humeurMajoritaire").src;
@@ -146,7 +148,6 @@ function modificationDonneesPage(context){
 			src += "humeur_blaze.gif";
 		}
 		document.getElementById("humeurMajoritaire").src = src;
-	}
 }
 
 function valider() {
@@ -175,6 +176,7 @@ function majIHM() {
 			moyenne = reponse[0];
 			nbPersonnes = reponse[1];
 			humeur = reponse[2];
+			
 			maj();
 		} else {
 			alert('Une erreur est survenue lors de la mise à jour de la page.'
