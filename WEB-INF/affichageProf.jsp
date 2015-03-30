@@ -55,6 +55,7 @@
 		
 		<%@ include file="footer.jsp" %>
 		<script src="${pageContext.request.contextPath}/javascript/affichageProf.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/javascript/securiteFermeture.js" type="text/javascript"></script>
 		
     </body>
 </html>

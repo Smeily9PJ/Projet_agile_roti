@@ -29,6 +29,7 @@
 	
 	</div>
 	<script src="${pageContext.request.contextPath}/javascript/voteEtudiant.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/javascript/securiteFermeture.js" type="text/javascript"></script>
 	
     <%@ include file="footer.jsp" %>
 </body>

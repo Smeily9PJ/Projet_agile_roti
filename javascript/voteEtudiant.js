@@ -40,18 +40,3 @@ function chrono(){
 	chrono.textContent = newChrono;
 	chronometre = setTimeout('chrono()',1000); //la fonction est relancée
 }
-
-var confirmOnLeave = function(msg) { 
-    window.onbeforeunload = function (e) {
-        e = e || window.event;
-        msg = msg || '';
- 
-        // For IE and Firefox
-        if (e) {e.returnValue = msg;}
- 
-        // For Chrome and Safari
-        return msg;
-    };
-};
- 
-confirmOnLeave('Etes-vous sûr de vouloir quitter ?');
