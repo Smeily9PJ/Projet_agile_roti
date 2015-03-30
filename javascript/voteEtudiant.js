@@ -1,18 +1,13 @@
 function miseAJourValeurRange(){
 	var valeurAffiche = document.getElementById("Etudiant_valeurVote");
-	var valeurAAffiche = document.getElementById("Etudiant_valeurRange");
-	valeurAffiche.textContent = valeurAAffiche.value;
-	
-	function miseAJourValeurRange(vote) {
-		  document.querySelector('#Etudiant_valeurVote').value = vote;
-	}
-	
+	var valeurAAfficher = document.getElementById("Etudiant_valeurRange");
+	valeurAffiche.textContent = valeurAAfficher.value;
 }
 
-var secondes
-var minutes
-var SEC = 5 // Variables depart
-var MIN = 0// Variables depart
+var secondes;
+var minutes;
+var SEC = 5;
+var MIN = 0;
 var chronometre;
 
 function vote() {
@@ -45,3 +40,18 @@ function chrono(){
 	chrono.textContent = newChrono;
 	chronometre = setTimeout('chrono()',1000); //la fonction est relancée
 }
+
+var confirmOnLeave = function(msg) { 
+    window.onbeforeunload = function (e) {
+        e = e || window.event;
+        msg = msg || '';
+ 
+        // For IE and Firefox
+        if (e) {e.returnValue = msg;}
+ 
+        // For Chrome and Safari
+        return msg;
+    };
+};
+ 
+confirmOnLeave('Etes-vous sûr de vouloir quitter ?');
