@@ -18,6 +18,8 @@ import sourceServlet.SourceServletAffichageProf;
 import baseDeDonnees.Bdd;
 
 public class ServletAffichageProf extends HttpServlet {
+	private static final long serialVersionUID = 6720344203824153474L;
+
 	private String ID_Session;
 
 	private Bdd bdd;
@@ -48,7 +50,7 @@ public class ServletAffichageProf extends HttpServlet {
 		try {
 			ArrayList<Integer> listeVote = new ArrayList<Integer>();
 			while (resultatSelect.next()) {
-				humeurMajoritaire = trouverHumeurMajoritaire(resultatSelect.getInt("Id_Etudiant"), bdd);
+				humeurMajoritaire = SourceServletAffichageProf.trouverHumeurMajoritaire(resultatSelect.getInt("Id_Etudiant"), bdd);
 				listeVote.add(resultatSelect.getInt("valeur"));
 			}
 			for (int val : listeVote) {
@@ -61,41 +63,6 @@ public class ServletAffichageProf extends HttpServlet {
 		}
 		response.getWriter().write(
 				moyenne + "&" + nbPersonnes + "&" + humeurMajoritaire);
-	}
-
-	private String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
-		String humeur = "colere";
-		ArrayList<String> valeurs = new ArrayList<String>();
-		valeurs.add(String.valueOf(idEtudiant));
-		ArrayList<String> typeValeurs = new ArrayList<String>();
-		typeValeurs.add("int");
-		ResultSet resultatHumeur = bdd.faireSelectParam("select emotion from etudiant where ID_Etudiant=?", valeurs, typeValeurs);
-		HashMap<String, Integer> listeHumeurs = new HashMap<>();
-		listeHumeurs.put("colere", 0);
-		listeHumeurs.put("blaze", 0);
-		listeHumeurs.put("dort", 0);
-		listeHumeurs.put("content", 0);
-		listeHumeurs.put("triste", 0);
-		listeHumeurs.put("rigole", 0);
-		try {
-			while (resultatHumeur.next()) {
-				listeHumeurs
-						.put(resultatHumeur.getString("emotion"), listeHumeurs
-								.get(resultatHumeur.getString("emotion")) + 1);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		Set cles = listeHumeurs.keySet();
-		Iterator it = cles.iterator();
-		while (it.hasNext()) {
-			String humeurMap = (String) it.next();
-			if (listeHumeurs.get(humeur) <= listeHumeurs.get(humeurMap)) {
-				humeur = humeurMap;
-			}
-		}
-		return humeur;
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

@@ -25,7 +25,7 @@ public class Vote {
 		ResultSet resultat = bdd.faireSelectParam(requeteSelect,valeurs, typeValeurs);
 		try {
 			typeValeurs.add("int");
-			if (resultat.next()) {
+			if (!resultat.next()) {
 				id = SourceServletVoteEtudiant.creerIdVote(bdd);
 				valeurs.add(valeurVote);
 				valeurs.add(String.valueOf(id));

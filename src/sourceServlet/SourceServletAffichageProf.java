@@ -1,6 +1,11 @@
 package sourceServlet;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -53,6 +58,11 @@ public class SourceServletAffichageProf {
 		this.session.setAttribute("mdp", mdp);
 		this.session.setAttribute("timing",
 				this.requete.getParameter("numeric"));
+	}
+	
+	public static String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
+		HumeurMajoritaire humeur = new HumeurMajoritaire(idEtudiant, bdd);
+		return humeur.trouverHumeurMajoritaire();
 	}
 
 }
