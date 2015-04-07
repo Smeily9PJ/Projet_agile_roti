@@ -15,7 +15,7 @@ import sourceServlet.SourceServletAccueil;
 import baseDeDonnees.Bdd;
 
 public class ServletAccueil extends HttpServlet {
-	
+	private static final long serialVersionUID = 6129813892573204568L;
 	private Bdd bdd;
 	
 	public ServletAccueil (){

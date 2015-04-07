@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,8 @@ import sourceServlet.SourceServletAjouterVote;
 import baseDeDonnees.Bdd;
 
 public class ServletAjouterVote extends HttpServlet  {
-	
+
+	private static final long serialVersionUID = 1438952108260051375L;
 	private Bdd bdd;
 	
 	public ServletAjouterVote (){
