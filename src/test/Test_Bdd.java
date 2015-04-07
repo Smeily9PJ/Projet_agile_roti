@@ -14,7 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import baseDeDonnees.Bdd;
-
+//http://www.ntu.edu.sg/home/ehchua/programming/howto/Tomcat_HowTo.html
 /**
 	Préconditions aux tests : avoir une ligne avec un id de 30 dans la table Session
 							  ne pas avoir d'id de 10 dans la table Session
