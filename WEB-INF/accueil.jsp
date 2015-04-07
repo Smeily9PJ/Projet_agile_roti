@@ -10,7 +10,7 @@
     </style>
     <title>MEETING TRACKER</title>
 </head>
-	<body onload="setup()">
+	<body onload='setup()'>
 		<%@ include file="header.jsp" %>
 		<div id="accueil_create" class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
 			<a onclick="create()" class="hi-icon hi-icon-mobile"><img src="images/modes/CreateMini.jpg"/></a>
@@ -31,7 +31,6 @@
 		</div>
 		<div id="accueil_ClickJoin">
 			<form METHOD="POST" ACTION="rejoindre">
-			<!-- ajouter texte si erreur connexion, ex : impossible de se connecter -->
 			    <table><tr><td>Numéro de session :</td></tr>
 					   <tr><td><input type=text name="accueil_text_idSession"></td></tr>
 					   <tr><td>Mot de passe :</td></tr>

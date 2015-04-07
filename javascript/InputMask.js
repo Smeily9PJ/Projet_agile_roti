@@ -1416,25 +1416,28 @@ function applyNumberMask(numberMask, isBlur, isBackSpace) {
 
 //Function to check the text limit
 function checkSizeLimit(control, isBlur) {
-    var sizeLimit = control.sizeLimit;
-    var max = sizeLimit.maxLength;
-    var diff = max - control.value.length;
-    if (control.value.length > max) {
-        control.value = left(control.value, max);
-        setCaretToEnd(control);
-    }
-    var size = control.value.length;
-    var charsLeft = max - size;
-    if (sizeLimit.output != null) {
-        var text = sizeLimit.outputText;
-        text = replaceAll(text, "${size}", size);
-        text = replaceAll(text, "${left}", charsLeft);
-        text = replaceAll(text, "${max}", max);
-        setValue(sizeLimit.output, text);
-    }
-    if (isInstance(sizeLimit.updateFunction, Function)) {
-        sizeLimit.updateFunction(control, size, max, charsLeft);
-    }
+	if(control.sizeLimit != undefined){
+		  var sizeLimit = control.sizeLimit;
+		    var max = sizeLimit.maxLength;
+		    var diff = max - control.value.length;
+		    if (control.value.length > max) {
+		        control.value = left(control.value, max);
+		        setCaretToEnd(control);
+		    }
+		    var size = control.value.length;
+		    var charsLeft = max - size;
+		    if (sizeLimit.output != null) {
+		        var text = sizeLimit.outputText;
+		        text = replaceAll(text, "${size}", size);
+		        text = replaceAll(text, "${left}", charsLeft);
+		        text = replaceAll(text, "${max}", max);
+		        setValue(sizeLimit.output, text);
+		    }
+		    if (isInstance(sizeLimit.updateFunction, Function)) {
+		        sizeLimit.updateFunction(control, size, max, charsLeft);
+		    }
+	}
+  
     return true;
 }
 

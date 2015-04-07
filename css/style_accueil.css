@@ -1,6 +1,5 @@
 /* Paramètres fixes */
 #accueil_ClickCreate, #accueil_ClickJoin{
-    visibility:hidden; 
     padding:20px; 
     position: fixed;
     color:white;
@@ -8,6 +7,22 @@
     font-family: "Quantico", sans-serif;
     font-weight: 700;
     top:18%;
+}
+
+#accueil_ClickJoin{
+    visibility:hidden; 
+}
+
+#accueil_ClickCreate{
+    visibility:hidden; 
+}
+
+#accueil_create{
+    visibility:visible; 
+}
+
+#accueil_join{
+    visibility:visible; 
 }
 
 #Accueil_bouton_create, #Accueil_bouton_join {

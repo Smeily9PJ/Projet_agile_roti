@@ -7,19 +7,19 @@ var ordonneePointsDejaTrace = [];
 var moyenne = 3;
 var nbPersonnes = 0;
 
-var etatChrono = 0; // 0 = arret, 1 = marche
+var etatchronoProf = 0; // 0 = arret, 1 = marche
 
-function chrono() {
-	if (etatChrono == 1) {
-		incrementerChrono();
+function chronoProf() {
+	if (etatchronoProf == 1) {
+		incrementerchronoProf();
 		majPage();
-		setTimeout('chrono()', 1000) // la fonction est relancée
+		setTimeout('chronoProf()', 1000) // la fonction est relancée
 	}
 }
 
-function incrementerChrono(){
-	var chrono = document.getElementById("affichageProf_chono");
-	var newChrono;
+function incrementerchronoProf(){
+	var chronoProf = document.getElementById("affichageProf_chono");
+	var newchronoProf;
 	if (secondes == 59) {
 		if (minutes == 59) {
 			secondes = 0;
@@ -32,8 +32,8 @@ function incrementerChrono(){
 	} else {
 		secondes++;
 	}
-	newChrono = heures + " : " + minutes + " : " + secondes;
-	chrono.textContent = newChrono;
+	newchronoProf = heures + " : " + minutes + " : " + secondes;
+	chronoProf.textContent = newchronoProf;
 }
 
 function majPage(){
@@ -45,15 +45,15 @@ function majPage(){
 	}
 }
 
-function start() {
-	if (etatChrono == 0) {
-		etatChrono = 1;
-		chrono();
+function startChrono() {
+	if (etatchronoProf == 0) {
+		etatchronoProf = 1;
+		chronoProf();
 	}
 }
 
 function pause() {
-	etatChrono = 0;
+	etatchronoProf = 0;
 }
 
 function maj() {
