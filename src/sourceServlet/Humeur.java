@@ -27,7 +27,7 @@ public class Humeur {
 		etudeHumeurEtudiant();
 	}
 
-	public String trouverHumeurMajoritaire() {
+	public String trouverHumeur() {
 		Set<String> humeursPossibles = listeHumeurs.keySet();
 		Iterator<String> iterHumeursPossibles = humeursPossibles.iterator();
 		while (iterHumeursPossibles.hasNext()) {

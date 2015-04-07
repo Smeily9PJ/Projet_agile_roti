@@ -1,12 +1,6 @@
 package sourceServlet;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -60,9 +54,10 @@ public class SourceServletAffichageProf {
 				this.requete.getParameter("numeric"));
 	}
 	
-	public static String trouverHumeurMajoritaire(int idEtudiant, Bdd bdd) {
-		Humeur humeur = new Humeur(idEtudiant, bdd);
-		return humeur.trouverHumeurMajoritaire();
+
+	public static String calculHumeurMajoritaire (Bdd bdd, String idSession){
+		HumeurMajoritaire humeurM = new HumeurMajoritaire(bdd, idSession);
+		return humeurM.toString();
 	}
 
 }
