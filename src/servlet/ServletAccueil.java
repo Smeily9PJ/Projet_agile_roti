@@ -46,31 +46,7 @@ public class ServletAccueil extends HttpServlet {
 		}
 		
 		if (request.getParameter("action").equals("Fin de session")) {
-			ArrayList<String> valeurs = new ArrayList<String>();
-			valeurs.add(session.getAttribute("identifiant").toString());
-			@SuppressWarnings("serial")
-			ArrayList<String> typeValeurs = new ArrayList<String>() {{add("int");}};
-			ResultSet idsEtudiants = bdd.faireSelectParam("select ID_Etudiant from vote where ID_Session=?", valeurs, typeValeurs);
-			bdd.faireDelete("DELETE FROM vote WHERE ID_Session=?", valeurs, typeValeurs);
-			try {
-				while(idsEtudiants.next()){
-					ArrayList<String> valeur = new ArrayList<String>();
-					try {
-						valeurs.add(String.valueOf(idsEtudiants.getInt(0)));
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					@SuppressWarnings("serial")
-					ArrayList<String> typeValeur = new ArrayList<String>() {{add("int");}};
-					bdd.faireDelete("DELETE FROM etudiant WHERE ID_Etudiant=?", valeur, typeValeur);
-				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			bdd.faireDelete("DELETE FROM session WHERE ID_Session=?", valeurs, typeValeurs);
-			int id = SourceServletAccueil.creerIdSession(bdd);
+			int id = SourceServletAccueil.supprimerSession(this.bdd, session);
 			this.getServletContext()
 					.getRequestDispatcher("/WEB-INF/accueil.jsp")
 					.forward(request, response);
