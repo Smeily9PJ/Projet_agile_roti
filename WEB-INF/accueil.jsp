@@ -42,7 +42,7 @@
 		
    <script src="${pageContext.request.contextPath}/javascript/accueil.js" type="text/javascript"></script>
    <script src="${pageContext.request.contextPath}/javascript/JavaScriptUtil.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/javascript/Parsers.js" type="text/javascript"></script>
+   <script src="${pageContext.request.contextPath}/javascript/Parsers.js" type="text/javascript"></script>
    <script src="${pageContext.request.contextPath}/javascript/InputMask.js" type="text/javascript"></script>
 	</body>
 </html>
