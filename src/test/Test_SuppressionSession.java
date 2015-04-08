@@ -34,11 +34,84 @@ public class Test_SuppressionSession {
 		this.baseDonnee = null;
 		this.monsieur = null;
 	}
-
+	
+	@Test
+	public void test_supprimerSession() {
+		ArrayList<String> valeurs = new  ArrayList<String>() {
+			private static final long serialVersionUID = 1L;
+		{add("4444");}};
+		
+		ArrayList<String> typeValeurs = new  ArrayList<String>() {
+			private static final long serialVersionUID = 1342417091354803177L;
+		{add("int");}};
+		
+		insertEnv("test_supprimerSession");
+		
+		int nouvelIDSession = monsieur.supprimerSession();
+		
+		String requeteSession = "select ID_Session from Session where ID_Session=4444";
+		String requeteEtudiant = "select ID_Etudiant from Etudiant where ID_Etudiant=4444";
+		String requeteVote = "select ID_Session from Vote where ID_Session=4444";
+			
+		int nbSession = 1;
+		int nbEtudiant = 1;
+		int nbVote = 1;
+		
+		ResultSet resultSession = baseDonnee.faireSelect(requeteSession);
+		try {
+			if (!resultSession.next()){
+				nbSession = 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		ResultSet resultEtudiant = baseDonnee.faireSelect(requeteEtudiant);
+		try {
+			if (!resultEtudiant.next()){
+				nbEtudiant = 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		ResultSet resultVote = baseDonnee.faireSelect(requeteVote);
+		try {
+			if (!resultVote.next()){
+				nbVote = 0;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		assertEquals(0, nbSession);
+		assertEquals(0, nbEtudiant);
+		assertEquals(0, nbVote);
+		assertNotEquals(0, nouvelIDSession);
+		
+		
+		//Nettoyage de la bdd en cas de prl
+		if (nbSession != 0){
+			String session = "DELETE FROM session WHERE ID_Session = ?";
+			System.out.println("test_supprimerSession : SUPPRESSION SESSION");
+			baseDonnee.faireDelete(session, valeurs, typeValeurs);
+		}
+		if (nbEtudiant != 0){
+			String etudiant = "DELETE FROM etudiant WHERE ID_Etudiant = ?";	
+			System.out.println("test_supprimerSession : SUPPRESSION ETUDIANT");
+			baseDonnee.faireDelete(etudiant, valeurs, typeValeurs);
+		}
+		if (nbVote != 0){
+			String vote = "DELETE FROM vote WHERE ID_Etudiant = ?";
+			System.out.println("test_supprimerSession : SUPPRESSION VOTE");
+			baseDonnee.faireDelete(vote, valeurs, typeValeurs);
+		}
+	}
+	
 	@Test
 	public void test_idEtudiantPourSessionEnCours() {
 		
-		int idVote = 0;	
+		int idVote = 1;	
 		insertEnv("test_idEtudiantPourSessionEnCours");
 		
 		String requete = "select ID_Etudiant from vote where ID_Session=4444";
