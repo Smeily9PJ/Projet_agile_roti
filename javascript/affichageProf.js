@@ -130,22 +130,22 @@ function modificationDonneesPage(context){
 		}	
 		switch (humeur) {
 		case "colere":
-			src += "humeur_colere.gif";
+			src += "humeur_colere.png";
 			break;
 		case "content":
-			src += "humeur_content.gif";
+			src += "humeur_content.png";
 			break;
 		case "triste":
-			src += "humeur_triste.gif";
+			src += "humeur_triste.png";
 			break;
 		case "dort":
-			src += "humeur_dort.gif";
+			src += "humeur_dort.png";
 			break;
 		case "rigole":
-			src += "humeur_rigole.gif";
+			src += "humeur_rigole.png";
 			break;
 		case "blaze":
-			src += "humeur_blaze.gif";
+			src += "humeur_blaze.png";
 		}
 		document.getElementById("humeurMajoritaire").src = src;
 }
