@@ -1,6 +1,6 @@
 <footer id="pied">
- <div id="infos_roti" onMouseOver="div.show('infos_txt_roti')" onMouseOut="div.hide('infos_txt_roti')">Qu'est-ce que c'est ?</div>
-  <div id="infos_credit" onMouseOver="div.show('infos_txt_credit')" onMouseOut="div.hide('infos_txt_credit')">Credit</div>
+ <div id="infos_roti" onMouseOver="showFooter('infos_txt_roti')" onMouseOut="hideFooter('infos_txt_roti')">Qu'est-ce que c'est ?</div>
+  <div id="infos_credit" onMouseOver="showFooter('infos_txt_credit')" onMouseOut="hideFooter('infos_txt_credit')">Credit</div>
   <div id="infos_txt_roti">
   Cette application Web sert à avoir un retour
   sur le temps investi lors d'une conférence en
@@ -16,14 +16,4 @@
  	BONIS Maxime
  </div>
 </footer>
-
-<script type="text/javascript">
-	div = {
-		show: function(elem) {
-			document.getElementById(elem).style.visibility = 'visible';
-		},
-		hide: function(elem) {
-			document.getElementById(elem).style.visibility = 'hidden';
-		}
-	}
-</script>
+<script src="${pageContext.request.contextPath}/javascript/footer.js" type="text/javascript"></script>

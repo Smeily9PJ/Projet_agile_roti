@@ -93,7 +93,7 @@ overflow-y: scroll;
 	height: 30px;
 }
 
-@media screen and (min-width: 720px) { 
+@media all and (min-width: 720px) { 
 .BOUTONS{
 top:55%;	
 min-width:150px;
@@ -111,7 +111,7 @@ left:20%;
 }
 }
 
-@media screen and (max-height: 800px) { 
+@media all and (max-height: 800px) { 
 	.BOUTONS #pause{
 top:55%;
 }

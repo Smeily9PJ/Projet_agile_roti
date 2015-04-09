@@ -75,4 +75,14 @@
 		<servlet-name>ServletAjouterVote</servlet-name>
 		<url-pattern>/ajouterVote</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DemoAccueil</servlet-name>
+		<servlet-class>servlet.DemoAccueil</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DemoAccueil</servlet-name>
+		<url-pattern>/demo</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Votez ROTI">
-    <meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis">
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Votez ROTI"/>
+    <meta name="keywords" content="Agile, méthodes agiles, SCRUM, ROTI, Conférence, Avis"/>
     <style type="text/css">
     <%@ include file="../css/style_commun.css" %><%@ include file="../css/style_accueil.css" %>
     </style>
@@ -44,5 +44,6 @@
    <script src="${pageContext.request.contextPath}/javascript/JavaScriptUtil.js" type="text/javascript"></script>
    <script src="${pageContext.request.contextPath}/javascript/Parsers.js" type="text/javascript"></script>
    <script src="${pageContext.request.contextPath}/javascript/InputMask.js" type="text/javascript"></script>
+   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 	</body>
 </html>

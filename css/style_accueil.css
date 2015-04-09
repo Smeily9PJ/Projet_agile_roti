@@ -123,28 +123,28 @@
 }
 /* FIN ICONE CREATION ET JOIN */
 
-@media screen and (max-width: 480px) {		
+@media all and (max-width: 480px) {		
     #accueil_ClickJoin{
     	top:10%; 
 		left:10%;
 	}
 }
 
-@media screen and (min-width: 320px) and (max-height: 250px) and (max-width: 720px) {      
+@media all and (min-width: 320px) and (max-height: 250px) and (max-width: 720px) {      
   	 #accueil_ClickJoin{
 		top:35%; 
 		left:20%; 
 	}
 }
 
-@media screen and (min-width: 480px) {
+@media all and (min-width: 480px) {
     #accueil_ClickJoin{
 		top:35%; 
 		left:25%; 
 	}
 }
 
-@media screen and (max-width: 720px) {
+@media all and (max-width: 720px) {
 	#accueil_create, #accueil_ClickCreate, #accueil_join {
 	    display : none;
 	}
@@ -156,7 +156,8 @@
 	}
 }
 
-@media screen and (min-width: 720px) {
+
+@media all and (min-width: 720px) {
 	#accueil_create, #accueil_join{
        top:32%;
        left:19%;
@@ -180,7 +181,7 @@
    }
 }
 
-@media screen and (min-width: 1024px){
+@media all and (min-width: 1024px){
    #accueil_create, #accueil_join {
        top:32%;
        left:19%;
@@ -201,4 +202,44 @@
    #accueil_ClickJoin {
        left:60%; 
    }
+}
+
+@media all and (max-device-width: 720px) {
+	
+	#accueil_create, #accueil_ClickCreate, #accueil_join {
+	    display : none;
+	}
+	#accueil_ClickJoin{
+	    visibility:visible;
+		top:30%; 
+		left:27%;
+		width:auto;
+	}	
+}
+
+@media all and (max-device-width: 480px) {
+	
+	#accueil_create, #accueil_ClickCreate, #accueil_join {
+	    display : none;
+	}
+	#accueil_ClickJoin{
+	    visibility:visible;
+		top:30%; 
+		left:27%;
+		width:auto;
+	}	
+}
+
+
+@media all and (max-device-width: 320px) {
+	
+	#accueil_create, #accueil_ClickCreate, #accueil_join {
+	    display : none;
+	}
+	#accueil_ClickJoin{
+	    visibility:visible;
+		top:30%; 
+		left:27%;
+		width:auto;
+	}	
 }

@@ -38,6 +38,8 @@ footer {
     font-family: 'MV Boli'; 
 }
 
+
+
 #infos_roti, #infos_credit {
 	left:23%;
 	width:20%;
@@ -48,6 +50,15 @@ footer {
 
 #infos_credit {
 	left:57%;
+}
+
+@media all and (max-device-width: 720px) {
+	footer {
+    height:10%;
+	}
+	#infos_roti,#infos_credit{
+	top:92%;
+	}
 }
 
 .btn {
@@ -123,7 +134,7 @@ footer {
 	width: 40%;
 }
 
-@media screen and (max-width: 320px) {	
+@media all and (max-width: 320px) {	
 	#headerIcon  {
 		width:20%;
 		height:100%;
@@ -156,11 +167,11 @@ footer {
 }
 }
 
-@media screen and (min-width: 320px) {	
+@media all and (min-width: 320px) {	
 
 }
 
-@media screen and (min-width: 480px) {	
+@media all and (min-width: 480px) {	
 #infos_txt_roti, #infos_txt_credit{
 	width:70%;
 	height:8%;
@@ -176,7 +187,7 @@ footer {
 }
 }
 
-@media screen and (min-width: 720px) {	
+@media all and (min-width: 720px) {	
 #infos_txt_roti, #infos_txt_credit{
 	width:50%;
 	height:8%;
@@ -188,7 +199,7 @@ footer {
 }
 }
 
-@media screen and (min-width: 1024px) {
+@media all and (min-width: 1024px) {
 
 #infos_txt_roti, #infos_txt_credit{
 	width:25%;
@@ -207,3 +218,25 @@ footer {
 }
 	
 }
+
+@media all and (max-device-width: 720px){
+	viewport{
+		width:device-width;
+		initial-scale :2.0;
+	}
+}
+
+@media all and (max-device-width: 480px){
+	viewport{
+		width:device-width;
+		initial-scale :2.0;
+	}
+}
+
+@media all and (max-device-width: 320px){
+	viewport{
+		width:device-width;
+		initial-scale :2.0;
+	}
+}
+	
